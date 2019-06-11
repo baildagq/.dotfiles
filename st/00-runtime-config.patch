@@ -1,0 +1,311 @@
+diff --git a/config.mk b/config.mk
+index 0cbb002..1620a84 100644
+--- a/config.mk
++++ b/config.mk
+@@ -21,7 +21,7 @@ LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
+        `$(PKG_CONFIG) --libs freetype2`
+ 
+ # flags
+-STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
++STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=700
+ STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
+ STLDFLAGS = $(LIBS) $(LDFLAGS)
+ 
+diff --git a/x.c b/x.c
+index 5828a3b..a6e0212 100644
+--- a/x.c
++++ b/x.c
+@@ -14,6 +14,12 @@
+ #include <X11/keysym.h>
+ #include <X11/Xft/Xft.h>
+ #include <X11/XKBlib.h>
++#include <ctype.h>
++#include <pwd.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <sys/types.h>
+ 
+ static char *argv0;
+ #include "arg.h"
+@@ -179,6 +185,15 @@ static int match(uint, uint);
+ static void run(void);
+ static void usage(void);
+ 
++static char *expand_tilde(const char *);
++static void read_config_item_float(const char *, float *, const char *);
++static void read_config_item_int(const char *, int *, const char *);
++static void read_config_item_uint(const char *, uint *, const char *);
++static void read_config_item_colorname(const char *);
++static void read_config_line(const char *);
++static void read_config_file(const char *);
++static void read_config(const char *);
++
+ static void (*handler[LASTEvent])(XEvent *) = {
+ 	[KeyPress] = kpress,
+ 	[ClientMessage] = cmessage,
+@@ -712,7 +727,7 @@ xloadcolor(int i, const char *name, Color *ncolor)
+ 	XRenderColor color = { .alpha = 0xffff };
+ 
+ 	if (!name) {
+-		if (BETWEEN(i, 16, 255)) { /* 256 color */
++		if (BETWEEN(i, 16, 255) && !colorname[i]) { /* 256 color */
+ 			if (i < 6*6*6+16) { /* same colors as xterm */
+ 				color.red   = sixd_to_16bit( ((i-16)/36)%6 );
+ 				color.green = sixd_to_16bit( ((i-16)/6) %6 );
+@@ -1914,16 +1929,230 @@ usage(void)
+ 	    " [stty_args ...]\n", argv0, argv0);
+ }
+ 
++char *
++expand_tilde(const char *path)
++{
++	if (*path == '~') {
++		const char *name_start = path + 1;
++		const char *name_end = strchr(name_start, '/');
++		if (!name_end) name_end = name_start + strlen(name_start);
++
++		const char *prefix = NULL;
++		if (name_end == name_start) {
++			prefix = getenv("HOME");
++		} else {
++			char *name = strndup(name_start, name_end - name_start);
++			const struct passwd *pw = getpwnam(name);
++			if (pw) {
++				prefix = pw->pw_dir;
++			}
++			free(name);
++		}
++
++		if (prefix) {
++			char *expanded = malloc(strlen(prefix) + strlen(name_end));
++			strcpy(expanded, prefix);
++			strcat(expanded, name_end);
++			return expanded;
++		}
++	}
++	return strdup(path);
++}
++
++void
++read_config_item_float(const char *item, float *dest, const char *item_name)
++{
++	float val;
++	int bytes_read;
++	int n = sscanf(item, "%f%n", &val, &bytes_read);
++	if (n == 1 && item[bytes_read] == '\0') {
++		*dest = val;
++	} else {
++		fprintf(stderr, "Invalid %s config item: %s\n", item_name, item);
++	}
++}
++
++void
++read_config_item_int(const char *item, int *dest, const char *item_name)
++{
++	int val;
++	int bytes_read;
++	int n = sscanf(item, "%d%n", &val, &bytes_read);
++	if (n == 1 && item[bytes_read] == '\0') {
++		*dest = val;
++	} else {
++		fprintf(stderr, "Invalid %s config item: %s\n", item_name, item);
++	}
++}
++
++void
++read_config_item_uint(const char *item, uint *dest, const char *item_name)
++{
++	uint val;
++	int bytes_read;
++	int n = sscanf(item, "%u%n", &val, &bytes_read);
++	if (n == 1 && item[bytes_read] == '\0') {
++		*dest = val;
++	} else {
++		fprintf(stderr, "Invalid %s config item: %s\n", item_name, item);
++	}
++}
++
++void
++read_config_item_colorname(const char *item)
++{
++	int idx;
++	char color[25];
++	int bytes_read;
++	int n = sscanf(item, "%d%24s%n", &idx, color, &bytes_read);
++	if (n == 2 && idx >= 0 && idx < LEN(colorname) && item[bytes_read] == '\0') {
++		colorname[idx] = strdup(color);
++	} else {
++		fprintf(stderr, "Invalid colorname config item: %s\n", item);
++	}
++}
++
++void
++read_config_line(const char *line)
++{
++	char config_name[50];
++	int bytes_read;
++	int n = sscanf(line, "%49s%n", config_name, &bytes_read);
++	if (n != 1) return;
++
++	const char *now = line + bytes_read;
++	if (*now && !isspace(*now)) {
++		fprintf(stderr, "Invalid config line: %s\n", line);
++		return;
++	}
++	now++;
++
++	if (!strcmp(config_name, "font")) {
++		font = strdup(now);
++	} else if (!strcmp(config_name, "borderpx")) {
++		read_config_item_int(now, &borderpx, config_name);
++	} else if (!strcmp(config_name, "cwscale")) {
++		read_config_item_float(now, &cwscale, config_name);
++	} else if (!strcmp(config_name, "chscale")) {
++		read_config_item_float(now, &chscale, config_name);
++	} else if (!strcmp(config_name, "worddelimiters")) {
++		size_t n = mbstowcs(NULL, now, 0);
++		wchar_t *buf = calloc(n + 1, sizeof(wchar_t));
++		mbstowcs(buf, now, n + 1);
++		worddelimiters = buf;
++	} else if (!strcmp(config_name, "doubleclicktimeout")) {
++		read_config_item_uint(now, &doubleclicktimeout, config_name);
++	} else if (!strcmp(config_name, "tripleclicktimeout")) {
++		read_config_item_uint(now, &tripleclicktimeout, config_name);
++	} else if (!strcmp(config_name, "allowaltscreen")) {
++		read_config_item_int(now, &allowaltscreen, config_name);
++	} else if (!strcmp(config_name, "xfps")) {
++		read_config_item_uint(now, &xfps, config_name);
++	} else if (!strcmp(config_name, "actionfps")) {
++		read_config_item_uint(now, &actionfps, config_name);
++	} else if (!strcmp(config_name, "blinktimeout")) {
++		read_config_item_uint(now, &blinktimeout, config_name);
++	} else if (!strcmp(config_name, "cursorthickness")) {
++		read_config_item_uint(now, &cursorthickness, config_name);
++	} else if (!strcmp(config_name, "bellvolume")) {
++		read_config_item_int(now, &bellvolume, config_name);
++	} else if (!strcmp(config_name, "termname")) {
++		termname = strdup(now);
++	} else if (!strcmp(config_name, "tabspaces")) {
++		read_config_item_uint(now, &tabspaces, config_name);
++	} else if (!strcmp(config_name, "colorname")) {
++		read_config_item_colorname(now);
++	} else if (!strcmp(config_name, "defaultfg")) {
++		read_config_item_uint(now, &defaultfg, config_name);
++	} else if (!strcmp(config_name, "defaultbg")) {
++		read_config_item_uint(now, &defaultbg, config_name);
++	} else if (!strcmp(config_name, "defaultcs")) {
++		read_config_item_uint(now, &defaultcs, config_name);
++	} else if (!strcmp(config_name, "defaultrcs")) {
++		read_config_item_uint(now, &defaultrcs, config_name);
++	} else if (!strcmp(config_name, "cursorshape")) {
++		read_config_item_uint(now, &cursorshape, config_name);
++	} else if (!strcmp(config_name, "mousefg")) {
++		read_config_item_uint(now, &mousefg, config_name);
++	} else if (!strcmp(config_name, "mousebg")) {
++		read_config_item_uint(now, &mousebg, config_name);
++	} else if (!strcmp(config_name, "defaultattr")) {
++		read_config_item_uint(now, &defaultattr, config_name);
++	} else if (!strcmp(config_name, "include")) {
++		read_config_file(now);
++	} else {
++		fprintf(stderr, "Unknown config item: %s\n", line);
++	}
++}
++
++void
++read_config_file(const char *fname)
++{
++	char *real_fname = expand_tilde(fname);
++	FILE *fp = fopen(real_fname, "r");
++	free(real_fname);
++
++	if (!fp) {
++		fprintf(stderr, "Can't open config file %s\n", fname);
++		return;
++	}
++
++	char *line = NULL;
++	size_t size = 0;
++	ssize_t len;
++
++	while ((len = getline(&line, &size, fp)) != -1) {
++		if (len && line[len - 1] == '\n') {
++			line[--len] = '\0';
++		}
++		if (!len || *line == '#') {
++			continue;
++		}
++		read_config_line(line);
++	}
++
++	fclose(fp);
++	free(line);
++}
++
++void
++read_config(const char *fname)
++{
++	if (fname) {
++		read_config_file(fname);
++		return;
++	}
++	char *config_fname = NULL;
++	const char *xdg_env = getenv("XDG_CONFIG_HOME");
++	if (xdg_env) {
++		config_fname = malloc(strlen(xdg_env) + strlen("/st/config"));
++		strcpy(config_fname, xdg_env);
++		strcat(config_fname, "/st/config");
++	} else {
++		const char *home = getenv("HOME");
++		if (home) {
++			config_fname = malloc(strlen(home) + strlen("/.config/st/config"));
++			strcpy(config_fname, home);
++			strcat(config_fname, "/.config/st/config");
++		}
++	}
++	if (!config_fname) return;
++	read_config_file(config_fname);
++	free(config_fname);
++}
++
+ int
+ main(int argc, char *argv[])
+ {
++	int no_allowaltscreen = 0;
++	const char *config_file_name = NULL;
++
+ 	xw.l = xw.t = 0;
+ 	xw.isfixed = False;
+-	win.cursor = cursorshape;
+ 
+ 	ARGBEGIN {
+ 	case 'a':
+-		allowaltscreen = 0;
++		no_allowaltscreen = 1;
+ 		break;
+ 	case 'c':
+ 		opt_class = EARGF(usage());
+@@ -1961,11 +2190,22 @@ main(int argc, char *argv[])
+ 	case 'v':
+ 		die("%s " VERSION "\n", argv0);
+ 		break;
++	case 'z':
++		config_file_name = EARGF(usage());
++		break;
+ 	default:
+ 		usage();
+ 	} ARGEND;
+ 
+ run:
++	read_config(config_file_name);
++	// Certain command-line options need to be applied after reading
++	// configuration file
++	win.cursor = cursorshape;
++	if (no_allowaltscreen) {
++		allowaltscreen = 0;
++	}
++
+ 	if (argc > 0) /* eat all remaining arguments */
+ 		opt_cmd = argv;
+ 
