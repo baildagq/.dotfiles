@@ -12,7 +12,11 @@ ln -s ~/dotfiles/.vim ~/.vim
 rm -rf ~/.tmux.conf
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 rm -rf ~/.zshrc
-ln -s ~/dotfiles/zsh/.zshrc_vm ~/.zshrc
+# ln -s ~/dotfiles/zsh/.zshrc_vm ~/.zshrc
+rm ~/.gitconfig
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+rm -rf ~/.bashrc
+ln -s ~/dotfiles/.bashrc ~/.bashrc
 
 ##========download conda========
 #cd ~/config_file/
