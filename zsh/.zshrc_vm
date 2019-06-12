@@ -119,6 +119,7 @@ set ZSH_DISABLE_COMPFIX = true
 alias py='python3'
 alias ipy='ipython'
 alias xdg="xdg-open"
+alias xx="startx"
 
 
 # 一句niubi 的话
