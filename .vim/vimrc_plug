@@ -22,7 +22,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'othree/html5.vim'
 Plug 'lervag/vimtex'
 Plug 'airblade/vim-gitgutter'
-
+Plug 'vim-latex/vim-latex'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'takac/vim-hardtime'
@@ -40,6 +40,7 @@ Plug 'rakr/vim-one'
 " add extra function
 Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
 Plug 'tomtom/tcomment_vim' 
+Plug 'junegunn/vim-easy-align'
 
 " not understand
 Plug 'kien/ctrlp.vim' 
@@ -60,6 +61,8 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 
 "vim-latex
+"define templete path
+let g:Tex_CustomTemplateDirectory='~/E/_favorate/Template/latex'
 let g:tex_flavor='xelatex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
@@ -80,15 +83,10 @@ let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:tagbar_left=0
 "打开文件自动 打开tagbar
 "autocmd bufreadpost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
-"映射tagbar的快捷键
-map <f4> :TagbarToggle<cr>
 
 
-"nerdtree ---------------
-nmap <f2> :NERDTree<cr>
 
 "vim-autoformat
-nnoremap <f6> :Autoformat<cr>
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
