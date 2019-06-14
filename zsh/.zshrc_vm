@@ -120,6 +120,7 @@ alias py='python3'
 alias ipy='ipython'
 alias xdg="xdg-open"
 alias xx="startx"
+alias za="zathura"
 
 
 # 一句niubi 的话
