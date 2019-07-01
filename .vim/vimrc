@@ -9,14 +9,18 @@ endif
 let mapleader =";"
 
 
+" clipboard : autoselect 和后面的为默认，本来以为可以直接set
+" clipbaord+=unnamedplus,但是发现可能就被exclude吃掉了，所以只能将unnameplus写在了前面，然后加上了default"
+set clipboard=unnamedplus,autoselect,exclude:cons\\\|linux 
+
 set mouse=a
 syntax enable
 set number					"show line numbers
 set relativenumber			"show relative line numbers
 " colorscheme gruvbox
 " colorscheme palenight
-" colorscheme codedark
-colorscheme SpaceVim
+colorscheme codedark
+" colorscheme SpaceVim
 set background=dark 
 
 set showcmd					"show command in bottom bar
@@ -29,6 +33,7 @@ set cursorcolumn			"highlight current column
 set showmatch				"highlight matching {[()]}
 set pumheight=10			" 设置补全高度为10"
 set laststatus=2
+set nowrap
 
 " "============ spell check ===========
 " setlocal spell

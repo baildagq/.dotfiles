@@ -6,3 +6,7 @@ for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 
 # compile using opencv file
 g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) && ./main
+
+#
+#查看系统安装的终端
+update-alternatives --list x-terminal-emulator

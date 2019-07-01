@@ -17,7 +17,11 @@ font pango:monospace 10
 
 # wallpaper
 # exec --no-startup-id feh --bg-scale "~/Pictures/wallpapers/wallpaper.jpg"
+exec --no-startup-id feh --bg-scale "~/Pictures/wallpapers/YOGT.png"
 # feh --bg-fill "~/Pictures/YOGT.png"
+
+# copy-paste board
+# exec --no-startup-id clipit
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -33,7 +37,6 @@ font pango:monospace 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-
 #===programs shortcuts===
 
 # browsers--firefox chromium
@@ -41,7 +44,10 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+g exec google-chrome
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# i3的脚本，自动选择系统安装的默认终端
+# bindsym $mod+Return exec i3-sensible-terminal
+# 手动指定了终端为 alacritty
+bindsym $mod+Return exec alacritty
 
 # start file manager -- thunar
 bindsym $mod+u exec --no-startup-id thunar

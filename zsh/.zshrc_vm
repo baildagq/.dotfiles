@@ -121,6 +121,7 @@ alias ipy='ipython'
 alias xdg="xdg-open"
 alias xx="startx"
 alias za="zathura"
+alias latexmk="latexmk -xelatex"
 
 
 # 一句niubi 的话
