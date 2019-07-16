@@ -122,6 +122,7 @@ alias xdg="xdg-open"
 alias xx="startx"
 alias za="zathura"
 alias latexmk="latexmk -xelatex"
+alias s="seaf-cli"
 
 
 # 一句niubi 的话
