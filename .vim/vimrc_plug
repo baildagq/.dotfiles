@@ -32,9 +32,6 @@ Plug 'vim-scripts/conque-shell'
 Plug 'junegunn/seoul256.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-one'
 
 " add extra function
@@ -48,6 +45,13 @@ Plug 'kien/ctrlp.vim'
 call plug#end()
 
 
+
+" lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }
 
 
 "youcompleteme
@@ -69,10 +73,6 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-"vim-airline 
-"open tabview automatically displays all buffers when there's only one tab open.
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
 
 "tagbar 
 "设置tagbar使用的ctags的插件,必须要设置对
@@ -98,14 +98,5 @@ if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
-"ayu-vim
-" set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme"
-
 "vim-one
-" let g:airline_theme='one'
-" set background=dark " for the dark version
-" set background=light " for the light version
-" let g:one_allow_italics = 1 " I love italic for comments
+let g:one_allow_italics = 1 " I love italic for comments
