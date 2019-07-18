@@ -37,11 +37,6 @@ set pumheight=10			" 设置补全高度为10"
 set laststatus=2
 set nowrap
 
-" "============ spell check ===========
-" setlocal spell
-" set spelllang=en_gb
-" inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u`]
-
 
 "============= Encoding ================
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
@@ -57,8 +52,7 @@ set cindent
 set tabstop=4 		    	"number  of visual spaces per tab
 set softtabstop=4		    "number of spaces in tab when editing
 set shiftwidth=4			"click one 'delete' delete four space
-set smarttab
-" 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+set smarttab                " 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
 set expandtab
 
 
@@ -70,14 +64,12 @@ set noundofile
 
 
 "==============  Search ==============
-
 set incsearch				"matching when you are inputing
 set hlsearch				"highlight the match when search	
 set ignorecase				"ignore case when searching
 set smartcase				" ...unless we type a capital
 
 "============== folds ===========
-
 set foldenable				"enable fold feature
 set foldlevel=0
 set foldmethod=indent		"fold based on syntax, other could be indent manual diff
