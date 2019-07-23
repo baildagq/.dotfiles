@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 #font pango:DejaVu Sans Mono 12
 # font pango:monospace 13
-font pango: Noto Sans 3
+font pango: Noto Sans 13
 
 # autostart
 exec --no-startup-id feh --bg-scale ~/Pictures/YOGT.png
