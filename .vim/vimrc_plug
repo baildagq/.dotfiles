@@ -11,6 +11,15 @@ Plug 'spacevim/spacevim'
 Plug 'ervandew/supertab'
 Plug 'drmingdrmer/xptemplate'
 
+" complete
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+
 " syntax
 " Plug 'Valloric/YouCompleteMe'
 Plug 'davidhalter/jedi-vim'
@@ -100,3 +109,6 @@ endif
 
 "vim-one
 let g:one_allow_italics = 1 " I love italic for comments
+
+" deoplete
+" let g:deoplete#enable_at_startup = 1

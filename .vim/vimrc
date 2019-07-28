@@ -156,16 +156,17 @@ endfunc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickly Run
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"============== quick_key ==========
+
 inoremap jk <esc>
 nnoremap <space> za
 xmap ga <Plug>(EasyAlign)
 
 nmap <F2>: NERDTree<cr>
 nmap <F4>: TagbarToggle<cr>
+nmap <F5>: call CompileRunGcc()<CR>
 nmap <F6>: Autoformat<cr>
-nmap <F5>:  call CompileRunGcc()<CR>
-nmap <F8>:  call DebugCompileRunGcc()<CR>
+nmap <F7>: call Shuati()<CR>
+nmap <F8>: call DebugCompileRunGcc()<CR>
 
 
 
@@ -185,6 +186,12 @@ func! CompileRunGcc()
         exec '!xelatex %'
     endif                                                                              
 endfunc 
+
+" func! Shuati()
+"     w
+"     if &filetype == 'cpp'
+
+
 
 func! DebugCompileRunGcc()
 	w
