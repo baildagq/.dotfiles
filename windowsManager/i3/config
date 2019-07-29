@@ -34,7 +34,6 @@ bindsym $mod+g exec google-chrome
 # start a terminal
 # i3的脚本，自动选择系统安装的默认终端
 # bindsym $mod+Return exec i3-sensible-terminal
-# 手动指定了终端为 alacritty
 bindsym $mod+Return exec alacritty
 
 # start file manager -- thunar

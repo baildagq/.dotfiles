@@ -43,15 +43,10 @@
 ! *.italicFont: xft:Iosevka:style=Italic:size=8
 ! *.boldItalicFont: xft:Iosevka:style=Bold Italic:size=8
 
-! URxvt Appearance
-! URxvt.font: -*-rissole-*
-! URxvt.boldFont: -*-rissole-*
-! URxvt.italicFont: -*-rissole-*
-! URxvt.boldItalicfont: -*-rissole-*
-URxvt.font: fonts-noto
-URxvt.boldFont: fonts-noto
-URxvt.italicFont: fonts-noto
-Rxvt.boldItalicfont: fonts-noto
+URxvt.font: xft:noto:size=12:antialias=true
+URxvt.boldFont: xft:noto
+URxvt.italicFont: xft:noto
+Rxvt.boldItalicfont: xft:noto
 
 
 URxvt.letterSpace: 0

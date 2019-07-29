@@ -123,6 +123,7 @@ alias xx="startx"
 alias za="zathura"
 alias latexmk="latexmk -xelatex"
 alias s="seaf-cli"
+alias ra="ranger"
 
 
 # 一句niubi 的话
@@ -170,5 +171,7 @@ bindkey '^Z' fancy-ctrl-z
 PATH=/home/stout/Software/wudao-dict/wudao-dict:${PATH}
 #PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 #export PATH
+# To make ranger default editor = vim
+VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
 set_conda
