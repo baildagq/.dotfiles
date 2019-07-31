@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-
 Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
@@ -11,14 +10,6 @@ Plug 'spacevim/spacevim'
 Plug 'ervandew/supertab'
 Plug 'drmingdrmer/xptemplate'
 
-" complete
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
 
 " syntax
 " Plug 'Valloric/YouCompleteMe'
@@ -30,12 +21,12 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'plasticboy/vim-markdown'
 Plug 'othree/html5.vim'
 Plug 'lervag/vimtex'
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-latex/vim-latex'
-Plug 'sirver/ultisnips'
+
+" git
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'takac/vim-hardtime'
-Plug 'vim-scripts/conque-shell'
+
 
 " color
 Plug 'junegunn/seoul256.vim'
@@ -47,6 +38,9 @@ Plug 'rakr/vim-one'
 Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
 Plug 'tomtom/tcomment_vim' 
 Plug 'junegunn/vim-easy-align'
+Plug 'sirver/ultisnips'
+Plug 'takac/vim-hardtime'
+Plug 'vim-scripts/conque-shell'
 
 " not understand
 Plug 'kien/ctrlp.vim' 
@@ -91,8 +85,11 @@ let g:tagbar_ctags_bin='/usr/bin/ctags'
 "设置tagbar的窗口显示的位置,为左边
 let g:tagbar_left=0
 "打开文件自动 打开tagbar
-"autocmd bufreadpost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+autocmd bufreadpost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 
+"============ YouCompleteMe =============
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 
 "vim-autoformat
@@ -110,5 +107,5 @@ endif
 "vim-one
 let g:one_allow_italics = 1 " I love italic for comments
 
-" deoplete
-" let g:deoplete#enable_at_startup = 1
+" vim-hardtime
+let g:hardtime_default_on = 0

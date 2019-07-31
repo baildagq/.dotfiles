@@ -86,9 +86,6 @@ set foldmethod=indent		"fold based on syntax, other could be indent manual diff
 set tags=./tags;,tags
 
 
-"============ YouCompleteMe =============
-let g:ycm_server_python_interpreter='/usr/bin/python'
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 
 "=========================== file-title ==============================
@@ -187,11 +184,6 @@ func! CompileRunGcc()
     endif                                                                              
 endfunc 
 
-" func! Shuati()
-"     w
-"     if &filetype == 'cpp'
-
-
 
 func! DebugCompileRunGcc()
 	w
@@ -200,3 +192,16 @@ func! DebugCompileRunGcc()
 		exec '!time gdb %<'
 	endif
 endfunc
+
+" call NERDTree when has no file in command line
+func! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunc
+
+
+" ====== autocmd ========
+au VimEnter * Tagbar
+" au VimEnter * NERDTree
+au VimEnter * call StartUp()
