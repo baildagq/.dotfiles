@@ -202,6 +202,6 @@ endfunc
 
 
 " ====== autocmd ========
-au VimEnter * Tagbar
+" au VimEnter * Tagbar
 " au VimEnter * NERDTree
 au VimEnter * call StartUp()
