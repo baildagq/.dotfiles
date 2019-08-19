@@ -59,3 +59,13 @@ sudo apt install -y python3-pip
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  #install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting #install zsh-syntax-hightlighting
+
+
+#========install wudao_dict========
+# sudo apt-get install python3
+# sudo apt-get install python3-pip
+# pip3 install bs4
+# pip3 install lxml
+# mkdir ~/Software
+# cd ~/Software
+# git clone https://github.com/chestnutheng/wudao-dict
