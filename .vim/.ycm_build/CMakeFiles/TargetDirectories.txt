@@ -1,5 +1,0 @@
-/home/stout/.vim/.ycm_build/CMakeFiles/rebuild_cache.dir
-/home/stout/.vim/.ycm_build/CMakeFiles/edit_cache.dir
-/home/stout/.vim/.ycm_build/ycm/CMakeFiles/rebuild_cache.dir
-/home/stout/.vim/.ycm_build/ycm/CMakeFiles/ycm_core.dir
-/home/stout/.vim/.ycm_build/ycm/CMakeFiles/edit_cache.dir
