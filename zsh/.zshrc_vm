@@ -119,11 +119,9 @@ set ZSH_DISABLE_COMPFIX = true
 alias py='python3'
 alias ipy='ipython'
 alias xdg="xdg-open"
-alias xx="startx"
 alias za="zathura"
 alias latexmk="latexmk -xelatex"
 alias s="seaf-cli"
-alias ra="ranger"
 
 
 # 一句niubi 的话

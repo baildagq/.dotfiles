@@ -13,6 +13,8 @@ ln -s ~/dotfiles/terminal/urxvt ~/.urxvt
 
 ln -s ~/dotfiles/windowsManager/i3 ~/.config/i3
 ln -s ~/dotfiles/windowsManager/compton.conf ~/.config/compton.conf
+ln -s ~/dotfiles/windowsManager/dunst ~/.config/dunst
+
 ln -s ~/dotfiles/feh               ~/.config/feh
 ln -s ~/dotfiles/zathura           ~/.config/zathura
 ln -s ~/dotfiles/terminal/alacritty ~/.config/alacritty

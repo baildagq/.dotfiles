@@ -17,6 +17,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'w0rp/ale'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'xavierd/clang_complete'
+Plug 'artur-shaik/vim-javacomplete2'
 
 " add file support
 Plug 'plasticboy/vim-markdown'
@@ -40,7 +41,7 @@ Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
 Plug 'tomtom/tcomment_vim' 
 Plug 'junegunn/vim-easy-align'
 Plug 'sirver/ultisnips'
-Plug 'takac/vim-hardtime'
+" Plug 'takac/vim-hardtime'
 Plug 'vim-scripts/conque-shell'
 
 " not understand
@@ -109,7 +110,7 @@ endif
 let g:one_allow_italics = 1 " I love italic for comments
 
 " vim-hardtime
-let g:hardtime_default_on = 0
+" let g:hardtime_default_on = 0
 
 " clang_complete
 let g:clang_library_path='/usr/lib/llvm-8/lib'
