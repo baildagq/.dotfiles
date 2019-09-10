@@ -173,7 +173,3 @@ PATH=/home/stout/Software/wudao-dict/wudao-dict:${PATH}
 VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
 set_conda
-
-function run {
-    g++ $1 -g -o ../build/$2 && ../build/$2
-}

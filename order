@@ -11,6 +11,18 @@ g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) &
 #查看系统安装的终端
 update-alternatives --list x-terminal-emulator
 
-colortest-python
 
+#################### general ####################
+vim
+zsh
+tmux
+git
+ag
 neofetch
+mindmaster
+colortest-python
+lxappearence
+
+#################### manjaro ####################
+
+#################### ubuntu  ####################
