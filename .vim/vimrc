@@ -18,8 +18,8 @@ syntax enable
 set number					"show line numbers
 set relativenumber			"show relative line numbers
 " colorscheme gruvbox
-colorscheme palenight
-" colorscheme codedark
+" colorscheme palenight
+colorscheme codedark
 " colorscheme SpaceVim
 " colorscheme one
 " colorscheme seoul256
