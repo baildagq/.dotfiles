@@ -117,79 +117,11 @@ set ZSH_DISABLE_COMPFIX = true
 
 alias py='python3'
 alias xdg="xdg-open"
+alias ipy='ipython'
+alias za="zathura"
+alias latexmk="latexmk -xelatex"
+alias s="seaf-cli"
 
-function megssh {
-    # $1: control internal-web or external-web
-    # $2: control ws1 or ws2
-    # $3: control connect straight or functional:
-            # s: straight
-            # f: functional: support jupyter and tensorboard
-    if [ $# = 3 ];then
-        if [ $1 = 'i' ];then
-            web="-interal"
-        fi
-        if [ $1 = 'e' ];then
-            web=""
-        fi
-        if [ $2 = 'ws' ]; then
-            if [ $3 = 's' ]; then
-                ssh -CAXY stout.qiqiang.brw@wh-a$web.brainpp.cn -D 7071
-            fi
-            if [ $3 = 'f' ]; then
-                ssh -L 8888:localhost:6006 stout.qiqiang.brw@wh-a$web.brainpp.cn
-            fi
-        fi
-        if [ $2 = 'ws2' ]; then
-            if [ $3 = 's' ]; then
-                ssh -CAXY qiqiang.qiqiang.ws2@wh-a$web.brainpp.cn -D 7071
-            fi
-            if [ $3 = 'f' ]; then
-                ssh -L 8888:localhost:6006 qiqiang.qiqiang.ws2@wh-a$web.brainpp.cn
-            fi
-        fi
-    else
-        echo "wrong parameters num"
-    fi
-}
-
-
-function megscp {
-    # $1: control up or down
-    # $2: control internal-web or external-web
-    # $3: control ws1 or ws2
-    # $4: filepath
-    # $5: filepath
-    if [ $# = 5 ];then
-        if [ $2 = 'i' ];then
-            web="-interal"
-        fi
-        if [ $2 = 'e' ];then
-            web=""
-        fi
-        if [ $3 = 'ws' ]; then
-            if [ $1 = 'up' ]; then
-	            scp -r $4 stout.qiqiang.brw@wh-a$web.brainpp.cn:$5
-            fi
-            if [ $1 = 'down' ]; then
-	            scp -r stout.qiqiang.brw@wh-a$web.brainpp.cn:$4 $5
-            fi
-        fi
-        if [ $3 = 'ws2' ]; then
-            if [ $1 = 'up' ]; then
-	            scp -r $4 qiqiang.qiqiang.ws2@wh-a$web.brainpp.cn:$5
-            fi
-            if [ $1 = 'down' ]; then
-	            scp -r qiqiang.qiqiang.ws2@wh-a$web.brainpp.cn:$4 $5
-            fi
-        fi
-    else
-        echo "wrong parameters num"
-    fi
-}
-
-function myssh {
-    ssh stout@192.168.163.$1
-}
 
 # 通过ctrl-z 由vim 进入shell, 并通过ctrl-z 退回shell
 function fancy-ctrl-z {
@@ -206,9 +138,3 @@ bindkey '^Z' fancy-ctrl-z
 
 #PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 #export PATH
-
-
-
-# 一句niubi 的话
-fortune
-

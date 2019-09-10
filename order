@@ -1,3 +1,17 @@
+#################### general ####################
+vim
+zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+tmux
+git
+ag
+ranger
+alacritty
+neofetch
+mindmaster
+colortest-python
+lxappearence
+
 # print color
 for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 
@@ -7,22 +21,19 @@ for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 # compile using opencv file
 g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) && ./main
 
-#
-#查看系统安装的终端
-update-alternatives --list x-terminal-emulator
 
 
-#################### general ####################
-vim
-zsh
-tmux
-git
-ag
-neofetch
-mindmaster
-colortest-python
-lxappearence
+
 
 #################### manjaro ####################
+sudo pacman-mirrors -i -c China -m rank
+yay
+
+
+
+
+
 
 #################### ubuntu  ####################
+# list system terminal
+update-alternatives --list x-terminal-emulator

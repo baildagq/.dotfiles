@@ -1,0 +1,97 @@
+#################### alias ####################
+alias py='python3'
+alias ipy='ipython'
+alias xdg="xdg-open"
+alias za="zathura"
+alias latexmk="latexmk -xelatex"
+alias s="seaf-cli"
+alias ra="ranger"
+alias ls="ls --color"
+
+# git
+alias g='git'
+alias ga='git add'
+alias gaa='git add --all'
+alias gapa='git add --patch'
+
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbda='git branch --merged | command grep -vE "^(\*|\s*master\s*$)" | command xargs -n 1 git branch -d'
+alias gbl='git blame -b -w'
+alias gbnm='git branch --no-merged'
+alias gbr='git branch --remote'
+alias gbs='git bisect'
+alias gbsb='git bisect bad'
+alias gbsg='git bisect good'
+alias gbsr='git bisect reset'
+alias gbss='git bisect start'
+alias gst='git status'
+
+# to add wudao-dict
+# PATH=/home/stout/Software/wudao-dict/wudao-dict:${PATH}
+# To make ranger default editor = vim
+VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
+
+#################### function ####################
+
+function mountShare {
+    sudo vmhgfs-fuse -o nonempty -o allow_other .host:/D ~/D
+}
+
+# 通过ctrl-z 由vim 进入shell, 并通过ctrl-z 退回shell
+function fancy-ctrl-z {
+  if [[ $#BUFFER -eq 0 ]]; then
+      BUFFER="fg"
+      zle accept-line
+  else
+	  zle push-input
+	  zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+
+#################### auto start ####################
+
+# show one nb words
+# fortune
+
+# auto start tmux as soon as into terminal
+if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
+    tmux attach || tmux new; exit
+fi
+
+### Added by Zplugin's installer
+source '/home/qiqiang/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
+
+
+
+#################### plugin ####################
+
+# Two regular plugins loaded without tracking.
+zplugin light zsh-users/zsh-autosuggestions
+zplugin light zdharma/fast-syntax-highlighting
+
+# Plugin history-search-multi-word loaded with tracking.
+zplugin load zdharma/history-search-multi-word
+
+# Load the pure theme, with zsh-async library that's bundled with it.
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light sindresorhus/pure
+
+# Binary release in archive, from GitHub-releases page. 
+# After automatic unpacking it provides program "fzf".
+zplugin ice from"gh-r" as"program"
+zplugin load junegunn/fzf-bin
+
+# One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
+# This is done by ice-mod `mv'{from} -> {to}'. There are multiple packages per
+# single version, for OS X, Linux and Windows – so ice-mod `bpick' is used to
+# select Linux package – in this case this is actually not needed, Zplugin will
+# grep operating system name and architecture automatically when there's no `bpick'.
+zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
+zplugin load docker/compose
