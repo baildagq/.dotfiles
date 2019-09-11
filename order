@@ -1,17 +1,4 @@
 #################### general ####################
-vim
-zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
-tmux
-git
-ag
-ranger
-alacritty
-neofetch
-mindmaster
-colortest-python
-lxappearence
-
 # print color
 for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 
@@ -21,6 +8,8 @@ for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 # compile using opencv file
 g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) && ./main
 
+# pip3 config
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 
@@ -28,7 +17,11 @@ g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) &
 #################### manjaro ####################
 sudo pacman-mirrors -i -c China -m rank
 yay
-
+wqy-microhei
+# ssh service
+systemctl enable sshd.service   #   开机启动
+systemctl start sshd.service    #   立即启动
+systemctl restart sshd.service  #   立即重启
 
 
 

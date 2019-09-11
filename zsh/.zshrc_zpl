@@ -7,25 +7,8 @@ alias latexmk="latexmk -xelatex"
 alias s="seaf-cli"
 alias ra="ranger"
 alias ls="ls --color"
+alias md="mkdir"
 
-# git
-alias g='git'
-alias ga='git add'
-alias gaa='git add --all'
-alias gapa='git add --patch'
-
-alias gb='git branch'
-alias gba='git branch -a'
-alias gbda='git branch --merged | command grep -vE "^(\*|\s*master\s*$)" | command xargs -n 1 git branch -d'
-alias gbl='git blame -b -w'
-alias gbnm='git branch --no-merged'
-alias gbr='git branch --remote'
-alias gbs='git bisect'
-alias gbsb='git bisect bad'
-alias gbsg='git bisect good'
-alias gbsr='git bisect reset'
-alias gbss='git bisect start'
-alias gst='git status'
 
 # to add wudao-dict
 # PATH=/home/stout/Software/wudao-dict/wudao-dict:${PATH}
@@ -80,8 +63,8 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin load zdharma/history-search-multi-word
 
 # Load the pure theme, with zsh-async library that's bundled with it.
-zplugin ice pick"async.zsh" src"pure.zsh"
-zplugin light sindresorhus/pure
+# zplugin ice pick"async.zsh" src"pure.zsh"
+# zplugin light sindresorhus/pure
 
 # Binary release in archive, from GitHub-releases page. 
 # After automatic unpacking it provides program "fzf".
@@ -95,3 +78,10 @@ zplugin load junegunn/fzf-bin
 # grep operating system name and architecture automatically when there's no `bpick'.
 zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zplugin load docker/compose
+
+zplugin ice nocompletions compile"{zinc_functions/*,segments/*,zinc.zsh}"
+zplugin load robobenklein/zinc
+
+zplugin ice wait lucid
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
