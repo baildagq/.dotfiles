@@ -16,8 +16,8 @@ Plug 'drmingdrmer/xptemplate'
 Plug 'davidhalter/jedi-vim'
 " Plug 'w0rp/ale'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'xavierd/clang_complete'
-Plug 'artur-shaik/vim-javacomplete2'
+" Plug 'xavierd/clang_complete'
+" Plug 'artur-shaik/vim-javacomplete2'
 
 " add file support
 Plug 'plasticboy/vim-markdown'
@@ -44,7 +44,7 @@ Plug 'sirver/ultisnips'
 " Plug 'takac/vim-hardtime'
 Plug 'vim-scripts/conque-shell'
 
-" not understand
+" dim search
 Plug 'kien/ctrlp.vim' 
 
 call plug#end()

@@ -8,6 +8,7 @@ alias s="seaf-cli"
 alias ra="ranger"
 alias ls="ls --color"
 alias md="mkdir"
+alias ca="conda activate"
 
 
 # to add wudao-dict
@@ -56,6 +57,7 @@ unset __conda_setup
 
 # show one nb words
 # fortune
+conda activate py36
 
 # auto start tmux as soon as into terminal
 if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
@@ -102,3 +104,5 @@ zplugin load robobenklein/zinc
 zplugin ice wait lucid
 zplugin snippet OMZ::lib/git.zsh
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
