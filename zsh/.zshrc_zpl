@@ -9,6 +9,7 @@ alias ra="ranger"
 alias ls="ls --color"
 alias md="mkdir"
 alias ca="conda activate"
+alias nvi="nvim"
 
 
 # to add wudao-dict
@@ -57,7 +58,7 @@ unset __conda_setup
 
 # show one nb words
 # fortune
-conda activate py36
+# conda activate py36
 
 # auto start tmux as soon as into terminal
 if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then

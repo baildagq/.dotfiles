@@ -8,6 +8,17 @@ endif
 "let mapleader = "\<Space>" 
 let mapleader =";"
 
+nnoremap Y y$ 
+nnoremap C c$ 
+nnoremap D d$ 
+nnoremap J 5j 
+nnoremap K 5k 
+nnoremap H 5h 
+nnoremap L 5l 
+vnoremap J 5j 
+vnoremap K 5k 
+vnoremap H 5h 
+vnoremap L 5l 
 
 " clipboard : autoselect 和后面的为默认，本来以为可以直接set
 " clipbaord+=unnamedplus,但是发现可能就被exclude吃掉了，所以只能将unnameplus写在了前面，然后加上了default"
