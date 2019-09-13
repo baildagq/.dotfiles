@@ -65,6 +65,6 @@ get_session(){
 
 exec $(get_session)
 
-if [ -f $HOME/.Xmodmap ]; then
-    /usr/bin/xmodmap $HOME/.Xmodmap
-fi
+# if [ -f $HOME/.xmodmap ]; then
+#     /usr/bin/xmodmap $HOME/.xmodmap
+# fi

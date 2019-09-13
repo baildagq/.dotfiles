@@ -7,11 +7,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 temp.py
+badd +0 .dotfiles/i3/config
 argglobal
 silent! argdel *
-$argadd temp.py
-edit temp.py
+$argadd .dotfiles/i3/config
+edit .dotfiles/i3/config
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -20,19 +20,19 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-setlocal fdm=indent
-setlocal fde=SimpylFold#FoldExpr(v:lnum)
+setlocal fdm=syntax
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 29 - ((7 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+29
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
