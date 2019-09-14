@@ -23,6 +23,12 @@ systemctl enable sshd.service   #   开机启动
 systemctl start sshd.service    #   立即启动
 systemctl restart sshd.service  #   立即重启
 
+# to solve screen lightness and keyboard lightness
+# screen:
+    # install light(manjaro)
+    # reboot to add 'video' group which could change lightness
+    # add current user to 'video' group:
+    # sudo usermod -a -G video
 
 
 

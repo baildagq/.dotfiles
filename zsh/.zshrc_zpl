@@ -10,6 +10,8 @@ alias ls="ls --color"
 alias md="mkdir"
 alias ca="conda activate"
 alias nvi="nvim"
+alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
+alias lll="i3lock-fancy"
 
 
 # to add wudao-dict
@@ -21,6 +23,10 @@ VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
 function ms {
     sudo vmhgfs-fuse -o nonempty -o allow_other .host:/D ~/D
+}
+
+function cc {
+    xmodmap ~/.xmodmap
 }
 
 # 通过ctrl-z 由vim 进入shell, 并通过ctrl-z 退回shell

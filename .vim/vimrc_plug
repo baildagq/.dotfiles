@@ -40,7 +40,7 @@ Plug 'rakr/vim-one'
 Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
 Plug 'tomtom/tcomment_vim' 
 Plug 'junegunn/vim-easy-align'
-Plug 'sirver/ultisnips'
+" Plug 'sirver/ultisnips'
 " Plug 'takac/vim-hardtime'
 Plug 'vim-scripts/conque-shell'
 
