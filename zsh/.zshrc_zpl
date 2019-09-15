@@ -110,8 +110,8 @@ zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zplugin load docker/compose
 
 
-zplugin ice wait lucid
-zplugin snippet OMZ::lib/git.zsh
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
+# zplugin ice wait lucid
+# zplugin snippet OMZ::lib/git.zsh
+# zplugin snippet OMZ::plugins/git/git.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
