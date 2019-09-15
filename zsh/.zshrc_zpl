@@ -6,6 +6,7 @@ alias za="zathura"
 alias latexmk="latexmk -xelatex"
 alias s="seaf-cli"
 alias ra="ranger"
+alias l="ls -al"
 alias ls="ls --color"
 alias md="mkdir"
 alias ca="conda activate"
@@ -89,13 +90,16 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin load zdharma/history-search-multi-word
 
 # Load the pure theme, with zsh-async library that's bundled with it.
-# zplugin ice pick"async.zsh" src"pure.zsh"
-# zplugin light sindresorhus/pure
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light sindresorhus/pure
 
+# Theme
 # Binary release in archive, from GitHub-releases page. 
 # After automatic unpacking it provides program "fzf".
 zplugin ice from"gh-r" as"program"
 zplugin load junegunn/fzf-bin
+# zplugin ice nocompletions compile"{zinc_functions/*,segments/*,zinc.zsh}"
+# zplugin load robobenklein/zinc
 
 # One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
 # This is done by ice-mod `mv'{from} -> {to}'. There are multiple packages per
@@ -105,8 +109,6 @@ zplugin load junegunn/fzf-bin
 zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zplugin load docker/compose
 
-zplugin ice nocompletions compile"{zinc_functions/*,segments/*,zinc.zsh}"
-zplugin load robobenklein/zinc
 
 zplugin ice wait lucid
 zplugin snippet OMZ::lib/git.zsh
