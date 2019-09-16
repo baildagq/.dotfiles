@@ -10,9 +10,10 @@ alias l="ls -al"
 alias ls="ls --color"
 alias md="mkdir"
 alias ca="conda activate"
-alias nvi="nvim"
+alias vim="nvim"
 alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
 alias lll="i3lock-fancy"
+# alias ta="tmux attach"
 
 
 # to add wudao-dict
@@ -68,9 +69,9 @@ unset __conda_setup
 # conda activate py36
 
 # auto start tmux as soon as into terminal
-if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach || tmux new; exit
-fi
+# if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
+    # tmux attach || tmux new; exit
+# fi
 
 ### Added by Zplugin's installer
 source '/home/qiqiang/.zplugin/bin/zplugin.zsh'
@@ -110,8 +111,11 @@ zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zplugin load docker/compose
 
 
-# zplugin ice wait lucid
+zplugin ice wait lucid
+zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/tmux/tmux.plugin.zsh
+zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
 # zplugin snippet OMZ::lib/git.zsh
 # zplugin snippet OMZ::plugins/git/git.plugin.zsh
+# zplugin snippet OMZ::plugins/git/tmux.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

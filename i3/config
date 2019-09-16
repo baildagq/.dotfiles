@@ -17,13 +17,12 @@ set $mod Mod1
 font pango: Noto Sans 11
 
 # autostart
-exec --no-startup-id feh --bg-scale ~/Pictures/wall.png
-exec --no-startup-id flameshot
+# exec --no-startup-id feh --bg-scale ~/Pictures/wall.png
+# exec --no-startup-id flameshot
 # exec --no-startup-id compton -b
 exec_always variety
 exec_always compton
 exec_always fcitx
-# exec_always xmodmap ...
 exec_always ~/.config/polybar/launch.sh
 exec_always alacritty
 
@@ -195,7 +194,7 @@ bar {
 new_window 1pixel
 
 # gaps
-gaps inner 8
+gaps inner 4
 
 # # window rules, you can find the window class using xprop
 # for_window [class=".*"] border pixel 4

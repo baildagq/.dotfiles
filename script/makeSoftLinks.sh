@@ -25,6 +25,7 @@ ln -s ~/.dotfiles/polybar              ~/.config/polybar
 
 ln -s ~/.dotfiles/ranger            ~/.config/ranger
 
+ln -s ~/.dotfiles/.thinkvim.d              ~/.thinkvim.d
 ln -s ~/.dotfiles/.tmux.conf        ~/.tmux.conf
 
 
