@@ -131,3 +131,5 @@ set completion-highlight-fg "#073642" # base02
 
 # Smooth scrolling:
 set smooth-scroll true
+set selection-clipboard clipboard
+set first-page-column 1:1

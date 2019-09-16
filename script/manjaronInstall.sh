@@ -1,10 +1,11 @@
 # pacman
-sudo pacman -Su yay git vim zsh tmux alacritty ranger zathura nodejs npm yarn ruby-rouge ripgrep neovim wqy-microhei i3 dunst compton variety brightnessctl 
+sudo pacman -Su yay git vim zsh tmux alacritty ranger zathura zathura-pdf-poppler nodejs npm yarn ruby-rouge ripgrep neovim wqy-microhei i3 dunst compton variety brightnessctl code
+
 sudo pacman -Su fcitx fcitx-configtool fcitx-googlepinyin yay the_silver_searcher python-pycodestyle flameshot polybar openvpn openssh neofetch polkit rofi
 
-sudo pacman -Su thunar nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-fonts-symbols  typora
+sudo pacman -Su thunar nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-fonts-symbols  typora tldr tig
 
-# yay 
+# yay
 yay -S i3lock-fancy
 
 # pip

@@ -1,1 +1,2 @@
 - repo: 'tomtom/tcomment_vim'
+- repo: 'iamcco/markdown-preview.nvim'
