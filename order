@@ -12,7 +12,9 @@ g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) &
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 
+grep -e "ctrl:\|:ctrl" /usr/share/X11/xkb/rules/evdev.lst
 
+setxkbmap -option caps:ctrl_modifier
 
 #################### manjaro ####################
 sudo pacman-mirrors -i -c China -m rank
