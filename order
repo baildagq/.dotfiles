@@ -16,6 +16,19 @@ grep -e "ctrl:\|:ctrl" /usr/share/X11/xkb/rules/evdev.lst
 
 setxkbmap -option caps:ctrl_modifier
 
+# make markdownpreview effective
+cd ~/.cache/vim/dein/repos/github.com/iamcco/markdown-preview.nvim
+npm install
+
+jupyter console
+
+
+
+
+
+
+
+
 #################### manjaro ####################
 sudo pacman-mirrors -i -c China -m rank
 yay
@@ -30,8 +43,11 @@ systemctl restart sshd.service  #   立即重启
     # install light(manjaro)
     # reboot to add 'video' group which could change lightness
     # add current user to 'video' group:
-    # sudo usermod -a -G video
+    # sudo usermod qiqiang -a -G video
 
+# to resolve nvim markdownpreview error
+cd ~/.cache/vim/dein/repos/github.com/iamcco/markdown-preview.nvim
+npm install
 
 
 

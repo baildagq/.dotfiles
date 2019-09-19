@@ -20,6 +20,9 @@ font pango: Noto Sans 11
 # exec --no-startup-id feh --bg-scale ~/Pictures/wall.png
 # exec --no-startup-id flameshot
 # exec --no-startup-id compton -b
+exec --no-startup-id dunst
+exec --no-startup-id keynav
+exec --no-startup-id screenlayout
 exec_always variety
 exec_always compton
 exec_always fcitx
