@@ -25,10 +25,6 @@ VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
 #################### function ####################
 
-function ms {
-    sudo vmhgfs-fuse -o nonempty -o allow_other .host:/D ~/D
-}
-
 function cc {
     setxkbmap -option caps:ctrl_modifier
     # xmodmap ~/.xmodmap

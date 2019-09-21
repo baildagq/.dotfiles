@@ -112,6 +112,7 @@ bindsym $mod+Shift+space floating toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+# bindsym $mod+ctrl focus parent
 
 
 # # switch to near workspace
