@@ -4,9 +4,11 @@ sudo pacman -Su yay git vim zsh tmux alacritty ranger zathura zathura-pdf-popple
 
 sudo pacman -Su fcitx fcitx-configtool fcitx-googlepinyin yay the_silver_searcher python-pycodestyle flameshot polybar openvpn openssh neofetch polkit rofi
 
-sudo pacman -Su thunar nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-fonts-symbols  typora tldr tig keynav arandr feh nerd-fonts-hack
+sudo pacman -Su dolphin nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-fonts-symbols  typora tldr tig keynav arandr feh nerd-fonts-hack zip
 
 sudo pacman -Su texlive-core texlive-langextra biber tllocalmgr texlive-bibtexextra texlive-fontsextra
+
+sudo pacman -Su mendeleydesktop-bundled vsftpd
 # wait for assure
 sudo pacman -Su paraview
 
@@ -19,6 +21,7 @@ pip3 install -U --user pynvim jedi-language-server jupyter_console
 
 # git
 git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nvim
+git clone https://github.com/chestnutheng/wudao-dict ~/.cache
 
 # sh
 bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh

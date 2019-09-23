@@ -1,12 +1,11 @@
 #################### path ####################
-PATH=$PATH:~/Downloads/mips-mti-elf/bin
+PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin
 
 #################### alias ####################
 alias py='python3'
 alias ipy='ipython'
 alias xdg="xdg-open"
 alias za="zathura"
-alias latexmk="latexmk -xelatex"
 alias ra="ranger"
 alias l="ls -al"
 alias ls="ls --color"
@@ -14,7 +13,6 @@ alias md="mkdir"
 alias ca="conda activate"
 # alias vim="nvim"
 alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
-alias lll="i3lock-fancy"
 alias ta="tmux attach"
 
 
@@ -24,11 +22,6 @@ alias ta="tmux attach"
 VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
 #################### function ####################
-
-function cc {
-    setxkbmap -option caps:ctrl_modifier
-    # xmodmap ~/.xmodmap
-}
 
 function op {
     sudo openvpn --config ~/.openvpn/vpn9.ovpn

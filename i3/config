@@ -45,7 +45,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+Return exec alacritty
 
 # start file manager -- thunar
-bindsym $mod+u exec --no-startup-id thunar
+# bindsym $mod+u exec --no-startup-id thunar
+bindsym $mod+u exec --no-startup-id dolphin
 
 # kill focused window
 # bindsym $mod+Shift+q kill
@@ -114,6 +115,8 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 # bindsym $mod+ctrl focus parent
 
+# lock screen
+bindsym mod4+l exec i3lock-fancy
 
 # # switch to near workspace
 bindsym mod4+Shift+Tab workspace prev
