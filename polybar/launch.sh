@@ -5,6 +5,13 @@
 # Created Time: 2019-09-13 19:39:09 #
 #####################################
 
-kill polybar
+# kill polybar
+#
+# polybar example
+killall -q polybar
 
-polybar example
+while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
+
+polybar top &
+
+echo "Bars launched..."

@@ -1,5 +1,24 @@
 #################### path ####################
 PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/qiqiang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/qiqiang/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/qiqiang/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/qiqiang/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+
+
 
 #################### alias ####################
 alias py='python3'
@@ -11,9 +30,10 @@ alias l="ls -al"
 alias ls="ls --color"
 alias md="mkdir"
 alias ca="conda activate"
-# alias vim="nvim"
+alias nv="nvim"
 alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
 alias ta="tmux attach"
+alias wd="wd -s"
 
 
 # to add wudao-dict
@@ -21,7 +41,15 @@ alias ta="tmux attach"
 # To make ranger default editor = vim
 VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
+
+
+
+
 #################### function ####################
+
+function pt {
+    ping www.baidu.com
+}
 
 function op {
     sudo openvpn --config ~/.openvpn/vpn9.ovpn
@@ -41,20 +69,6 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/qiqiang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/qiqiang/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/qiqiang/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/qiqiang/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 
 
@@ -80,9 +94,6 @@ source '/home/qiqiang/.zplugin/bin/zplugin.zsh'
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
-
-
-
 #################### plugin ####################
 
 # Two regular plugins loaded without tracking.
@@ -111,7 +122,6 @@ zplugin load junegunn/fzf-bin
 # grep operating system name and architecture automatically when there's no `bpick'.
 zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zplugin load docker/compose
-
 
 zplugin ice wait lucid
 # zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/tmux/tmux.plugin.zsh
