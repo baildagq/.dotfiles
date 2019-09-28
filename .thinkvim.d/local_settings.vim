@@ -101,3 +101,5 @@ endif
 
 " set system clipboard
 set clipboard+=unnamedplus
+
+autocmd BufNewFile,BufRead *.vue setf vue

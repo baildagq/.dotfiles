@@ -59,8 +59,8 @@ bindsym $mod+u exec --no-startup-id dolphin
 
 # start dmenu (a program launcher)
 # bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
-# bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
-bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
+# bindsym $mod+space exec --no-startup-id rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -229,4 +229,4 @@ bindsym $mod+m bar mode toggle
 new_window 1pixel
 
 # gaps
-gaps inner 4
+gaps inner 0

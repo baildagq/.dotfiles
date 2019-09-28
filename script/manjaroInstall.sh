@@ -1,6 +1,6 @@
 #################### basic ####################
 # pacman
-sudo pacman -Su yay git vim zsh tmux alacritty ranger zathura zathura-pdf-poppler nodejs npm yarn ruby-rouge ripgrep neovim wqy-microhei i3 dunst compton variety brightnessctl code
+sudo pacman -Su yay git vim zsh tmux alacritty ranger lxappearence zathura zathura-pdf-poppler nodejs npm yarn ruby-rouge ripgrep neovim wqy-microhei i3 dunst compton variety brightnessctl code
 
 sudo pacman -Su fcitx fcitx-configtool fcitx-googlepinyin fcitx-libpinyin fcitx-cloudpinyin yay the_silver_searcher python-pycodestyle flameshot polybar openvpn openssh neofetch polkit rofi
 
@@ -13,8 +13,8 @@ sudo pacman -Su mendeleydesktop-bundled vsftpd
 sudo pacman -Su paraview
 
 # yay
-yay -S i3lock-fancy 
-yay -S texlive-localmanager-git texlive-gantt
+yay -S i3lock-fancy
+yay -S texlive-most texlive-localmanager-git texlive-gantt
 
 # pip
 pip3 install -U --user pynvim jedi-language-server jupyter_console openpyxl

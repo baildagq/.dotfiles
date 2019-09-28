@@ -16,6 +16,12 @@
   on_ft: rust
 #  }}} Language #
 
+#  Language {{{ #
+# language support for vue
+- repo:  posva/vim-vue
+  on_ft: vue
+#  }}} Language #
+
 #  Editing {{{ #
 # fix neovim block paste bug
 - repo: vim-scripts/fcitx.vim
