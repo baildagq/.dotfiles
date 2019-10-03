@@ -9,7 +9,7 @@
 
 
 " I do change this very often
-colorscheme ayu
+colorscheme neodark
 set cursorline
 
 " easy resize
@@ -103,3 +103,7 @@ endif
 set clipboard+=unnamedplus
 
 autocmd BufNewFile,BufRead *.vue setf vue
+
+set shiftwidth=2
+set tabstop=2
+set expandtab

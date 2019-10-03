@@ -34,6 +34,7 @@ alias nv="nvim"
 alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
 alias ta="tmux attach"
 alias wd="wd -s"
+alias dockerarch="c973e63acf1c"
 
 
 # to add wudao-dict

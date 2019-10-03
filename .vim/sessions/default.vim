@@ -2,16 +2,16 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /mnt/D/_learn/rg/big/template/vue-argon-dashboard-master/src
+cd ~/.dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.dotfiles/.thinkvim.d/local_settings.vim
+badd +0 daemon.conf
 argglobal
 silent! argdel *
-$argadd ~/.dotfiles/.thinkvim.d/local_settings.vim
-edit ~/.dotfiles/.thinkvim.d/local_settings.vim
+$argadd daemon.conf
+edit daemon.conf
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -28,12 +28,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 16 - ((15 * winheight(0) + 21) / 43)
+let s:l = 2 - ((1 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 0
+2
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

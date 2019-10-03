@@ -8,7 +8,7 @@ sudo pacman -Su dolphin nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-f
 
 sudo pacman -Su texlive-core texlive-langextra biber tllocalmgr texlive-bibtexextra texlive-fontsextra
 
-sudo pacman -Su mendeleydesktop-bundled vsftpd
+sudo pacman -Su mendeleydesktop-bundled vsftpd tree google-chrome
 # wait for assure
 sudo pacman -Su paraview
 
