@@ -32,6 +32,11 @@ git branch -d qq
 
 ./node_modules/.bin/eslint --init
 
+# docker
+sudo docker run -it -p 80:80 sate-back:latest /usr/bin run.sh
+sudo docker run -it -p 80:80 sate-back:latest /bin/bash
+
+
 
 
 

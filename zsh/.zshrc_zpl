@@ -75,7 +75,7 @@ bindkey '^Z' fancy-ctrl-z
 
 #################### auto start ####################
 
-# conda activate py36
+conda activate py36
 
 # auto start tmux as soon as into terminal
 if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then

@@ -22,6 +22,7 @@ pip3 install -U --user pynvim jedi-language-server jupyter_console openpyxl
 # git
 git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nvim
 git clone https://github.com/chestnutheng/wudao-dict ~/.cache
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # sh
 bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh

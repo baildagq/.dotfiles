@@ -39,3 +39,10 @@ set recolor                     true
 set recolor-lightcolor          "#073642" # base02
 set recolor-darkcolor           "#93a1a1" # base1
 # set recolor-keephue             true      # keep original color
+
+# Smooth scrolling:
+set smooth-scroll true
+set selection-clipboard clipboard
+set first-page-column 1:1
+map <C-i> zoom in
+map <C-o> zoom out
