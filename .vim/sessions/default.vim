@@ -2,17 +2,16 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /mnt/D/_learn/sj/Artificial-Neural-Network-THU-2018/hw1
+cd /mnt/D/_learn/sj/HW1/codes
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.dotfiles/zathura/zathurarc
-badd +3 ~/.config/zathura/zathurarc.back
+badd +0 ~/.tmux.conf
 argglobal
 silent! argdel *
-$argadd ~/.dotfiles/zathura/zathurarc
-edit ~/.dotfiles/zathura/zathurarc
+$argadd ~/.tmux.conf
+edit ~/.tmux.conf
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -29,12 +28,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 47 - ((41 * winheight(0) + 24) / 48)
+let s:l = 19 - ((18 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-47
-normal! 017|
+19
+normal! 012|
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
