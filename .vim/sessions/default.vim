@@ -7,19 +7,30 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.tmux.conf
+badd +19 loss.py
+badd +22 /mnt/D/_learn/sj/HW1/codes/run_mlp.py
+badd +85 ~/.config/nvim/coc-settings.json
+badd +10 /mnt/D/_learn/sj/HW1/codes/layers.py
 argglobal
 silent! argdel *
-$argadd ~/.tmux.conf
-edit ~/.tmux.conf
+$argadd loss.py
+edit loss.py
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 set nosplitright
 wincmd t
 set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe 'vert 1resize ' . ((&columns * 15 + 54) / 109)
+exe 'vert 2resize ' . ((&columns * 93 + 54) / 109)
 argglobal
+enew
+file \[defx]\ default-0
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -27,13 +38,29 @@ setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
+setlocal nofen
+wincmd w
+argglobal
+setlocal fdm=expr
+setlocal fde=SimpylFold#FoldExpr(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
 setlocal fen
-let s:l = 19 - ((18 * winheight(0) + 24) / 48)
+19
+normal! zo
+let s:l = 30 - ((29 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 012|
+30
+normal! 09|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 15 + 54) / 109)
+exe 'vert 2resize ' . ((&columns * 93 + 54) / 109)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
