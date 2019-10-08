@@ -23,6 +23,7 @@ font pango: Noto Sans 11
 exec --no-startup-id dunst
 exec --no-startup-id keynav
 exec_always variety
+exec_always seafile
 exec_always compton
 exec_always nm-applet
 exec_always fcitx
