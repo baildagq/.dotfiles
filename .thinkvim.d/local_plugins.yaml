@@ -7,7 +7,7 @@
 # My custom plugins for ThinkVim.
 # Author: Na Sen
 
-- repo: 'tomtom/tcomment_vim'
+- repo: tomtom/tcomment_vim
 - { repo: yuttie/comfortable-motion.vim, if: 0 }
 
 #  Language {{{ #
@@ -29,6 +29,9 @@
 
 #  Theme {{{ #
 - repo: sainnhe/gruvbox-material
+- repo: tomasiser/vim-code-dark
+- repo: tomasr/molokai
+- repo: sonph/onehalf
 #  }}} Theme #
 
 #  Main {{{ #

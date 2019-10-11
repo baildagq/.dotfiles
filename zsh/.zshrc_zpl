@@ -15,6 +15,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# To make ranger default editor = vim
+VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
+
+# rg need
+export satellite_db_addr=167.179.97.242
 
 
 
@@ -38,10 +43,6 @@ alias wd="wd -s"
 alias dockerarch="c973e63acf1c"
 
 
-# to add wudao-dict
-# PATH=/home/stout/Software/wudao-dict/wudao-dict:${PATH}
-# To make ranger default editor = vim
-VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
 
 

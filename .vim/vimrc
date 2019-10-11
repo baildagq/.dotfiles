@@ -175,6 +175,7 @@ nmap <F5>: call CompileRunGcc()<CR>
 nmap <F6>: Autoformat<cr>
 nmap <F7>: call Shuati()<CR>
 nmap <F8>: call DebugCompileRunGcc()<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 
 
@@ -204,15 +205,15 @@ func! DebugCompileRunGcc()
 	endif
 endfunc
 
-" call NERDTree when has no file in command line
-func! StartUp()
-    if 0 == argc()
-        NERDTree
-    end
-endfunc
+" " call NERDTree when has no file in command line
+" func! StartUp()
+"     if 0 == argc()
+"         NERDTree
+"     end
+" endfunc
 
 
 " ====== autocmd ========
-" au VimEnter * Tagbar
 " au VimEnter * NERDTree
-au VimEnter * call StartUp()
+" au VimEnter * Tagbar
+" au VimEnter * call StartUp()

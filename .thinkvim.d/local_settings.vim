@@ -107,3 +107,9 @@ autocmd BufNewFile,BufRead *.vue setf vue
 set shiftwidth=2
 set tabstop=2
 set expandtab
+
+" no backup
+set nobackup				"no backup files
+set noswapfile				"no swap files
+set nowritebackup			"only in case you don't want a backup file while editing
+set noundofile
