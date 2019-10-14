@@ -33,6 +33,7 @@ chsh -s /usr/bin/zsh
 # add google input
 # sudo usermod qiqiang -a -G video
 
+# tex
 # tllocalmgr
 tllocalmgr install ctex zhnumber
 texhash

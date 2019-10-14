@@ -138,3 +138,9 @@ bindkey '^Z' fancy-ctrl-z
 
 #PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 #export PATH
+
+### Added by Zplugin's installer
+source '/home/qiqiang/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin installer's chunk
