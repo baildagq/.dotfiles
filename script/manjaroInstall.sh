@@ -8,7 +8,7 @@ sudo pacman -Su dolphin nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-f
 
 sudo pacman -Su texlive-core texlive-langextra biber tllocalmgr texlive-bibtexextra texlive-fontsextra
 
-sudo pacman -Su mendeleydesktop-bundled vsftpd tree google-chrome
+sudo pacman -Su mendeleydesktop-bundled vsftpd tree google-chrome cmake go go-tools calibre
 # wait for assure
 sudo pacman -Su paraview
 
@@ -18,6 +18,7 @@ yay -S texlive-most texlive-localmanager-git texlive-gantt
 
 # pip
 pip3 install -U --user pynvim jedi-language-server jupyter_console openpyxl
+# conda 中只有pip，需要pip3再装一下pynvim
 
 # git
 git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nvim

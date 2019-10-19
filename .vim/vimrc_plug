@@ -1,36 +1,36 @@
 call plug#begin('~/.vim/plugged')
 
+" extra function
+Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
+Plug 'tomtom/tcomment_vim' 
+Plug 'junegunn/vim-easy-align'
+Plug 'vim-scripts/conque-shell'
+Plug 'kien/ctrlp.vim' 
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar' 
 Plug 'Raimondi/delimitMate'
 Plug 'Chiel92/vim-autoformat'
-" Plug 'spacevim/spacevim'
 Plug 'ervandew/supertab'
 Plug 'drmingdrmer/xptemplate'
-
+Plug 'jiangmiao/auto-pairs'
 
 " syntax
-" Plug 'Valloric/YouCompleteMe'
-Plug 'davidhalter/jedi-vim'
+Plug 'Valloric/YouCompleteMe'
+" Plug 'davidhalter/jedi-vim'
 " Plug 'w0rp/ale'
-Plug 'Vimjas/vim-python-pep8-indent'
-" Plug 'xavierd/clang_complete'
-" Plug 'artur-shaik/vim-javacomplete2'
+" Plug 'Vimjas/vim-python-pep8-indent'
 
-" add file support
+" file support
 Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/mathjax-support-for-mkdp'
-Plug 'iamcco/markdown-preview.vim'
 Plug 'othree/html5.vim'
-Plug 'lervag/vimtex'
 Plug 'vim-latex/vim-latex'
 
 " git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-
 
 " color
 Plug 'junegunn/seoul256.vim'
@@ -38,18 +38,6 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 
-" add extra function
-Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
-Plug 'tomtom/tcomment_vim' 
-Plug 'junegunn/vim-easy-align'
-" Plug 'sirver/ultisnips'
-" Plug 'takac/vim-hardtime'
-Plug 'vim-scripts/conque-shell'
-
-" dim search
-Plug 'kien/ctrlp.vim' 
-
-Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 

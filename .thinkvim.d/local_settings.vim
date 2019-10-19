@@ -10,6 +10,7 @@
 
 " I do change this very often
 colorscheme neodark
+" colorscheme gruvbox
 set cursorline
 
 " easy resize
@@ -113,3 +114,15 @@ set nobackup				"no backup files
 set noswapfile				"no swap files
 set nowritebackup			"only in case you don't want a backup file while editing
 set noundofile
+
+"folds
+set foldenable          "enable fold feature
+set foldlevel=0
+set foldmethod=indent
+" 折叠方法
+" manual    手工折叠
+" indent    使用缩进表示折叠
+" expr      使用表达式定义折叠
+" syntax    使用语法定义折叠
+" diff      对没有更改的文本进行折叠
+" marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}

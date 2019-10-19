@@ -76,14 +76,14 @@ set noundofile
 
 "==============  Search ==============
 set incsearch				"matching when you are inputing
-set hlsearch				"highlight the match when search	
+set hlsearch				"highlight the match when search
 set ignorecase				"ignore case when searching
 set smartcase				" ...unless we type a capital
 
 "============== folds ===========
-set foldenable				"enable fold feature
+set foldenable          "enable fold feature
 set foldlevel=0
-set foldmethod=indent		"fold based on syntax, other could be indent manual diff
+set foldmethod=indent   "fold based on syntax, other could be indent manual diff
 " 折叠方法
 " manual    手工折叠
 " indent    使用缩进表示折叠
@@ -217,3 +217,6 @@ endfunc
 " au VimEnter * NERDTree
 " au VimEnter * Tagbar
 " au VimEnter * call StartUp()
+
+" set pythonthreehome=/usr
+" set pythonthreedll=

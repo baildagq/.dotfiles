@@ -7,8 +7,14 @@
 # My custom plugins for ThinkVim.
 # Author: Na Sen
 
-- repo: tomtom/tcomment_vim
+# close default plugin
 - { repo: yuttie/comfortable-motion.vim, if: 0 }
+- { repo: tmhedberg/SimpylFold, if: 0 }
+
+
+# beblow myself
+- repo: tomtom/tcomment_vim
+- repo: prettier/vim-prettier
 
 #  Language {{{ #
 # language support for rust
@@ -20,6 +26,7 @@
 # language support for vue
 - repo:  posva/vim-vue
   on_ft: vue
+- repo:  othree/html5.vim
 #  }}} Language #
 
 #  Editing {{{ #
