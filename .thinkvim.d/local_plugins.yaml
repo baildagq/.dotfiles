@@ -25,6 +25,7 @@
 #  Editing {{{ #
 # fix neovim block paste bug
 - repo: vim-scripts/fcitx.vim
+- repo: Chiel92/vim-autoformat
 #  }}} Editing #
 
 #  Theme {{{ #

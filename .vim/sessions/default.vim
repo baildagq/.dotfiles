@@ -2,16 +2,16 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /mnt/D/_program/satellite-frontend/src/views
+cd /mnt/D/_program/rg/satellite-frontend/src
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Dashboard.vue
+badd +0 layout/DashboardNavbar.vue
 argglobal
-silent! argdel *
-$argadd Dashboard.vue
-edit Dashboard.vue
+%argdel
+$argadd layout/DashboardNavbar.vue
+edit layout/DashboardNavbar.vue
 set splitbelow splitright
 set nosplitright
 wincmd t
@@ -28,11 +28,11 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 19 - ((18 * winheight(0) + 26) / 52)
+let s:l = 1 - ((0 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
+1
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

@@ -18,15 +18,15 @@ noremap <down> :res -5<CR>
 noremap <left> :vertical res -5<CR>
 noremap <right> :vertical res +5<CR>
 
-nnoremap H 5h
-nnoremap J 5j
-nnoremap K 5k
-nnoremap L 5l
+nnoremap H 10h
+nnoremap J 10j
+nnoremap K 10k
+nnoremap L 10l
 
-vnoremap H 5h
-vnoremap J 5j
-vnoremap K 5k
-vnoremap L 5l
+vnoremap H 10h
+vnoremap J 10j
+vnoremap K 10k
+vnoremap L 10l
 
 tnoremap <Esc> <C-\><C-n>
 
