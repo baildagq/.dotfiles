@@ -34,13 +34,14 @@ alias ra="ranger"
 alias l="ls -al"
 alias ls="ls --color"
 alias md="mkdir"
-alias ca="conda activate"
+alias ca="conda activate py36"
 alias nv="nvim"
 alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
 alias ta="tmux attach"
 alias t="tmux"
 alias wd="wd -s"
 alias dockerarch="c973e63acf1c"
+alias npmtb="npm install --registry=https://registry.npm.taobao.org"
 
 
 
