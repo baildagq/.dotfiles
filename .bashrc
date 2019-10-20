@@ -122,15 +122,41 @@ s(){
     ssh stout@192.168.163.$1
 }
 
+alias t="tmux"
+alias ta="tmux attach"
+alias ra="ranger"
 # cd /home/qiqiang
 # if [ -t 1 ]
 # then
 #    exec zsh
 # fi
 
-# temp alias
-alias bytest="./testAll.py PA1-A"
-function testby {
-    java -jar --enable-preview /mnt/d/_program/by/decaf-PA1-A/build/libs/decaf.jar -t PA1 $1
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# for by
+# run in testcase
+alias bytest="./testAll.py PA1-A"
+
+# run in testcase/s1
+function testby {
+    java -jar --enable-preview /mnt/d/_program/by/decaf-PA1-A/build/libs/decaf.jar -t PA1 $1.decaf #> output/tmp.output && vimdiff output/tmp.output result/$1.result
+}
+
+# run in testcase/s1
+function testvim {
+    vimdiff output/$1.output result/$1.result
 }
