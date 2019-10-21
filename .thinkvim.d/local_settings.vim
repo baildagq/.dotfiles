@@ -13,6 +13,9 @@ colorscheme neodark
 " colorscheme gruvbox
 set cursorline
 
+nmap <leader>p :Prettier<CR>
+vmap <leader>p :Prettier<CR>
+
 " easy resize
 noremap <up> :res +5<CR>
 noremap <down> :res -5<CR>

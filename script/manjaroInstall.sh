@@ -1,6 +1,6 @@
 #################### basic ####################
 # pacman
-sudo pacman -Su yay git vim zsh tmux alacritty ranger lxappearence zathura zathura-pdf-poppler nodejs npm yarn ruby-rouge ripgrep neovim ctags wqy-microhei i3 dunst compton variety brightnessctl code
+sudo pacman -Su yay git vim zsh tmux alacritty ranger lxappearence zathura zathura-pdf-poppler nodejs npm yarn ruby-rouge ripgrep neovim ctags wqy-zenhei wqy-microhei i3 dunst compton variety brightnessctl code
 
 sudo pacman -Su fcitx fcitx-configtool fcitx-googlepinyin fcitx-libpinyin fcitx-cloudpinyin yay the_silver_searcher python-pycodestyle flameshot polybar openvpn openssh neofetch polkit rofi
 

@@ -81,9 +81,10 @@ bindkey '^Z' fancy-ctrl-z
 # conda activate py36
 
 # # auto start tmux as soon as into terminal
-# if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
-#   tmux attach || tmux new; exit
-# fi
+if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
+  # tmux attach || tmux new; exit
+  tmux new; exit
+fi
 
 
 
