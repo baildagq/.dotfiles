@@ -125,11 +125,10 @@ s(){
 alias t="tmux"
 alias ta="tmux attach"
 alias ra="ranger"
-# cd /home/qiqiang
-# if [ -t 1 ]
-# then
-#    exec zsh
-# fi
+if [ -t 1 ]
+then
+   exec zsh
+fi
 
 
 

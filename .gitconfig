@@ -4,4 +4,5 @@
     name = 齐强
     email = 2017011436@secoder.net
 
-
+[alias]
+    cm = commit
