@@ -41,3 +41,5 @@ ln -s ~/.dotfiles/zsh/.zshrc_zpl    ~/.zshrc
 
 sudo mv /etc/X11/xorg.conf.d /etc/X11/xorg.conf.d.back
 sudo ln -s ~/.dotfiles/xorg.conf.d       /etc/X11/
+
+~/.keynavrc
