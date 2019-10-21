@@ -12,16 +12,16 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+# # append to the history file, don't overwrite it
+# shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+# # check the window size after each command and, if necessary,
+# # update the values of LINES and COLUMNS.
+# shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -105,23 +105,57 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+# # enable programmable completion features (you don't need to enable
+# # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# # sources /etc/bash.bashrc).
+# if ! shopt -oq posix; then
+#   if [ -f /usr/share/bash-completion/bash_completion ]; then
+#     . /usr/share/bash-completion/bash_completion
+#   elif [ -f /etc/bash_completion ]; then
+#     . /etc/bash_completion
+#   fi
+# fi
 
 alias py='python3'
+
+s(){
+    ssh stout@192.168.163.$1
+}
+
+alias t="tmux"
+alias ta="tmux attach"
+alias ra="ranger"
 if [ -t 1 ]
 then
    exec zsh
 fi
 
-s(){
-    ssh stout@192.168.163.$1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# for by
+# run in testcase
+alias bytest="./testAll.py PA1-A"
+
+# run in testcase/s1
+function testby {
+    java -jar --enable-preview /mnt/d/_program/by/decaf-PA1-A/build/libs/decaf.jar -t PA1 $1.decaf #> output/tmp.output && vimdiff output/tmp.output result/$1.result
+}
+
+# run in testcase/s1
+function testvim {
+    vimdiff output/$1.output result/$1.result
 }

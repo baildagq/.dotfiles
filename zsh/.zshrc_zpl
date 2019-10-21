@@ -112,6 +112,8 @@ zplugin load zdharma/history-search-multi-word
 zplugin ice pick"async.zsh" src"pure.zsh"
 zplugin light sindresorhus/pure
 
+# zplugin light agnoster/agnoster-zsh-theme
+
 # Theme
 # Binary release in archive, from GitHub-releases page. 
 # After automatic unpacking it provides program "fzf".
