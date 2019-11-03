@@ -132,7 +132,7 @@ zplugin load docker/compose
 
 zplugin ice wait lucid
 # zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/tmux/tmux.plugin.zsh
-zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
+# zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
 # zplugin snippet OMZ::lib/git.zsh
 # zplugin snippet OMZ::plugins/git/git.plugin.zsh
 # zplugin snippet OMZ::plugins/git/tmux.plugin.zsh

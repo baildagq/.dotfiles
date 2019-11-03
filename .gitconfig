@@ -6,3 +6,6 @@
 
 [alias]
     cm = commit
+
+[core]
+    editor=vim

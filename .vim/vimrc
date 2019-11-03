@@ -11,14 +11,14 @@ let mapleader =";"
 nnoremap Y y$ 
 nnoremap C c$ 
 nnoremap D d$ 
-nnoremap J 5j 
-nnoremap K 5k 
-nnoremap H 5h 
-nnoremap L 5l 
-vnoremap J 5j 
-vnoremap K 5k 
-vnoremap H 5h 
-vnoremap L 5l 
+nnoremap J 10j 
+nnoremap K 10k 
+nnoremap H 10h 
+nnoremap L 10l 
+vnoremap J 10j 
+vnoremap K 10k 
+vnoremap H 10h 
+vnoremap L 10l 
 
 " clipboard : autoselect 和后面的为默认，本来以为可以直接set
 " clipbaord+=unnamedplus,但是发现可能就被exclude吃掉了，所以只能将unnameplus写在了前面，然后加上了default"
@@ -28,9 +28,9 @@ set mouse=a
 syntax enable
 set number					"show line numbers
 set relativenumber			"show relative line numbers
-" colorscheme gruvbox
+colorscheme gruvbox
 " colorscheme palenight
-colorscheme codedark
+" colorscheme codedark
 " colorscheme SpaceVim
 " colorscheme one
 " colorscheme seoul256
@@ -220,3 +220,7 @@ endfunc
 
 " set pythonthreehome=/usr
 " set pythonthreedll=
+
+set shiftwidth=2
+set tabstop=2
+set expandtab

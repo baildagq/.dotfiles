@@ -91,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ipy='ipython3'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -125,10 +126,10 @@ s(){
 alias t="tmux"
 alias ta="tmux attach"
 alias ra="ranger"
-if [ -t 1 ]
-then
-   exec zsh
-fi
+# if [ -t 1 ]
+# then
+#    exec zsh
+# fi
 
 
 
@@ -147,15 +148,21 @@ fi
 
 
 # for by
-# run in testcase
-alias bytest="./testAll.py PA1-A"
 
-# run in testcase/s1
-function testby {
-    java -jar --enable-preview /mnt/d/_program/by/decaf-PA1-A/build/libs/decaf.jar -t PA1 $1.decaf #> output/tmp.output && vimdiff output/tmp.output result/$1.result
+# run in TestCases
+function by {
+  cd ../ && gradle build && cd TestCases/ && ./testAll.py PA1-B
+}
+# run in testcases/xx
+function bytest {
+    java -jar --enable-preview /mnt/d/_program/by/decaf-2017011436/build/libs/decaf.jar -t PA1-LL $1.decaf #> output/tmp.output && vimdiff output/tmp.output result/$1.result
+}
+# run in testcases/xx
+function byvim {
+    vimdiff output/$1.output result/$1.result
 }
 
-# run in testcase/s1
-function testvim {
+# run in testcases/xx
+function byvim {
     vimdiff output/$1.output result/$1.result
 }

@@ -18,7 +18,7 @@ Plug 'drmingdrmer/xptemplate'
 Plug 'jiangmiao/auto-pairs'
 
 " syntax
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " Plug 'davidhalter/jedi-vim'
 " Plug 'w0rp/ale'
 
@@ -26,6 +26,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'plasticboy/vim-markdown'
 Plug 'othree/html5.vim'
 Plug 'vim-latex/vim-latex'
+
+Plug 'posva/vim-vue'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -36,6 +38,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
+Plug 'prettier/vim-prettier'
 
 call plug#end()
 
@@ -125,3 +128,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " java-complete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complet
 
+" vim-prettier
+" max line length that prettier will wrap on
+" Prettier default: 80
+let g:prettier#config#print_width = 150"
