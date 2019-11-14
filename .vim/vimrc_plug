@@ -94,8 +94,8 @@ let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-" auto format file when saving
-au BufWrite * :Autoformat
+" " auto format file when saving
+" au BufWrite * :Autoformat
 
 "palenight
 "let g:lightline.colorscheme = 'palenight'
