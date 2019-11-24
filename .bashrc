@@ -149,19 +149,22 @@ alias ra="ranger"
 
 # for by
 
-# run in TestCases
 function by {
-  cd ../ && gradle build && cd TestCases/ && ./testAll.py PA1-B
-}
-# run in testcases/xx
-function bytest {
-    java -jar --enable-preview /mnt/d/_program/by/decaf-2017011436/build/libs/decaf.jar -t PA1-LL $1.decaf #> output/tmp.output && vimdiff output/tmp.output result/$1.result
-}
-# run in testcases/xx
-function byvim {
-    vimdiff output/$1.output result/$1.result
+    cd ~/program/by/decaf-2017011436 && gradle build
 }
 
+function bytestall {
+    cd ~/program/by/decaf-2017011436/TestCases && ./testAll.py PA2
+}
+# run in testcases/xx
+function bytestone {
+    java -jar --enable-preview /mnt/d/_program/by/decaf-2017011436/build/libs/decaf.jar -t PA2 $1.decaf > ~/tmp.output && vimdiff ~/tmp.output ~/program/by/decaf-2017011436/TestCases/S2/result/$1.result
+}
+
+# run in testcases/xx
+function bytest {
+    java -jar --enable-preview /mnt/d/_program/by/decaf-2017011436/build/libs/decaf.jar -t PA2 $1.decaf
+}
 # run in testcases/xx
 function byvim {
     vimdiff output/$1.output result/$1.result

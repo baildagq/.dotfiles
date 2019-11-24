@@ -8,6 +8,12 @@ endif
 "let mapleader = "\<Space>" 
 let mapleader =";"
 
+" easy resize
+noremap <up> :res +5<CR>
+noremap <down> :res -5<CR>
+noremap <left> :vertical res -5<CR>
+noremap <right> :vertical res +5<CR>
+
 nnoremap Y y$ 
 nnoremap C c$ 
 nnoremap D d$ 
@@ -221,6 +227,8 @@ endfunc
 " set pythonthreehome=/usr
 " set pythonthreedll=
 
-set shiftwidth=2
-set tabstop=2
+" set shiftwidth=2
+" set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set expandtab
