@@ -19,7 +19,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " syntax
 " Plug 'Valloric/YouCompleteMe'
-" Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 " Plug 'w0rp/ale'
 
 " file support
@@ -39,6 +39,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'prettier/vim-prettier'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -52,9 +53,6 @@ let g:lightline = {
       \ }
 
 
-"youcompleteme
-let g:ycm_server_python_interpreter='/usr/bin/python3'
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -132,3 +130,8 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complet
 " max line length that prettier will wrap on
 " Prettier default: 80
 let g:prettier#config#print_width = 150"
+
+" jedi-vim
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_splits_not_buffers = "left"
+let g:jedi#documentation_command = "F"

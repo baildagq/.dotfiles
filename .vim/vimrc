@@ -8,11 +8,11 @@ endif
 "let mapleader = "\<Space>" 
 let mapleader =";"
 
-" easy resize
-noremap <up> :res +5<CR>
-noremap <down> :res -5<CR>
-noremap <left> :vertical res -5<CR>
-noremap <right> :vertical res +5<CR>
+" " easy resize
+" noremap <up> :res +5<CR>
+" noremap <down> :res -5<CR>
+" noremap <left> :vertical res -5<CR>
+" noremap <right> :vertical res +5<CR>
 
 nnoremap Y y$ 
 nnoremap C c$ 
@@ -34,13 +34,13 @@ set mouse=a
 syntax enable
 set number					"show line numbers
 set relativenumber			"show relative line numbers
-colorscheme gruvbox
-" colorscheme palenight
+" colorscheme gruvbox
 " colorscheme codedark
-" colorscheme SpaceVim
+colorscheme PaperColor
 " colorscheme one
 " colorscheme seoul256
-set background=dark 
+" set background=dark 
+set background=light 
 
 set showcmd					"show command in bottom bar
 set novisualbell			"no screen flashing
@@ -185,6 +185,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 
 
+
 func! CompileRunGcc()
     exec "w" 
     if &filetype == 'c' 
@@ -232,3 +233,7 @@ endfunc
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
+"youcompleteme
+let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'

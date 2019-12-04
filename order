@@ -62,3 +62,16 @@ sudo pacman -Rnc xxxxx
 #################### ubuntu  ####################
 # list system terminal
 update-alternatives --list x-terminal-emulator
+
+
+
+
+
+
+
+
+
+
+
+
+sudo apt-get install gcc-mips-linux-gnu
