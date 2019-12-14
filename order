@@ -1,4 +1,4 @@
-#################### general ####################
+#################### common ####################
 # print color
 for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 
@@ -66,12 +66,5 @@ update-alternatives --list x-terminal-emulator
 
 
 
-
-
-
-
-
-
-
-
+#################### other  ####################
 sudo apt-get install gcc-mips-linux-gnu
