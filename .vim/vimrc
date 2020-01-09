@@ -35,8 +35,8 @@ syntax enable
 set number					"show line numbers
 set relativenumber			"show relative line numbers
 " colorscheme gruvbox
-" colorscheme codedark
-colorscheme PaperColor
+colorscheme codedark
+" colorscheme PaperColor
 " colorscheme one
 " colorscheme seoul256
 " set background=dark 

@@ -68,3 +68,14 @@ update-alternatives --list x-terminal-emulator
 
 #################### other  ####################
 sudo apt-get install gcc-mips-linux-gnu
+
+# patch
+patch -p1 < 1.patch
+
+
+#################### vim   ####################
+set paste
+
+#################### vmware ####################
+# sometime share directory could not be seen
+sudo /usr/bin/vmhgfs-fuse .host:/D /mnt/hgfs/D -o allow_other
