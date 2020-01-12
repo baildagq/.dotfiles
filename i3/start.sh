@@ -6,5 +6,3 @@
 #####################################
 
 /usr/bin/xmodmap ~/.xmodmap
-
-echo 123 > /tmp/testtest

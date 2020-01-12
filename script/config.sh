@@ -34,8 +34,5 @@ mv ~/.bashrc ~/.bashrc.back
 ln -s ~/.dotfiles/.bashrc ~/.bashrc
 ln -s ~/.dotfiles/.bash_aliases ~/.bashrc_aliases
 
-
-
 sudo mv /etc/X11/xorg.conf.d              /etc/X11/xorg.conf.d.back
 sudo ln -s                                ~/.dotfiles/xorg.conf.d       /etc/X11/
-
