@@ -16,12 +16,22 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 sudo apt install nodejs
 npm install -g @vue/cli
 
+# sh
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  #install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting #install zsh-syntax-hightlighting
+# zplugin
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+chsh -s /usr/bin/zsh
+# conda
+bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh
 
 
+# git
+git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nvim
+git clone https://github.com/chestnutheng/wudao-dict ~/.cache
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # ================= MANJARO =================
 # pacman
@@ -39,15 +49,7 @@ yay -S i3lock-fancy
 pip3 install -U --user pynvim jedi-language-server jupyter_console openpyxl
 # conda 中只有pip，需要pip3再装一下pynvim
 
-# git
-git clone --depth=1 https://github.com/hardcoreplayers/ThinkVim.git ~/.config/nvim
-git clone https://github.com/chestnutheng/wudao-dict ~/.cache
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# sh
-bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
-chsh -s /usr/bin/zsh
 
 # After reboot
 # add google input

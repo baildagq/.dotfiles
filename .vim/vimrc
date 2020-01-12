@@ -34,13 +34,13 @@ set mouse=a
 syntax enable
 set number					"show line numbers
 set relativenumber			"show relative line numbers
-" colorscheme gruvbox
+colorscheme gruvbox
 " colorscheme codedark
-colorscheme PaperColor
+" colorscheme PaperColor
 " colorscheme one
 " colorscheme seoul256
-" set background=dark 
-set background=light 
+set background=dark 
+" set background=light 
 
 set showcmd					"show command in bottom bar
 set novisualbell			"no screen flashing

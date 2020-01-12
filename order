@@ -31,6 +31,9 @@ git branch -d qq
 sudo docker run -it -p 80:80 sate-back:latest /usr/bin run.sh
 sudo docker run -it -p 80:80 sate-back:latest /bin/bash
 
+# rofi
+rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns  3
+
 
 
 
@@ -62,6 +65,8 @@ sudo pacman -Rnc xxxxx
 #################### ubuntu  ####################
 # list system terminal
 update-alternatives --list x-terminal-emulator
+sudo add-apt-repository --update ppa:nicolais/termshark
+sudo apt install termshark
 
 
 
