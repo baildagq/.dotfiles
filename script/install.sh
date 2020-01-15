@@ -59,7 +59,8 @@ pip3 install -U --user pynvim jedi-language-server jupyter_console openpyxl
 
 # =================UBUNTU=================
 sudo apt install -y --upgrade alacritty  git zsh vimt tmux ncurses-* ### very important!!!!! solve tmux problem
-sudo apt install -y tree curl tweak tldr ctags cscope build-essential flameshot silversearcher-ag gnome-nettool cmatrix fortune-mod 
+sudo apt install -y tree curl tweak tldr ctags cscope build-essential flameshot silversearcher-ag gnome-nettool cmatrix fortune-mod fonts-powerline
+sudo apt install -y texlive-latex-base latex-cjk-all texlive-latex-extra texlive-xetex
 
 # sogoupinyin
 curl  http://cdn2.ime.sogou.com/dl/index/1524572264/sogoupinyin_2.2.0.0108_amd64.deb\?st\=e2rkzoJ2HibQ0Y8dfcZkUQ\&e\=1550853634\&fn\=sogoupinyin_2.2.0.0108_amd64.deb --create-dirs -o ~/tmp/software_packges/sogoupinyin.deb

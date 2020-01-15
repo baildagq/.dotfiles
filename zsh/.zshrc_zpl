@@ -51,10 +51,6 @@ alias npmtb="npm install --registry=https://registry.npm.taobao.org"
 
 #################### function ####################
 
-function pt {
-    ping www.baidu.com
-}
-
 function op {
     sudo openvpn --config ~/.openvpn/vpn9.ovpn
 }
@@ -81,10 +77,10 @@ bindkey '^Z' fancy-ctrl-z
 # conda activate py36
 
 # # auto start tmux as soon as into terminal
-if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
-  # tmux attach || tmux new; exit
-  tmux new; exit
-fi
+# if [[ $(tty) != /dev/tty* ]] && [ $TERM != "tmux-256color" ] && [  $TERM != "screen" ]; then
+#   # tmux attach || tmux new; exit
+#   tmux new; exit
+# fi
 
 
 
@@ -109,17 +105,16 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin load zdharma/history-search-multi-word
 
 # Load the pure theme, with zsh-async library that's bundled with it.
-zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin ice pick'async.zsh' src'pure.zsh'
 zplugin light sindresorhus/pure
 
-# zplugin light agnoster/agnoster-zsh-theme
 
 # Theme
 # Binary release in archive, from GitHub-releases page. 
-# After automatic unpacking it provides program "fzf".
-zplugin ice from"gh-r" as"program"
+# After automatic unpacking it provides program 'fzf'.
+zplugin ice from'gh-r' as'program'
 zplugin load junegunn/fzf-bin
-# zplugin ice nocompletions compile"{zinc_functions/*,segments/*,zinc.zsh}"
+# zplugin ice nocompletions compile'{zinc_functions/*,segments/*,zinc.zsh}'
 # zplugin load robobenklein/zinc
 
 # One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
@@ -127,14 +122,12 @@ zplugin load junegunn/fzf-bin
 # single version, for OS X, Linux and Windows – so ice-mod `bpick' is used to
 # select Linux package – in this case this is actually not needed, Zplugin will
 # grep operating system name and architecture automatically when there's no `bpick'.
-zplugin ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
+zplugin ice from'gh-r' as'program' mv'docker* -> docker-compose' bpick'*linux*'
 zplugin load docker/compose
 
 zplugin ice wait lucid
-# zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/tmux/tmux.plugin.zsh
-# zplugin snippet https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
-# zplugin snippet OMZ::lib/git.zsh
-# zplugin snippet OMZ::plugins/git/git.plugin.zsh
-# zplugin snippet OMZ::plugins/git/tmux.plugin.zsh
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
