@@ -19,7 +19,6 @@ ln   -s ~/.dotfiles/pip                   ~/.config/pip
 ln   -s ~/.dotfiles/polybar               ~/.config/polybar
 ln   -s ~/.dotfiles/ranger                ~/.config/ranger
 
-# ln   -s ~/.dotfiles/.thinkvim.d           ~/.thinkvim.d
 ln   -s ~/.dotfiles/.tmux.conf            ~/.tmux.conf
 ln   -s ~/.dotfiles/.xmodmap              ~/.xmodmap
 ln   -s ~/.dotfiles/.xprofile             ~/.xprofile
@@ -27,12 +26,12 @@ ln   -s ~/.dotfiles/.Xresources           ~/.Xresources
 ln   -s ~/.dotfiles/.condarc              ~/.condarc
 ln   -s ~/.dotfiles/.vim                  ~/.vim
 ln   -s ~/.dotfiles/.gitconfig            ~/.gitconfig
-ln   -s ~/.dotfiles/zsh/.zshrc_zpl        ~/.zshrc
 ln   -s ~/.dotfiles/.keynavrc             ~/.keynavrc
 ln   -s ~/.dotfiles/.latexmkrc            ~/.latexmkrc
-mv ~/.bashrc ~/.bashrc.back
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.bash_aliases ~/.bashrc_aliases
+ln   -s ~/.dotfiles/sh/.zshrc_zpl         ~/.zshrc
+ln   -s ~/.dotfiles/sh/.shellconfig       ~/.shellconfig
+ln   -s ~/.dotfiles/sh/.bashrc            ~/.bashrc
+ln   -s ~/.dotfiles/.gitaliases           ~/.gitaliases
 
 sudo mv /etc/X11/xorg.conf.d              /etc/X11/xorg.conf.d.back
-sudo ln -s                                ~/.dotfiles/xorg.conf.d       /etc/X11/
+sudo ln -s                                ~/.dotfiles/xorg.conf.d /etc/X11/

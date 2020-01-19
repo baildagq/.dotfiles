@@ -3,7 +3,8 @@
 for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 
 # install youcompleteme
-./install.py --clang-completer --system-libclang --all
+python3 install.py --clang-completer --all
+python3 install.py --clang-completer --system-libclang --all
 
 # compile using opencv file
 g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) && ./main

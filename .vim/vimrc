@@ -175,13 +175,15 @@ inoremap jk <esc>
 nnoremap <space> za
 xmap ga <Plug>(EasyAlign)
 
-nmap <F2>: NERDTree<cr>
-nmap <F4>: TagbarToggle<cr>
-nmap <F5>: call CompileRunGcc()<CR>
-nmap <F6>: Autoformat<cr>
-nmap <F7>: call Shuati()<CR>
-nmap <F8>: call DebugCompileRunGcc()<CR>
+nnoremap <F2>: NERDTree<cr>
+nnoremap <F4>: TagbarToggle<cr>
+nnoremap <F5>: call CompileRunGcc()<CR>
+nnoremap <F6>: Autoformat<cr>
+nnoremap <F7>: call Shuati()<CR>
+nnoremap <F8>: call DebugCompileRunGcc()<CR>
 map <C-n> :NERDTreeToggle<CR>
+
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 
 
@@ -222,7 +224,6 @@ endfunc
 
 " ====== autocmd ========
 " au VimEnter * NERDTree
-" au VimEnter * Tagbar
 " au VimEnter * call StartUp()
 
 " set pythonthreehome=/usr

@@ -1,0 +1,45 @@
+if [ -f ~/.shellconfig ]; then
+    . ~/.shellconfig
+fi
+
+### Added by Zplugin's installer
+source '/home/qiqiang/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
+#################### plugin ####################
+
+# Two regular plugins loaded without tracking.
+zplugin light zsh-users/zsh-autosuggestions
+zplugin light zdharma/fast-syntax-highlighting
+
+# Plugin history-search-multi-word loaded with tracking.
+zplugin load zdharma/history-search-multi-word
+
+# Load the pure theme, with zsh-async library that's bundled with it.
+zplugin ice pick'async.zsh' src'pure.zsh'
+zplugin light sindresorhus/pure
+
+
+# Theme
+# Binary release in archive, from GitHub-releases page. 
+# After automatic unpacking it provides program 'fzf'.
+zplugin ice from'gh-r' as'program'
+zplugin load junegunn/fzf-bin
+# zplugin ice nocompletions compile'{zinc_functions/*,segments/*,zinc.zsh}'
+# zplugin load robobenklein/zinc
+
+# One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
+# This is done by ice-mod `mv'{from} -> {to}'. There are multiple packages per
+# single version, for OS X, Linux and Windows – so ice-mod `bpick' is used to
+# select Linux package – in this case this is actually not needed, Zplugin will
+# grep operating system name and architecture automatically when there's no `bpick'.
+zplugin ice from'gh-r' as'program' mv'docker* -> docker-compose' bpick'*linux*'
+zplugin load docker/compose
+
+zplugin ice wait lucid
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
