@@ -38,7 +38,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo pacman -Su yay git vim zsh tmux alacritty ranger lxappearence zathura zathura-pdf-poppler nodejs npm yarn ruby-rouge ripgrep neovim ctags wqy-zenhei wqy-microhei i3 dunst compton variety brightnessctl code
 sudo pacman -Su fcitx fcitx-configtool fcitx-googlepinyin fcitx-libpinyin fcitx-cloudpinyin yay the_silver_searcher python-pycodestyle flameshot polybar openvpn openssh neofetch polkit rofi
 sudo pacman -Su dolphin nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-fonts-symbols  typora tldr tig keynav arandr feh nerd-fonts-hack zip unzip network-manager-applet
-sudo pacman -Su mendeleydesktop-bundled vsftpd tree google-chrome cmake go go-tools calibre
+sudo pacman -Su mendeleydesktop-bundled vsftpd tree google-chrome cmake go go-tools calibre peek
 # wait for assure
 sudo pacman -Su paraview
 
@@ -61,6 +61,12 @@ pip3 install -U --user pynvim jedi-language-server jupyter_console openpyxl
 sudo apt install -y --upgrade alacritty  git zsh vimt tmux ncurses-* ### very important!!!!! solve tmux problem
 sudo apt install -y tree curl tweak tldr ctags cscope build-essential flameshot silversearcher-ag gnome-nettool cmatrix fortune-mod fonts-powerline
 sudo apt install -y texlive-latex-base latex-cjk-all texlive-latex-extra texlive-xetex
+sudo apt install -y python-autopep8
+
+# peek: gif record tools
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek
 
 # sogoupinyin
 curl  http://cdn2.ime.sogou.com/dl/index/1524572264/sogoupinyin_2.2.0.0108_amd64.deb\?st\=e2rkzoJ2HibQ0Y8dfcZkUQ\&e\=1550853634\&fn\=sogoupinyin_2.2.0.0108_amd64.deb --create-dirs -o ~/tmp/software_packges/sogoupinyin.deb

@@ -108,7 +108,9 @@ fi
 #   fi
 # fi
 
-if [ -t 1 ]
-then
-   exec zsh
-fi
+# if [ -t 1 ]
+# then
+#    exec zsh
+# fi
+
+conda activate scrapy

@@ -1,5 +1,6 @@
 #################### path ####################
 PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/qiqiang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -40,7 +41,7 @@ alias md="mkdir"
 alias ca="conda activate py36"
 alias nv="nvim"
 alias v="vim"
-alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
+# alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
 alias ta="tmux attach"
 alias t="tmux"
 alias wd="wd -s"
@@ -65,18 +66,18 @@ function op {
     sudo openvpn --config ~/.openvpn/vpn9.ovpn
 }
 
-# 通过ctrl-z 由vim 进入shell, 并通过ctrl-z 退回shell
-function fancy-ctrl-z {
-  if [[ $#BUFFER -eq 0 ]]; then
-      BUFFER="fg"
-      zle accept-line
-  else
-	  zle push-input
-	  zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+# # 通过ctrl-z 由vim 进入shell, 并通过ctrl-z 退回shell
+# function fancy-ctrl-z {
+#   if [[ $#BUFFER -eq 0 ]]; then
+#       BUFFER="fg"
+#       zle accept-line
+#   else
+# 	  zle push-input
+# 	  zle clear-screen
+#   fi
+# }
+# zle -N fancy-ctrl-z
+# bindkey '^Z' fancy-ctrl-z
 
 
 
