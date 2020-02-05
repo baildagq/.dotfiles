@@ -37,7 +37,7 @@ paths=(
     '.config/pip' 
     '.config/polybar' 
     '.config/ranger' 
-    '.config/rofi'               
+    # '.config/rofi'               
     '.config/zathura'               
 
     '.bashrc'

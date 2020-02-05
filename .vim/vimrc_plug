@@ -15,6 +15,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'ervandew/supertab'
 Plug 'drmingdrmer/xptemplate'
 Plug 'jiangmiao/auto-pairs'
+Plug 'ianva/vim-youdao-translater'
 
 " syntax
 Plug 'ycm-core/YouCompleteMe'

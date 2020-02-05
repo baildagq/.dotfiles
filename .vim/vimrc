@@ -184,7 +184,9 @@ nnoremap <F8>: call DebugCompileRunGcc()<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
-
+vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
 
 
 
