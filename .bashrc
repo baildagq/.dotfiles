@@ -112,5 +112,3 @@ fi
 # then
 #    exec zsh
 # fi
-
-conda activate scrapy
