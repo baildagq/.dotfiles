@@ -79,6 +79,10 @@ function op {
 # zle -N fancy-ctrl-z
 # bindkey '^Z' fancy-ctrl-z
 
+function mountsharedir {
+    sudo mount -t vboxsf D_DRIVE /mnt/d
+    sudo mount -t vboxsf E_DRIVE /mnt/e
+}
 
 
 

@@ -8,20 +8,19 @@
 
 # ================= COMMON =================
 # pypi
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
+pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 # git
-git clone https://github.com/chestnutheng/wudao-dict ~/.cache
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # sh
 # oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  #install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting #install zsh-syntax-hightlighting
-# zplugin
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+# # zplugin
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 chsh -s /usr/bin/zsh
 
 
@@ -66,8 +65,11 @@ do
             ln -s ~/.dotfiles/$item ~/.zshrc
         elif test "$item" = "xorg.conf.d"
         then
-            sudo mv /etc/X11/xorg.conf.d /etc/X11/xorg.conf.d.back
-            sudo ln -s ~/.dotfiles/$item /etc/X11/
+            if [ -e ~/$item ]
+            then
+                sudo mv /etc/X11/xorg.conf.d /etc/X11/xorg.conf.d.back
+                sudo ln -s ~/.dotfiles/$item /etc/X11/
+            fi
         else
             if [ -h ~/$item ]
             then

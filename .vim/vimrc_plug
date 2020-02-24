@@ -16,10 +16,11 @@ Plug 'ervandew/supertab'
 Plug 'drmingdrmer/xptemplate'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ianva/vim-youdao-translater'
+Plug 'junegunn/fzf'
 
 " syntax
 Plug 'ycm-core/YouCompleteMe'
-" Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 " file support
 Plug 'plasticboy/vim-markdown'
