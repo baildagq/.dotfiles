@@ -8,7 +8,7 @@
 
 # ================= COMMON =================
 # pypi
-pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
+pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U --user
 pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 # git
@@ -16,28 +16,26 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # sh
 # oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  #install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting #install zsh-syntax-hightlighting
-# # zplugin
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
-chsh -s /usr/bin/zsh
 
 
 cd ~/.dotfiles
 
 paths=(
-    '.config/alacritty' 
-    '.config/codestyle' 
-    '.config/dunst' 
-    '.config/feh' 
-    '.config/i3' 
-    '.config/openvpn' 
-    '.config/pip' 
-    '.config/polybar' 
-    '.config/ranger' 
-    # '.config/rofi'               
-    '.config/zathura'               
+    '.config/alacritty'
+    '.config/codestyle'
+    '.config/dunst'
+    '.config/feh'
+    '.config/i3'
+    '.config/openvpn'
+    '.config/pip'
+    '.config/polybar'
+    '.config/ranger'
+    #'.config/rofi'
+    '.config/zathura'
+    '.config/nvim'
 
     '.bashrc'
     '.condarc'

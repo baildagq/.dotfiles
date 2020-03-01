@@ -117,3 +117,5 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.shellconfig ]; then
     . ~/.shellconfig
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

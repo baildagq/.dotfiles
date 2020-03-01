@@ -112,3 +112,5 @@ fi
 # then
 #    exec zsh
 # fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

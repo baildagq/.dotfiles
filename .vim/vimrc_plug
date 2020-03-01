@@ -2,14 +2,14 @@ call plug#begin('~/.vim/plugged')
 
 " extra function
 Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
-Plug 'tomtom/tcomment_vim' 
+Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim' 
+Plug 'kien/ctrlp.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar' 
+Plug 'majutsushi/tagbar'
 Plug 'Raimondi/delimitMate'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ervandew/supertab'
@@ -19,7 +19,7 @@ Plug 'ianva/vim-youdao-translater'
 Plug 'junegunn/fzf'
 
 " syntax
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 " Plug 'davidhalter/jedi-vim'
 
 " file support
@@ -32,10 +32,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " color
-Plug 'junegunn/seoul256.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
-Plug 'rakr/vim-one'
 Plug 'prettier/vim-prettier'
 Plug 'NLKNguyen/papercolor-theme'
 
@@ -45,10 +43,10 @@ call plug#end()
 
 " lightline
 let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
-      \ }
-      \ }
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+            \ }
+            \ }
 
 
 
@@ -71,7 +69,7 @@ autocmd FileType tex autocmd CursorHold,CursorHoldI * silent! wall
 autocmd FileType tex command Compile !alacritty -cd %:p:h -e latexmk % &
 
 
-"tagbar 
+"tagbar
 "设置tagbar使用的ctags的插件,必须要设置对
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 "设置tagbar的窗口宽度
@@ -137,6 +135,5 @@ let g:jedi#documentation_command = "F"
 " vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
-
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)

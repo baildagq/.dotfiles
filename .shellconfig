@@ -48,7 +48,7 @@ alias wd="wd -s"
 alias dockerarch="c973e63acf1c"
 alias sudo="sudo "
 alias npmitb="npm install --registry=https://registry.npm.taobao.org"
-alias tx="g++ -O3 -fopenmp qq.cpp -o run && ./run"
+# alias tx="g++ -O3 -fopenmp qq.cpp -o run && ./run"
 alias latexmk="latexmk -xelatex"
 alias s="seaf-cli"
 # Add an "alert" alias for long running commands.  Use like so:
@@ -83,6 +83,10 @@ function op {
 function mountsharedir {
     sudo mount -t vboxsf D_DRIVE /mnt/d
     sudo mount -t vboxsf E_DRIVE /mnt/e
+}
+
+function mapcaps {
+    setxkbmap -option caps:ctrl_modifier
 }
 
 
