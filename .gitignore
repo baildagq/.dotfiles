@@ -15,5 +15,5 @@ build
 .vim/plugged/
 .vim/sessions/
 
-nvim/autoload
-nvim/tmp
+.config/nvim/autoload/
+.config/nvim/tmp/
