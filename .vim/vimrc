@@ -53,6 +53,9 @@ set showmatch				"highlight matching {[()]}
 set pumheight=10			" 设置补全高度为10"
 set laststatus=2
 " set nowrap
+set listchars=tab:>-,trail:-,eol:$ list
+
+
 
 
 "============= Encoding ================
@@ -88,7 +91,7 @@ set smartcase				" ...unless we type a capital
 
 "============== folds ===========
 set foldenable          "enable fold feature
-set foldlevel=0
+set foldlevel=5
 set foldmethod=indent   "fold based on syntax, other could be indent manual diff
 " 折叠方法
 " manual    手工折叠

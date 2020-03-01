@@ -31,6 +31,7 @@ git branch -d qq
 # docker
 sudo docker run -it -p 80:80 sate-back:latest /usr/bin run.sh
 sudo docker run -it -p 80:80 sate-back:latest /bin/bash
+sudo docker run -itd --name ubuntu-test -v /hoe/qiqiqang/e/tmp/:/data ubuntu18.04 /bin/bash
 
 # rofi
 rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns  3

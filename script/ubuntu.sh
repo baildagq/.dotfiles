@@ -14,10 +14,18 @@ install_tui_mode() {
         fortune-mod fonts-powerline tig python-autopep8 nfs-common python3-pip cmake\
         texlive-latex-base latex-cjk-all texlive-latex-extra texlive-xetex \
         tesseract-ocr tesseract-ocr-chi-sim trash-cli\
-        nodejs npm poppler-utils httpie\
+        poppler-utils httpie\
         mysql-client mysql-server
+
+    # gitbook
+
+
         
-    # # docker
+    # npm
+    curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+    sudo apt-get install -y nodejs npm
+
+    # docker
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo apt install -y --upgrade docker-ce # docker-ce-cli containerd.io
 }
@@ -29,7 +37,6 @@ install_gui_mode() {
         fctix goldendict calibre\
         synaptic qbittorrent\
         sgt-puzzles
-
 
     # sogoupinyin
     curl  http://cdn2.ime.sogou.com/dl/index/1524572264/sogoupinyin_2.2.0.0108_amd64.deb\?st\=e2rkzoJ2HibQ0Y8dfcZkUQ\&e\=1550853634\&fn\=sogoupinyin_2.2.0.0108_amd64.deb --create-dirs -o ~/Downloads/sogoupinyin.deb

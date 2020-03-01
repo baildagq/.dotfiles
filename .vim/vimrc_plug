@@ -20,7 +20,7 @@ Plug 'junegunn/fzf'
 
 " syntax
 Plug 'ycm-core/YouCompleteMe'
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 " file support
 Plug 'plasticboy/vim-markdown'
