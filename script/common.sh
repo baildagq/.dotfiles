@@ -13,6 +13,8 @@ pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 # git
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # sh
 # oh-my-zsh
@@ -20,6 +22,10 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  #install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting #install zsh-syntax-hightlighting
 
+
+# npm
+# gitbook
+npm install -g gitbook-cli
 
 cd ~/.dotfiles
 

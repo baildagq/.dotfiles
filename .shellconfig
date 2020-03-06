@@ -47,7 +47,7 @@ alias t="tmux"
 alias wd="wd -s"
 alias dockerarch="c973e63acf1c"
 alias sudo="sudo "
-alias npmitb="npm install --registry=https://registry.npm.taobao.org"
+alias npmtb="npm install --registry=https://registry.npm.taobao.org"
 # alias tx="g++ -O3 -fopenmp qq.cpp -o run && ./run"
 alias latexmk="latexmk -xelatex"
 alias s="seaf-cli"
@@ -89,6 +89,9 @@ function mapcaps {
     setxkbmap -option caps:ctrl_modifier
 }
 
+function ss {
+    ssh qiqiang@192.168.0.111
+}
 
 
 

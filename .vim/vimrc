@@ -48,7 +48,7 @@ set showmatch               "highlight matching {[()]}
 set pumheight=10            " 设置补全高度为10"
 set laststatus=2
 " set nowrap
-set listchars=tab:>-,trail:-,eol:$ list
+" set listchars=tab:>-,trail:-,eol:$ list
 
 
 

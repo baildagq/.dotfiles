@@ -17,3 +17,6 @@ build
 
 .config/nvim/autoload/
 .config/nvim/tmp/
+
+.config/ranger/bookmarks
+.config/ranger/tagged
