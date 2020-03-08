@@ -9,9 +9,9 @@ INSTALL="sudo apt install -y --upgrade"
 
 # TUI
 install_basic() {
-     $INSTALL git zsh vim tmux ncurses-* tig tree curl wget httpie tldr ctags cscope\
+     $INSTALL git zsh vim tmux ncurses-* xsel tig tree curl wget httpie tldr ctags cscope\
          build-essential silversearcher-ag fonts-powerline ipython3 python-autopep8 python3-pip\
-         cmake poppler-utils gnome-nettool neofetch
+         cmake poppler-utils gnome-nettool neofetch 
 }
 install_mysql() {
     $INSTALL mysql-client mysql-server

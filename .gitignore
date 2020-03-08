@@ -20,3 +20,4 @@ build
 
 .config/ranger/bookmarks
 .config/ranger/tagged
+.config/ranger/history

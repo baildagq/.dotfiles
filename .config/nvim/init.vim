@@ -73,8 +73,8 @@ set expandtab
 "============= Terminal =============
 " Opening a terminal window
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
-" Auto change directory to current dir
-autocmd BufEnter * silent! lcd %:p:h
+" " Auto change directory to current dir
+" autocmd BufEnter * silent! lcd %:p:h
 " Call figlet for fun
 noremap tx :r !figlet
 
@@ -180,7 +180,7 @@ Plug 'chrisbra/Colorizer' " Show colors with :ColorHighlight
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 " Taglist
@@ -213,9 +213,10 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
 " Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['markdown', 'vim-plug'] }
+Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
-Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
-Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
+" Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
+" Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 Plug 'theniceboy/bullets.vim'
 
 " Editor Enhancement
@@ -299,57 +300,57 @@ noremap <LEADER>tm :TableModeToggle<CR>
 let g:table_mode_cell_text_object_i_map = 'k<Bar>'
 
 
-" ===
-" === FZF
-" ===
-set rtp+=/usr/local/opt/fzf
-set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
-noremap <C-p> :FZF<CR>
-noremap <C-f> :Ag<CR>
-noremap <C-h> :MRU<CR>
-noremap <C-t> :BTags<CR>
-noremap <C-l> :LinesWithPreview<CR>
-"noremap ; :History:<CR>
-
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noruler
-            \| autocmd BufLeave <buffer> set laststatus=2 ruler
-
-command! -bang -nargs=* Buffers
-            \ call fzf#vim#buffers(
-            \   '',
-            \   <bang>0 ? fzf#vim#with_preview('up:60%')
-            \           : fzf#vim#with_preview('right:0%', '?'),
-            \   <bang>0)
-
-
-command! -bang -nargs=* LinesWithPreview
-            \ call fzf#vim#grep(
-            \   'rg --with-filename --column --line-number --no-heading --color=always --smart-case . '.fnameescape(expand('%')), 1,
-            \   fzf#vim#with_preview({}, 'up:50%', '?'),
-            \   1)
-
-command! -bang -nargs=* Ag
-            \ call fzf#vim#ag(
-            \   '',
-            \   <bang>0 ? fzf#vim#with_preview('up:60%')
-            \           : fzf#vim#with_preview('right:50%', '?'),
-            \   <bang>0)
-
-
-command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
-
-command! -bang BTags
-            \ call fzf#vim#buffer_tags('', {
-            \     'down': '40%',
-            \     'options': '--with-nth 1
-            \                 --reverse
-            \                 --prompt "> "
-            \                 --preview-window="70%"
-            \                 --preview "
-            \                     tail -n +\$(echo {3} | tr -d \";\\\"\") {2} |
-            \                     head -n 16"'
-            \ })
+" " ===
+" " === FZF
+" " ===
+" set rtp+=/usr/local/opt/fzf
+" set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+" noremap <C-p> :FZF<CR>
+" noremap <C-f> :Ag<CR>
+" noremap <C-h> :MRU<CR>
+" noremap <C-t> :BTags<CR>
+" noremap <C-l> :LinesWithPreview<CR>
+" "noremap ; :History:<CR>
+"
+" autocmd! FileType fzf
+" autocmd  FileType fzf set laststatus=0 noruler
+"             \| autocmd BufLeave <buffer> set laststatus=2 ruler
+"
+" command! -bang -nargs=* Buffers
+"             \ call fzf#vim#buffers(
+"             \   '',
+"             \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"             \           : fzf#vim#with_preview('right:0%', '?'),
+"             \   <bang>0)
+"
+"
+" command! -bang -nargs=* LinesWithPreview
+"             \ call fzf#vim#grep(
+"             \   'rg --with-filename --column --line-number --no-heading --color=always --smart-case . '.fnameescape(expand('%')), 1,
+"             \   fzf#vim#with_preview({}, 'up:50%', '?'),
+"             \   1)
+"
+" command! -bang -nargs=* Ag
+"             \ call fzf#vim#ag(
+"             \   '',
+"             \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"             \           : fzf#vim#with_preview('right:50%', '?'),
+"             \   <bang>0)
+"
+"
+" command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
+"
+" command! -bang BTags
+"             \ call fzf#vim#buffer_tags('', {
+"             \     'down': '40%',
+"             \     'options': '--with-nth 1
+"             \                 --reverse
+"             \                 --prompt "> "
+"             \                 --preview-window="70%"
+"             \                 --preview "
+"             \                     tail -n +\$(echo {3} | tr -d \";\\\"\") {2} |
+"             \                     head -n 16"'
+"             \ })
 
 
 " ===

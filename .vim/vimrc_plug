@@ -19,7 +19,7 @@ Plug 'ianva/vim-youdao-translater'
 Plug 'junegunn/fzf'
 
 " syntax
-" Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 " Plug 'davidhalter/jedi-vim'
 
 " file support
