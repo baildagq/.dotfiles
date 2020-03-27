@@ -2,6 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 
+export GIT_TRACE_PACKET=1
+export GIT_TRACE=1
+export GIT_CURL_VERBOSE=1
 # Path to your oh-my-zsh installation.
 export ZSH="/home/qiqiang/.oh-my-zsh"
 

@@ -62,6 +62,8 @@ npm install
 
 sudo pacman -Rnc xxxxx
 
+python3 -m pydoc -p 1234
+
 
 
 #################### ubuntu  ####################

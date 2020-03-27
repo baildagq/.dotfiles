@@ -17,18 +17,20 @@ set $mod Mod1
 font pango: Noto Sans 11
 
 # autostart
-# exec --no-startup-id feh --bg-scale ~/Pictures/wall.png
-# exec --no-startup-id flameshot
+exec --no-startup-id feh --bg-scale ~/Pictures/wall.png
+exec --no-startup-id flameshot
+exec --no-startup-id goldendict
 # exec --no-startup-id compton -b
-exec --no-startup-id dunst
-exec --no-startup-id keynav
-exec_always variety
-exec_always seafile
-exec_always compton
-exec_always nm-applet
-exec_always fcitx
+# exec --no-startup-id dunst
+# exec --no-startup-id keynav
+# exec_always variety
+# exec_always seafile
+# exec_always compton
+# exec_always nm-applet
+# exec_always fcitx
 exec_always ~/.config/polybar/launch.sh
 exec_always alacritty
+# exec_always i3-sensible-terminal
 
 
 
@@ -45,7 +47,7 @@ bindsym XF86AudioMute exec amixer -q set Master mute
 # bindsym XF86AudioPrev exec playerctl previous  
 
 # browsers--firefox
-bindsym $mod+b exec firefox
+bindsym $mod+b exec chromium-browser
 
 # start a terminal
 # i3的脚本，自动选择系统安装的默认终端
@@ -53,8 +55,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+Return exec alacritty
 
 # start file manager -- thunar
-# bindsym $mod+u exec --no-startup-id thunar
-bindsym $mod+u exec --no-startup-id dolphin
+bindsym $mod+u exec --no-startup-id nautilus # dolphin thunar
 
 
 
@@ -102,7 +103,9 @@ bindsym Mod1+F4 kill
 bindsym $mod+q kill
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# most common config, but i think it have less use
+# bindsym $mod+f fullscreen toggle 
+bindsym $mod+f exec flameshot gui
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -123,8 +126,7 @@ bindsym $mod+Shift+space floating toggle
 # bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
-# bindsym $mod+ctrl focus parent
+bindsym $mod+p focus parent
 
 # lock screen
 bindsym mod4+l exec i3lock-fancy
@@ -137,16 +139,16 @@ bindsym mod4+Shift+Tab workspace prev
 bindsym mod4+Tab workspace next
 
 # set workspace icon
-set $ws1   "1 "
-set $ws2   "2 "
-set $ws3   "3 "
-set $ws4   "4 "
-set $ws5   "5 "
-set $ws6   "6 "
-set $ws7   "7 "
-set $ws8   "8 "
-set $ws9   9
-set $ws10  10
+# set $ws1   "1 "
+# set $ws2   "2 "
+# set $ws3   "3 "
+# set $ws4   "4 "
+# set $ws5   "5 "
+# set $ws6   "6 "
+# set $ws7   "7 "
+# set $ws8   "8 "
+# set $ws9   9
+# set $ws10  10
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -210,24 +212,25 @@ bindsym $mod+m bar mode toggle
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#     #     colors {
-#     #     background #2f343f
-#     #     statusline #2f343f
-#     #     separator #4b5262
-#     #
-#     #     # colour of border, background, and text
-#     #     focused_workspace       #2f343f #bf616a #d8dee8
-#     #     active_workspace        #2f343f #2f343f #d8dee8
-#     #     inactive_workspace      #2f343f #2f343f #d8dee8
-#     #     urgent_workspacei       #2f343f #ebcb8b #2f343f
-#     # }
-#         mode hide
-#         status_command i3status
-# }
+bar {
+    #     colors {
+    #     background #2f343f
+    #     statusline #2f343f
+    #     separator #4b5262
+    #
+    #     # colour of border, background, and text
+    #     focused_workspace       #2f343f #bf616a #d8dee8
+    #     active_workspace        #2f343f #2f343f #d8dee8
+    #     inactive_workspace      #2f343f #2f343f #d8dee8
+    #     urgent_workspacei       #2f343f #ebcb8b #2f343f
+    # }
+        mode hide
+        height 25
+        status_command i3status
+}
 
 # hide the head title of windoes
 new_window 1pixel
 
 # gaps
-gaps inner 0
+gaps inner 8

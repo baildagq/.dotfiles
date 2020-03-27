@@ -10,6 +10,7 @@
 # pypi
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U --user
 pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install --user pipreqs
 
 # git
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

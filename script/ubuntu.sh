@@ -9,9 +9,18 @@ INSTALL="sudo apt install -y --upgrade"
 
 # TUI
 install_basic() {
-     $INSTALL git zsh vim tmux ncurses-* xsel tig tree curl wget httpie tldr ctags cscope\
+     $INSTALL git zsh neovim vim tmux ncurses-* xsel tig tree curl wget httpie tldr ctags cscope\
          build-essential silversearcher-ag fonts-powerline ipython3 python-autopep8 python3-pip\
-         cmake poppler-utils gnome-nettool neofetch 
+         cmake poppler-utils gnome-nettool neofetch htop aria2
+}
+install_latest_neovim() {
+    # install build prerequisites
+    $INSTALL ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+}
+install_i3() {
+    sudo add-apt-repository ppa:kgilmer/speed-ricer
+    sudo apt update
+    $INSTALL i3 i3-gaps
 }
 install_mysql() {
     $INSTALL mysql-client mysql-server
@@ -48,7 +57,7 @@ install_ocr() {
 # GUI
 install_utiltools() {
      $INSTALL zathura tweak flameshot keynav rofi goldendict\
-         calibre synaptic qbittorrent sgt-puzzles chromium-browser okular meld
+         calibre synaptic qbittorrent sgt-puzzles chromium-browser okular meld anki feh dolphin notion
 }
 install_sogoupinyin() {
     # sogoupinyin
@@ -58,8 +67,8 @@ install_sogoupinyin() {
 }
 install_office() {
     # wps-office
-    curl http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb --create-dirs -o ~/Downloads/wps-office.deb
-    sudo dpkg -i ~/Downloads/wps-office.deb
+    # curl http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb --create-dirs -o ~/Downloads/wps-office.deb
+    # sudo dpkg -i ~/Downloads/wps-office.deb
 }
 install_typora() {
     wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
@@ -96,8 +105,8 @@ INSTALLOPTIONS() {
     # gui
     # install_utiltools
     # install_typora
-    install_sogoupinyin
-    # install_office
+    # install_sogoupinyin
+    install_office
     # install_netease
     # install_mendelay
 }
