@@ -17,14 +17,6 @@ let mapleader =";"
 nnoremap Y y$
 nnoremap C c$
 nnoremap D d$
-nnoremap J 10j
-nnoremap K 10k
-nnoremap H 10h
-nnoremap L 10l
-vnoremap J 10j
-vnoremap K 10k
-vnoremap H 10h
-vnoremap L 10l
 
 " clipboard : autoselect 和后面的为默认，本来以为可以直接set
 " clipbaord+=unnamedplus,但是发现可能就被exclude吃掉了，所以只能将unnameplus写在了前面，然后加上了default"
@@ -47,7 +39,7 @@ set cursorcolumn            "highlight current column
 set showmatch               "highlight matching {[()]}
 set pumheight=10            " 设置补全高度为10"
 set laststatus=2
-" set nowrap
+set nowrap
 " set listchars=tab:>-,trail:-,eol:$ list
 
 
@@ -60,7 +52,6 @@ set encoding=utf-8
 
 
 "============= Indentation =============
-
 set autoindent
 set smartindent
 set cindent
@@ -93,79 +84,25 @@ set foldmethod=indent   "fold based on syntax, other could be indent manual diff
 "============= jump =============
 set tags=./tags;,tags
 
-
-
-
 "=========================== file-title ==============================
-autocmd BufNewFile *.cpp  exec ":call SetTitleCpp()"
-func! SetTitleCpp()
-    call setline(1, "/**********************************************")
-    call append(line(".")+0, " *   > Author: stout                          *")
-    call append(line(".")+1, " *   > Mail: 2817253603@qq.com                *")
-    call append(line(".")+2, " *   > Created Time: ".strftime("%Y-%m-%d %H:%M:%S")."      *")
-    call append(line(".")+3, " **********************************************/")
+autocmd BufNewFile *.cpp,*.py,*.h exec ":call SetTitle()"
+func! SetTitle()
+    " call setline(1,"#!/bin/bash")
+    call setline(1,"#####################################")
+    call append(line(".")+0, "# Author: stout                     #")
+    call append(line(".")+1, "# mail: 2817253603@qq.com           #")
+    call append(line(".")+2, "# Created Time: ".strftime("%Y-%m-%d %H:%M:%S")." #")
+    call append(line(".")+3, "#####################################")
     call append(line(".")+4, "")
-    call append(line(".")+5, "#include<cstdio>")
-    call append(line(".")+6, "#include<cstring>")
-    call append(line(".")+7, "#include<iostream>")
-    call append(line(".")+8, "")
-    call append(line(".")+9, "")
-    call append(line(".")+10, "using namespace std;")
-    call append(line(".")+11, "")
-    call append(line(".")+12, "int main(){")
-    call append(line(".")+13, "    return 0;")
-    call append(line(".")+14, "}")
-endfunc
-
-autocmd BufNewFile *.h  exec ":call SetTitleH()"
-func! SetTitleH()
-    call setline(1, "/**********************************************")
-    call append(line(".")+0, " *   > Author: stout                          *")
-    call append(line(".")+1, " *   > Mail: 2817253603@qq.com                *")
-    call append(line(".")+2, " *   > Created Time: ".strftime("%Y-%m-%d %H:%M:%S")."      *")
-    call append(line(".")+3, " **********************************************/")
-    call append(line(".")+4, "")
-    call append(line(".")+5,"#pragma once")
-endfunc
-
-autocmd BufNewFile *.py  exec ":call SetTitlePy()"
-func! SetTitlePy()
-    call setline(1, "#!/usr/bin/python3")
-    call append(line(".")+0, "#####################################")
-    call append(line(".")+1, "# Author: stout                     #")
-    call append(line(".")+2, "# Mail: 2817253603@qq.com           #")
-    call append(line(".")+3, "# Created Time: ".strftime("%Y-%m-%d %H:%M:%S")." #")
-    call append(line(".")+4, "#####################################")
     call append(line(".")+5, "")
-    call append(line(".")+6, "")
-    call append(line(".")+7, "def main():")
-    call append(line(".")+8, "    print(0)")
-    call append(line(".")+9, "")
-    call append(line(".")+10, "")
-    call append(line(".")+11, 'if __name__ == "__main__":')
-    call append(line(".")+12, "    exit(main())")
+    7j
 endfunc
 
-autocmd BufNewFile *.sh  exec ":call SetTitleSh()"
-func! SetTitleSh()
-    call setline(1,"#!/bin/bash")
-    call append(line(".")+0, "#####################################")
-    call append(line(".")+1, "# Author: stout                     #")
-    call append(line(".")+2, "# mail: 2817253603@qq.com           #")
-    call append(line(".")+3, "# Created Time: ".strftime("%Y-%m-%d %H:%M:%S")." #")
-    call append(line(".")+4, "#####################################")
-    call append(line(".")+6, "")
-endfunc
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickly Run
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-inoremap jk <esc>
-nnoremap <space> za
-xmap ga <Plug>(EasyAlign)
-
 nnoremap <F2>: NERDTree<cr>
 nnoremap <F4>: TagbarToggle<cr>
 nnoremap <F5>: call CompileRunGcc()<CR>
@@ -173,55 +110,3 @@ nnoremap <F6>: Autoformat<cr>
 nnoremap <F7>: call Shuati()<CR>
 nnoremap <F8>: call DebugCompileRunGcc()<CR>
 map <C-n> :NERDTreeToggle<CR>
-
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-vnoremap <silent> <C-T> :<C-u>Ydv<CR>
-nnoremap <silent> <C-T> :<C-u>Ydc<CR>
-noremap <leader>yd :<C-u>Yde<CR>
-
-
-
-func! CompileRunGcc()
-    exec "w"
-    if &filetype == 'c'
-        exec '!g++ % -g -o %<'
-        exec '!time ./%<'
-    elseif &filetype == 'cpp'
-        exec '!g++ % -o %< --std=c++11'
-        exec '!time ./%<'
-    elseif &filetype == 'python'
-        exec '!time python3 %'
-    elseif &filetype == 'sh'
-        :!time bash %
-    elseif &filetype == 'tex'
-        exec '!xelatex %'
-    endif
-endfunc
-
-
-func! DebugCompileRunGcc()
-    w
-    if &filetype == 'cpp'
-        exec '!g++ % -g -o %< --std=c++11'
-        exec '!time gdb %<'
-    endif
-endfunc
-
-" " call NERDTree when has no file in command line
-" func! StartUp()
-"     if 0 == argc()
-"         NERDTree
-"     end
-" endfunc
-
-
-" ====== autocmd ========
-" au VimEnter * NERDTree
-" au VimEnter * call StartUp()
-
-" set pythonthreehome=/usr
-" set pythonthreedll=
-
-"youcompleteme
-let g:ycm_server_python_interpreter='/usr/bin/python3'
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'

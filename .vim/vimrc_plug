@@ -1,31 +1,22 @@
 call plug#begin('~/.vim/plugged')
 
 " extra function
+Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'junegunn/limelight.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
-Plug 'Raimondi/delimitMate'
 Plug 'Chiel92/vim-autoformat'
+Plug 'prettier/vim-prettier'
 Plug 'ervandew/supertab'
-Plug 'drmingdrmer/xptemplate'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ianva/vim-youdao-translater'
-Plug 'junegunn/fzf'
-
-" syntax
-Plug 'ycm-core/YouCompleteMe'
-" Plug 'davidhalter/jedi-vim'
 
 " file support
 Plug 'plasticboy/vim-markdown'
-Plug 'othree/html5.vim'
-Plug 'vim-latex/vim-latex'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -34,11 +25,8 @@ Plug 'tpope/vim-fugitive'
 " color
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
-Plug 'prettier/vim-prettier'
 Plug 'NLKNguyen/papercolor-theme'
-
 call plug#end()
-
 
 
 " lightline
@@ -49,47 +37,23 @@ let g:lightline = {
             \ }
 
 
-
-" ultisnips
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
-
-"vim-latex
-"define templete path
-" let g:Tex_CustomTemplateDirectory='~/E/_favorate/Template/latex'
-let g:tex_flavor='xelatex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-autocmd FileType tex set updatetime=2000 spell
-autocmd FileType tex autocmd CursorHold,CursorHoldI * silent! wall
-autocmd FileType tex command Compile !alacritty -cd %:p:h -e latexmk % &
-
-
 "tagbar
-"设置tagbar使用的ctags的插件,必须要设置对
 let g:tagbar_ctags_bin='/usr/bin/ctags'
-"设置tagbar的窗口宽度
-"let g:tagbar_width=30
-"设置tagbar的窗口显示的位置,为左边
-let g:tagbar_left=0
-"打开文件自动 打开tagbar
 " autocmd bufreadpost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 
 "============ YouCompleteMe =============
 let g:ycm_server_python_interpreter='/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap  <leader>yd :<C-u>Yde<CR>
 
 
 " vim-autoformat
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-" " auto format file when saving
-" au BufWrite * :Autoformat
 
 "palenight
 "let g:lightline.colorscheme = 'palenight'
@@ -98,39 +62,19 @@ if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
-"vim-one
-let g:one_allow_italics = 1 " I love italic for comments
-
-" vim-hardtime
-" let g:hardtime_default_on = 0
-
 " clang_complete
 let g:clang_library_path='/usr/lib/llvm-8/lib'
-
-" vim-markdown
-" let g:vim_markdown_folding_disabled = 1
-" set nofoldenable
 
 
 " nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-" java-complete2
-autocmd FileType java setlocal omnifunc=javacomplete#Complet
 
 " vim-prettier
 " max line length that prettier will wrap on
 " Prettier default: 80
 let g:prettier#config#print_width = 150"
-
-" jedi-vim
-let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#documentation_command = "F"
 
 " vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
