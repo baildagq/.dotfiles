@@ -17,6 +17,10 @@ endif
 "the most import map
 "let mapleader = "\<Space>"
 let mapleader =";"
+nmap <leader>v "+gp
+nmap <leader>c "+y
+vmap <leader>v "+gp
+vmap <leader>c "+y
 " clipboard : autoselect 和后面的为默认，本来以为可以直接set
 " clipbaord+=unnamedplus,但是发现可能就被exclude吃掉了，所以只能将unnameplus写在了前面，然后加上了default"
 " set clipboard=unnamedplus,autoselect,exclude:cons\\\|linux
@@ -250,6 +254,7 @@ Plug 'junegunn/vim-easy-align' " gaip= to align the = in paragraph,
 Plug 'tpope/vim-capslock'   " Ctrl+L (insert) to toggle capslock
 Plug 'easymotion/vim-easymotion'
 Plug 'Konfekt/FastFold'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-peekaboo'
 "Plug 'wellle/context.vim'
 Plug 'svermeulen/vim-subversive'
@@ -384,6 +389,8 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 color gruvbox
+" set background=light
+
 
 
 " ===
