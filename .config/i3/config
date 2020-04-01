@@ -12,7 +12,7 @@
 set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:DejaVu Sans Mono 12
+# font pango:DejaVu Sans Mono 12
 # font pango:monospace 13
 font pango: Noto Sans 11
 
@@ -22,10 +22,9 @@ exec --no-startup-id flameshot
 exec --no-startup-id goldendict
 # exec --no-startup-id compton -b
 # exec --no-startup-id dunst
-# exec --no-startup-id keynav
+exec --no-startup-id keynav
 # exec_always variety
 # exec_always seafile
-# exec_always compton
 # exec_always nm-applet
 # exec_always fcitx
 exec_always ~/.config/polybar/launch.sh
@@ -51,8 +50,8 @@ bindsym $mod+b exec chromium-browser
 
 # start a terminal
 # i3的脚本，自动选择系统安装的默认终端
-# bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec alacritty
+# bindsym $mod+Return exec i3-sensible-terminal
 
 # start file manager -- thunar
 bindsym $mod+u exec --no-startup-id nautilus # dolphin thunar
@@ -138,17 +137,6 @@ bindsym mod4+p exec ~/.screenlayout/toggle.sh
 bindsym mod4+Shift+Tab workspace prev
 bindsym mod4+Tab workspace next
 
-# set workspace icon
-# set $ws1   "1 "
-# set $ws2   "2 "
-# set $ws3   "3 "
-# set $ws4   "4 "
-# set $ws5   "5 "
-# set $ws6   "6 "
-# set $ws7   "7 "
-# set $ws8   "8 "
-# set $ws9   9
-# set $ws10  10
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -233,4 +221,4 @@ bar {
 new_window 1pixel
 
 # gaps
-gaps inner 8
+gaps inner 0

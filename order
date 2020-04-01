@@ -71,6 +71,7 @@ python3 -m pydoc -p 1234
 update-alternatives --list x-terminal-emulator
 sudo add-apt-repository --update ppa:nicolais/termshark
 sudo apt install termshark
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
 
 
 

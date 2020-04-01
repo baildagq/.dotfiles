@@ -14,7 +14,6 @@ install_basic() {
          cmake poppler-utils gnome-nettool neofetch htop aria2
 }
 install_latest_neovim() {
-    # install build prerequisites
     $INSTALL ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
 }
 install_i3() {
@@ -23,9 +22,6 @@ install_i3() {
     $INSTALL i3 i3-gaps
 }
 install_mysql() {
-    $INSTALL mysql-client mysql-server
-}
-install_qemu() {
     $INSTALL mysql-client mysql-server
 }
 install_npm() {
@@ -46,6 +42,10 @@ install_latex() {
 install_ocr() {
     $INSTALL tesseract-ocr tesseract-ocr-chi-sim
 }
+install_clangd() {
+    $INSTALL clangd-9
+    sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
+}
 
 
 
@@ -57,7 +57,7 @@ install_ocr() {
 # GUI
 install_utiltools() {
      $INSTALL zathura tweak flameshot keynav rofi goldendict\
-         calibre synaptic qbittorrent sgt-puzzles chromium-browser okular meld anki feh dolphin notion
+         calibre synaptic qbittorrent  chromium-browser okular meld anki feh dolphin notion
 }
 install_sogoupinyin() {
     # sogoupinyin
@@ -66,9 +66,9 @@ install_sogoupinyin() {
     sudo dpkg -i ~/Downloads/sogoupinyin.deb
 }
 install_office() {
-    # wps-office
-    # curl http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb --create-dirs -o ~/Downloads/wps-office.deb
-    # sudo dpkg -i ~/Downloads/wps-office.deb
+    wps-office
+    curl http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb --create-dirs -o ~/Downloads/wps-office.deb
+    sudo dpkg -i ~/Downloads/wps-office.deb
 }
 install_typora() {
     wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
@@ -87,6 +87,9 @@ install_mendelay() {
     # mendeley-desktop
     curl https://www.mendeley.com/autoupdates/installer/Linux-x64/stable-incoming --create-dirs -o ~/Downloads/mendeley-desktop.deb
     sudo dpkg -i ~/Downloads/mendeley-desktop.deb
+}
+install_fun() {
+    $INSTALL cmatrix figlet sgt-puzzles
 }
 
 
