@@ -16,11 +16,6 @@ install_basic() {
 install_latest_neovim() {
     $INSTALL ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
 }
-install_i3() {
-    sudo add-apt-repository ppa:kgilmer/speed-ricer
-    sudo apt update
-    $INSTALL i3 i3-gaps
-}
 install_mysql() {
     $INSTALL mysql-client mysql-server
 }
@@ -57,7 +52,14 @@ install_clangd() {
 # GUI
 install_utiltools() {
      $INSTALL zathura tweak flameshot keynav rofi goldendict\
-         calibre synaptic qbittorrent  chromium-browser okular meld anki feh dolphin notion
+         calibre synaptic qbittorrent  chromium-browser okular meld anki feh dolphin\
+         font-manager
+}
+install_i3() {
+    sudo add-apt-repository ppa:kgilmer/speed-ricer
+    sudo apt update
+    $INSTALL i3 i3-gaps arandr
+    $INSTALL dunst polybar # or yabar
 }
 install_sogoupinyin() {
     # sogoupinyin
@@ -89,7 +91,7 @@ install_mendelay() {
     sudo dpkg -i ~/Downloads/mendeley-desktop.deb
 }
 install_fun() {
-    $INSTALL cmatrix figlet sgt-puzzles
+    $INSTALL cmatrix figlet sgt-puzzles # sgt-launcher 
 }
 
 
