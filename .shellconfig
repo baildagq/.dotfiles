@@ -1,6 +1,10 @@
 #################### path ####################
 PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin
 
+# To make ranger default editor = nvim
+VISUAL=nvim;export VISUAL EDITOR=nvim; export EDITOR
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/qiqiang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -15,13 +19,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# To make ranger default editor = vim
-VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
-
-# rg need
-export satellite_db_addr=167.179.97.242
-
 
 
 
@@ -42,7 +39,8 @@ alias ca="conda activate py36"
 alias nv="nvim"
 alias v="vim"
 # alias -g "kbl"="/bin/bash /usr/local/share/kbd_backlight"
-alias ta="tmux attach"
+alias ta="tmux attach-session"
+alias tl="tmux list-session"
 alias t="tmux"
 alias wd="wd -s"
 alias dockerarch="c973e63acf1c"
@@ -54,6 +52,8 @@ alias s="seaf-cli"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias gg='goldendict'
+alias vd='vimdiff'
 
 
 

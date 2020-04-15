@@ -60,7 +60,7 @@ font-4 = WenQuanYi Micro Hei Mono:size=10;1
 modules-left = i3
 ; modules-center = xwindow mpd
 modules-center = xwindow my-text-label
-modules-right = pulseaudio wlan memory cpu filesystem battery date
+modules-right = wlan memory cpu filesystem battery date
 
 ;wm-restack = bspwm
 ;scroll-up = bspwm-desknext
