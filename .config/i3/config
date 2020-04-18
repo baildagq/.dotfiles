@@ -56,8 +56,6 @@ bindsym $mod+Return exec alacritty
 # start file manager -- thunar
 bindsym $mod+u exec --no-startup-id nautilus # dolphin thunar
 
-
-
 # start dmenu (a program launcher)
 # bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
@@ -137,6 +135,19 @@ bindsym mod4+p exec ~/.screenlayout/toggle.sh
 bindsym mod4+Shift+Tab workspace prev
 bindsym mod4+Tab workspace next
 
+# alacritty-colorscheme
+# Set program location
+# set $alacritty_colorscheme ~/.bin/alacritty-colorscheme
+set $alacritty_colorscheme alacritty-colorscheme -C ~/.alacritty-themes
+
+# Toggle between light and dark colorscheme
+bindsym $mod+Shift+n exec $alacritty_colorscheme -t solarized-light.yml solarized-dark.yml
+
+# Toggle between all available colorscheme
+bindsym $mod+Shift+m exec $alacritty_colorscheme -T
+
+# Get notification with current colorscheme
+bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s`
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

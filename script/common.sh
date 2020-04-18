@@ -7,29 +7,37 @@
 
 
 # ================= COMMON =================
+
+# alacritty
+pip3 install git+https://github.com/toggle-corp/alacritty-colorscheme.git --user
+# then manual download the theme-file-directory from follow two repo ( may with gitzip.. chrome plugin):
+# 1. https://github.com/aaron-williamson/base16-alacritty/tree/master/colors
+# 2. https://github.com/eendroroy/alacritty-theme/tree/master/themes
+# unzip themes to ~/.alacritty-themes
+
 # pypi
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U --user
 pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip3 install --user pipreqs
 
-# git
+# tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-# sh
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  #install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting #install zsh-syntax-hightlighting
 
-
 # npm
-# gitbook
 npm install -g gitbook-cli
 
-cd ~/.dotfiles
 
+# make soft-link
+cd ~/.dotfiles
 paths=(
     '.config/alacritty'
     '.config/codestyle'
@@ -62,7 +70,7 @@ paths=(
 
 for item in ${paths[*]}
 do
-    # dotfile exist
+    # judge whether dotfile exist
     if test -e $item
     then
         if test "$item" = ".zshrc_omz" -o "$item" = ".zshrc_zpl"

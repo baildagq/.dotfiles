@@ -1,8 +1,12 @@
 #################### path ####################
 PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # To make ranger default editor = nvim
 VISUAL=nvim;export VISUAL EDITOR=nvim; export EDITOR
+
+# rust tuna
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
 
 # >>> conda initialize >>>
@@ -30,11 +34,16 @@ alias ipy='ipython3'
 alias xdg="xdg-open"
 alias za="zathura"
 alias ra="ranger"
-alias l="ls -alh"
-alias ls="ls --color"
-alias la='ls -A'
-alias ll='ls -alF'
-alias md="mkdir"
+# alias l="ls -alh"
+# alias ls="ls --color"
+# alias la='ls -A'
+# alias ll='ls -alF'
+# ls -> exa
+alias l="exa -lah"
+alias ls=exa
+alias ll="exa -l"
+alias lt="exa -T"
+
 alias ca="conda activate py36"
 alias nv="nvim"
 alias v="vim"
@@ -54,6 +63,10 @@ alias s="seaf-cli"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias gg='goldendict'
 alias vd='vimdiff'
+alias alacritty-colorscheme='alacritty-colorscheme -C ~/.alacritty-themes'
+# quickly go to workspace
+alias tmp='cd ~/tmp'
+alias work="cd ~/workspace"
 
 
 
@@ -85,6 +98,15 @@ function mountsharedir {
     sudo mount -t vboxsf E_DRIVE /mnt/e
 }
 
+function mkcd {
+    mkdir $1
+    cd $1
+}
+
+function todo {
+    echo $1 >> ~/note/todo.md
+}
+
 function mapcaps {
     setxkbmap -option caps:ctrl_modifier
 }
@@ -93,6 +115,13 @@ function ss {
     ssh qiqiang@192.168.0.111
 }
 
+# function alacritty-list-theme {
+#     alacritty-colorscheme -C  -T
+# }
+#
+# function alacritty-toggle-theme {
+#     alacritty-colorscheme -C  -T
+# }
 
 
 #################### auto start ####################

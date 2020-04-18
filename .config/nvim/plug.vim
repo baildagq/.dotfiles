@@ -8,6 +8,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'ajmwagar/vim-deus'
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'altercation/vim-colors-solarized'
 
 " Genreal Highlighter
 Plug 'jaxbot/semantic-highlight.vim'
@@ -25,7 +26,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
 " " Undo Tree
