@@ -11,7 +11,7 @@ INSTALL="sudo apt install -y --upgrade"
 install_basic() {
      $INSTALL git zsh neovim vim tmux ncurses-* xsel tig tree curl wget httpie tldr ctags cscope\
          build-essential silversearcher-ag fonts-powerline ipython3 python-autopep8 python3-pip\
-         cmake poppler-utils gnome-nettool neofetch htop aria2
+         cmake poppler-utils gnome-nettool neofetch htop aria2 ntpdate
 }
 install_latest_neovim() {
     $INSTALL ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
@@ -54,12 +54,18 @@ install_utiltools() {
      $INSTALL zathura tweak flameshot keynav rofi goldendict\
          calibre synaptic qbittorrent  chromium-browser okular meld anki feh dolphin\
          font-manager
+     sudo snap install mathpix-snipping-tool
+     sudo snap install mailspring
 }
 install_i3() {
     sudo add-apt-repository ppa:kgilmer/speed-ricer
     sudo apt update
     $INSTALL i3 i3-gaps arandr
     $INSTALL dunst polybar # or yabar
+}
+install_lightdm() {
+    $INSTALL slick-greeter
+
 }
 install_sogoupinyin() {
     # sogoupinyin

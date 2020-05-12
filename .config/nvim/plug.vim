@@ -26,7 +26,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
 " " Undo Tree
@@ -55,6 +55,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'f
 " Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
 " Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 " Plug 'theniceboy/bullets.vim'
+" Plug 'vimwiki/vimwiki'
 
 " Dart
 Plug 'dart-lang/dart-vim-plugin'

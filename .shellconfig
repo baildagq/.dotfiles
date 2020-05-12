@@ -1,5 +1,5 @@
 #################### path ####################
-PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin
+PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # To make ranger default editor = nvim
@@ -51,6 +51,7 @@ alias v="vim"
 alias ta="tmux attach-session"
 alias tl="tmux list-session"
 alias t="tmux"
+alias ft="sh ~/Documents/sh/tmux.sh"
 alias wd="wd -s"
 alias dockerarch="c973e63acf1c"
 alias sudo="sudo "
@@ -67,6 +68,8 @@ alias alacritty-colorscheme='alacritty-colorscheme -C ~/.alacritty-themes'
 # quickly go to workspace
 alias tmp='cd ~/tmp'
 alias work="cd ~/workspace"
+alias leet="cd ~/.leetcode"
+alias note="cd ~/note"
 
 
 
@@ -104,7 +107,22 @@ function mkcd {
 }
 
 function todo {
-    echo $1 >> ~/note/todo.md
+    command -v joplin 1>/dev/null 2>&1
+    flag=$?
+    if [ $flag = 0 ]
+        then
+        # joplin version
+            joplin use "Todo"
+            joplin mktodo $1
+        else
+        # maual version
+            if [[ $# = 0 ]]
+            then
+                cat ~/note/todo.md
+            else
+                echo $1 >> ~/note/todo.md
+            fi
+    fi
 }
 
 function mapcaps {
@@ -115,14 +133,24 @@ function ss {
     ssh qiqiang@192.168.0.111
 }
 
-# function alacritty-list-theme {
-#     alacritty-colorscheme -C  -T
-# }
-#
-# function alacritty-toggle-theme {
-#     alacritty-colorscheme -C  -T
-# }
+function guijop {
+    ~/.joplin/Joplin.AppImage
+}
 
+
+function build {
+    g++ $1.cpp -g -std=c++14 -o $1 && ./$1
+    # flag=$?
+    # if [[ $flag -eq 0 ]]
+    # then
+    #     ./$1
+    # fi
+}
+
+function changenet {
+    sudo sed -iE "s/192\.168\.[0-9][0-9]*\.1/192.168.$1.1/g" /etc/netplan/01-network-manager-all.yaml
+    sudo netplan apply 
+}
 
 #################### auto start ####################
 

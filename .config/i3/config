@@ -127,6 +127,8 @@ bindsym $mod+p focus parent
 
 # lock screen
 bindsym mod4+l exec i3lock-fancy
+bindsym mod4+j exec joplin
+bindsym mod4+Shift+l exec chromium-browser www.leetcode-cn.com
 
 # change display mode
 bindsym mod4+p exec ~/.screenlayout/toggle.sh

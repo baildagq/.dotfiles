@@ -93,12 +93,22 @@ set tags=./tags;,tags
 "============== Tab management ===========
 " Create a new tab with tu
 noremap tu :tabe<CR>
+" " Move around tabs with tn and ti
+" noremap ti :-tabnext<CR>
+" noremap tn :+tabnext<CR>
+" " Move the tabs with tmn and tmi
+" noremap tmn :-tabmove<CR>
+" noremap tmi :+tabmove<CR>
 " Move around tabs with tn and ti
+" noremap <C-w>n :+tabnext<CR>
+" noremap <C-w>p :-tabnext<CR>
 noremap ti :-tabnext<CR>
 noremap tn :+tabnext<CR>
 " Move the tabs with tmn and tmi
 noremap tmn :-tabmove<CR>
 noremap tmi :+tabmove<CR>
+
+
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 noremap run :call CompileRunGcc()<CR>
 nnoremap <F2>: NERDTree<cr>

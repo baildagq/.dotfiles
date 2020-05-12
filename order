@@ -89,3 +89,8 @@ set paste
 #################### vmware ####################
 # sometime share directory could not be seen
 sudo /usr/bin/vmhgfs-fuse .host:/D /mnt/hgfs/D -o allow_other
+
+# udpate system-time with net
+sudo ntpdate time.windows.com
+gsettings get org.gnome.desktop.interface monospace-font-name
+sudo dpkg-reconfigure lightdm
