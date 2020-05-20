@@ -58,12 +58,12 @@ sudo pacman -Su \
 	peek\
 	goldendict\
 	figlet\
-	fzf
-
-
+	fzf\
+    gcc\
 	i3\
 	dunst\
-	compton\
+	compton
+fontmatrix
 
 # neovim(for thinkvim)
 sudo pacman -Su neovim python-pip nodejs yarn ripgrep ctags nerd-fonts-noto-sans-mono nerd-fonts-terminus ttf-nerd-fonts-symbols bat
@@ -72,3 +72,6 @@ pip3 install --user pynvim
 # After reboot
 # add google input
 # sudo usermod qiqiang -a -G video
+
+# network connect: nmtui
+net-tools

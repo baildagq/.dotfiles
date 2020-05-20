@@ -29,7 +29,7 @@ alert = #bd2c40
 
 [bar/top]
 width = 100%
-height = 20
+height = 25
 ; bottom = true
 ; offset-x = 50%
 ; offset-y = 50%
@@ -51,11 +51,11 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 2
 
-font-0 = FantasqueSansMono Nerd Font:pixelsize=12;1
-font-1 = Noto Color Emoji:size=12;1
-font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = siji:pixelsize=10;1
-font-4 = WenQuanYi Micro Hei Mono:size=10;1
+font-0 = FantasqueSansMono Nerd Font:pixelsize=13;1
+font-1 = Noto Color Emoji:size=13;1
+font-2 = unifont:fontformat=truetype:size=13:antialias=false;0
+font-3 = siji:pixelsize=13;1
+font-4 = WenQuanYi Micro Hei Mono:size=13;1
 
 modules-left = i3
 ; modules-center = xwindow mpd
@@ -124,8 +124,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = AC
+battery = BAT1
+adapter = ACAD
 full-at = 98
 poll-interval = 5
 
@@ -213,7 +213,8 @@ format-underline = #f90000
 ;   <bar-load>
 ;   <ramp-load>
 ;   <ramp-coreload>
-format = <label> <ramp-coreload>
+format = CPU<label> 
+;<ramp-coreload>
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load averaged over all cores
@@ -324,7 +325,7 @@ label-song-ellipsis = true
 
 [module/wlan]
 type = internal/network
-interface = enp0s3
+interface = enp2s0
 interval = 3.0
 
 format-connected =  <label-connected>
