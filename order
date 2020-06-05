@@ -94,3 +94,9 @@ sudo /usr/bin/vmhgfs-fuse .host:/D /mnt/hgfs/D -o allow_other
 sudo ntpdate time.windows.com
 gsettings get org.gnome.desktop.interface monospace-font-name
 sudo dpkg-reconfigure lightdm
+
+# look the manual install package
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+
+# add user brightnessctl permission
+sudo usermod qiqiang -a -G video

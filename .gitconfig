@@ -2,15 +2,8 @@
     name = qistout
     email = 2817253603@qq.com
 
-[alias]
-    cm = commit
-
 [core]
     editor=vim
-	autocrlf = false
-	compression = -1
-[http]
-	postBuffer = 1048576000
+
 [oh-my-zsh]
-    # hide some info when in a repo
 	hide-status = 1
