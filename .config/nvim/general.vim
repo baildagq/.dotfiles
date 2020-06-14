@@ -33,9 +33,9 @@ set showmatch               "highlight matching {[()]}
 set pumheight=10            " 设置补全高度为10"
 set laststatus=2
 set cmdheight=1
-set wrap
+set nowrap
 set list
-set listchars=tab:\|\ ,trail:▫
+" set listchars=tab:\|\ ,trail:▫
 " set listchars=tab:>-,trail:-,eol:$ list
 set scrolloff=4
 set ttyfast "should make scrolling faster
