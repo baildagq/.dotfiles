@@ -54,7 +54,7 @@ systemctl restart sshd.service  #   立即重启
     # install light(manjaro)
     # reboot to add 'video' group which could change lightness
     # add current user to 'video' group:
-    # sudo usermod qiqiang -a -G video
+    sudo usermod qiqiang -aG video
 
 # to resolve nvim markdownpreview error
 cd ~/.cache/vim/dein/repos/github.com/iamcco/markdown-preview.nvim
@@ -100,3 +100,8 @@ comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-
 
 # add user brightnessctl permission
 sudo usermod qiqiang -a -G video
+sudo gpasswd -a ${USER} docker
+
+nmcli c add type wifi autoconnect yes ifname wlp4s0 ssid 红米手机
+nmcli c up 红米手机 --ask
+nmcli c up 齐金生 passwd-file ~/.key/齐金生.key

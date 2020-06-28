@@ -3,7 +3,7 @@
     email = 2817253603@qq.com
 
 [core]
-    editor=vim
+    editor=nvim
 
 [oh-my-zsh]
 	hide-status = 1
