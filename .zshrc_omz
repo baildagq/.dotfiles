@@ -254,18 +254,18 @@ function ck {
 }
 
 function cl {
-    sudo brightnessctl s $1% > /dev/null
+    brightnessctl s $1% > /dev/null
 }
 
 function nc {
     # network connect
     if test $# -eq 0
     then
-        ID=红米手机
-        nmcli c up $ID passwd-file ~/.key/$ID.key
+        ID=齐金生 
     else
-        nmcli c up $1 passwd-file ~/.key/$1.key
+        ID=$1
     fi
+       nmcli device wifi connect $ID
 }
 
 

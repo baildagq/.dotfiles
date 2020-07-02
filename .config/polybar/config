@@ -46,21 +46,25 @@ border-size = 2
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = FantasqueSansMono Nerd Font:pixelsize=13;1
-font-1 = Noto Color Emoji:size=13;1
-font-2 = unifont:fontformat=truetype:size=13:antialias=false;0
+; font-0 = FantasqueSansMono Nerd Font:pixelsize=13;1
+; font-2 = unifont:fontformat=truetype:size=13:antialias=false;0
+font-0 = "Noto Sans Mono:style=Regular:size=13;1"
+font-1 = NotoEmoji Nerd Font:style=Book:size=13;1
+font-2 = Unifont:style=Sans-Serif:size=13:antialias=false;0
 font-3 = siji:pixelsize=13;1
 font-4 = WenQuanYi Micro Hei Mono:size=13;1
+
 
 modules-left = i3
 ; modules-center = xwindow mpd
 modules-center = xwindow my-text-label
-modules-right = wlan memory cpu filesystem battery date
+modules-right = wlan memory cpu filesystem battery date 
+# powermenu
 
 ;wm-restack = bspwm
 ;scroll-up = bspwm-desknext
@@ -127,7 +131,7 @@ type = internal/battery
 battery = BAT1
 adapter = ACAD
 full-at = 98
-poll-interval = 5
+poll-interval = 2
 
 ; format-charging = <animation-charging> <label-charging>
 format-charging = <label-charging>
@@ -213,15 +217,13 @@ format-underline = #f90000
 ;   <bar-load>
 ;   <ramp-load>
 ;   <ramp-coreload>
-format = CPU<label> 
-;<ramp-coreload>
+format = CPU<label> <ramp-coreload>
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load averaged over all cores
 ;   %percentage-sum% - Cumulative load on all cores
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-; label = CPU %percentage:2%%
 label = %percentage:2%%
 
 ; Spacing between individual per-core ramps
@@ -325,13 +327,13 @@ label-song-ellipsis = true
 
 [module/wlan]
 type = internal/network
-interface = enp2s0
+interface = wlp4s0
 interval = 3.0
 
 format-connected =  <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %downspeed:9%
-; label-connected = %{A1:nm-connection-editor:}%essid%%{A}
+; label-connected = %downspeed:9%
+label-connected = %{A1:nm-connection-editor:}%essid%%{A}
 
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
@@ -465,9 +467,9 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = open
 label-open-foreground = ${colors.foreground}
-label-close = 
+label-close = close
 label-close-foreground = ${colors.foreground}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}

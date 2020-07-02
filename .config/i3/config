@@ -45,7 +45,6 @@ bindsym XF86AudioMute exec amixer -q set Master mute
 # bindsym XF86AudioNext exec playerctl next  
 # bindsym XF86AudioPrev exec playerctl previous  
 
-# browsers--firefox
 # bindsym $mod+b exec google-chrome-stable
 bindsym $mod+b exec chromium
 
@@ -102,7 +101,7 @@ bindsym $mod+q kill
 
 # enter fullscreen mode for the focused container
 # most common config, but i think it have less use
-# bindsym $mod+f fullscreen toggle 
+bindsym $mod+Shift+f fullscreen toggle 
 bindsym $mod+f exec flameshot gui
 
 # change container layout (stacked, tabbed, toggle split)
@@ -130,7 +129,7 @@ bindsym $mod+p focus parent
 bindsym mod4+l exec i3lock
 
 bindsym mod4+j exec joplin
-bindsym mod4+Shift+l exec chromium-browser www.leetcode-cn.com
+bindsym mod4+Shift+l exec chromium www.leetcode-cn.com
 
 # change display mode
 bindsym mod4+p exec ~/.screenlayout/toggle.sh
@@ -228,8 +227,9 @@ bindsym $mod+m bar mode toggle
 #     #     urgent_workspacei       #2f343f #ebcb8b #2f343f
 #     # }
 #     # mode hide
-#     height 25
+#     height 24
 #     status_command i3status
+#     # status_command i3blocks
 # }
 
 # hide the head title of windoes
@@ -237,4 +237,4 @@ bindsym $mod+m bar mode toggle
 new_window none
 
 # gaps
-gaps inner 8
+gaps inner 0

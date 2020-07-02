@@ -105,3 +105,5 @@ sudo gpasswd -a ${USER} docker
 nmcli c add type wifi autoconnect yes ifname wlp4s0 ssid 红米手机
 nmcli c up 红米手机 --ask
 nmcli c up 齐金生 passwd-file ~/.key/齐金生.key
+
+fc-list # 列出字体，得到名称
