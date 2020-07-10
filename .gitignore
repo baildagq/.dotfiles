@@ -15,7 +15,7 @@ build
 .vim/plugged/
 .vim/sessions/
 
-.config/nvim/autoload/
+.config/nvim/autoload/plugged/
 .config/nvim/tmp/
 .config/nvim/.netrwhist
 

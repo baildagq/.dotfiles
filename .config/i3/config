@@ -26,7 +26,7 @@ exec --no-startup-id keynav
 # exec_always variety
 # exec_always seafile
 exec_always ~/.script/init.sh
-exec_always ~/.config/polybar/launch.sh
+# exec_always ~/.config/polybar/launch.sh
 exec_always fcitx
 exec_always alacritty
 # exec_always i3-sensible-terminal
@@ -212,25 +212,25 @@ bindsym $mod+r mode "resize"
 # bar toggle, hide or show
 bindsym $mod+m bar mode toggle
 
-# # Start i3bar to display a workspace bar (plus the system information i3status
-# # finds out, if available)
-# bar {
-#     #     colors {
-#     #     background #2f343f
-#     #     statusline #2f343f
-#     #     separator #4b5262
-#     #
-#     #     # colour of border, background, and text
-#     #     focused_workspace       #2f343f #bf616a #d8dee8
-#     #     active_workspace        #2f343f #2f343f #d8dee8
-#     #     inactive_workspace      #2f343f #2f343f #d8dee8
-#     #     urgent_workspacei       #2f343f #ebcb8b #2f343f
-#     # }
-#     # mode hide
-#     height 24
-#     status_command i3status
-#     # status_command i3blocks
-# }
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    #     colors {
+    #     background #2f343f
+    #     statusline #2f343f
+    #     separator #4b5262
+    #
+    #     # colour of border, background, and text
+    #     focused_workspace       #2f343f #bf616a #d8dee8
+    #     active_workspace        #2f343f #2f343f #d8dee8
+    #     inactive_workspace      #2f343f #2f343f #d8dee8
+    #     urgent_workspacei       #2f343f #ebcb8b #2f343f
+    # }
+    # mode hide
+    height 24
+    status_command i3status
+    # status_command i3blocks
+}
 
 # hide the head title of windoes
 # new_window 1pixel

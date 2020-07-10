@@ -46,9 +46,9 @@ border-size = 2
 border-color = #00000000
 
 padding-left = 0
-padding-right = 0
+padding-right = 1
 
-module-margin-left = 0
+module-margin-left = 1
 module-margin-right = 1
 
 ; font-0 = FantasqueSansMono Nerd Font:pixelsize=13;1
@@ -61,9 +61,8 @@ font-4 = WenQuanYi Micro Hei Mono:size=13;1
 
 
 modules-left = i3
-; modules-center = xwindow mpd
 modules-center = xwindow my-text-label
-modules-right = wlan memory cpu filesystem battery date 
+modules-right = pulseaudio wlan memory cpu filesystem battery date 
 # powermenu
 
 ;wm-restack = bspwm
@@ -217,7 +216,8 @@ format-underline = #f90000
 ;   <bar-load>
 ;   <ramp-load>
 ;   <ramp-coreload>
-format = CPU<label> <ramp-coreload>
+; format = CPU<label> <ramp-coreload>
+format = CPU<label>
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load averaged over all cores
@@ -274,20 +274,20 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
-
+;
 ; focused = Active workspace on focused monitor
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
+label-focused-padding = 1
+;
 ; unfocused = Inactive workspace on any monitor
-label-unfocused-padding = 2
-
+label-unfocused-padding = 1
+;
 ; visible = Active workspace on unfocused monitor
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
@@ -295,9 +295,9 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
-; Separator in between workspaces
+; ; Separator in between workspaces
 ; label-separator = |
 
 
@@ -407,7 +407,8 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/my-text-label]
 type = custom/text
-content = Come on! Qiang!
+; content = Come on! Qiang!
+content = Qiang!
 ; "content" has the same properties as "format-NAME"
 ; content-background = #000
 ; content-foreground = #fff
