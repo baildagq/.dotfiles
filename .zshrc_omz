@@ -189,7 +189,7 @@ alias vd='vimdiff'
 alias alacritty-colorscheme='alacritty-colorscheme -C ~/.alacritty-themes'
 # quickly go to folder
 alias tmp='cd ~/tmp'
-alias leet='cd ~/Code/leetcode'
+alias leet='cd ~/leetcode'
 alias setproxy='export all_proxy=socks://127.0.0.1:8000'
 alias unproxy='unset all_proxy'
 
@@ -271,10 +271,15 @@ function nc {
 }
 
 function run {
-    g++ $1.cpp -g -o $1 && ./$1
+    if ! test -e ./$1.cpp
+    then
+        cp template.cpp $1.cpp
+    else
+        g++ $1.cpp -Wall -O0 -g -o ./exec/$1 && ./exec/$1
+    fi
 }
 
-function only_second_screen {
+function secondscreen {
     ~/.screenlayout/second_screen_only.sh
 }
 
