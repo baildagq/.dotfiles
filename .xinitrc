@@ -41,7 +41,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-exec i3
+# exec i3
 
 # twm &
 # xclock -geometry 50x50-1+1 &
