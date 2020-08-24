@@ -13,7 +13,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Chiel92/vim-autoformat'
 Plug 'prettier/vim-prettier'
 Plug 'ervandew/supertab'
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " file support
 Plug 'plasticboy/vim-markdown'
