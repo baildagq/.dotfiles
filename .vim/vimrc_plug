@@ -26,6 +26,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
+
+" syntax
+Plug 'ycm-core/YouCompleteMe'
+
 call plug#end()
 
 
