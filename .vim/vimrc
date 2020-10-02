@@ -115,8 +115,8 @@ noremap tmi :+tabmove<CR>
 
 
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
-noremap run :call CompileRunGcc()<CR>
 nnoremap <F2>: NERDTree<cr>
+set pastetoggle=<F3>
 nnoremap <F4>: TagbarToggle<cr>
 nnoremap <F5>: call CompileRunGcc()<CR>
 nnoremap <F6>: Autoformat<cr>
