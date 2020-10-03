@@ -80,10 +80,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " vim-prettier
 " max line length that prettier will wrap on
 " Prettier default: 80
-let g:prettier#config#print_width = 150"
+let g:prettier#config#print_width = 150
 
 " vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Goyo
+let g:goyo_width = 120
+let g:goyo_height = 90
