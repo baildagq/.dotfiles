@@ -128,8 +128,8 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# To make ranger default editor = nvim
-VISUAL=nvim;export VISUAL EDITOR=nvim; export EDITOR
+# To make ranger default editor = vim
+VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
 
 # rust tuna
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -191,6 +191,7 @@ alias alacritty-colorscheme='alacritty-colorscheme -C ~/.alacritty-themes'
 # quickly go to folder
 alias tmp='cd ~/tmp'
 alias leet='cd ~/leetcode'
+alias note='cd ~/d/_note'
 alias setproxy='export all_proxy=socks://127.0.0.1:8000'
 alias unproxy='unset all_proxy'
 

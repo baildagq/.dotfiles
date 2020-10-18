@@ -112,3 +112,6 @@ find ./ -type -f | xargs dos2unix # 找到所有类型为文件的文件并且do
 find ./ -type l -delete # 找到所有类型为软链接的文件，并且删除它们
 
 vim +PlugInstall +qall
+
+sudo dpkg --configure -a
+service --status-all

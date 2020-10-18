@@ -16,6 +16,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'prettier/vim-prettier'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+" Plug 'lyokha/vim-xkbswitch' "not work in windows-wsl
 
 " file support
 Plug 'plasticboy/vim-markdown'
@@ -51,6 +53,7 @@ let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:ycm_server_python_interpreter='/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+" nnoremap <leader>rn :YcmCompleter RefactorRename<CR>
 vnoremap <silent> <C-T> :<C-u>Ydv<CR>
 nnoremap <silent> <C-T> :<C-u>Ydc<CR>
 noremap  <leader>yd :<C-u>Yde<CR>
@@ -91,3 +94,10 @@ nmap ga <Plug>(EasyAlign)
 " Goyo
 let g:goyo_width = 120
 let g:goyo_height = 90
+
+" " vim-xkbswitch(not work in windows-wsl)
+" let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchLib = '/mnt/c/Program Files(self)/libxkbswitch64.dll' 
+
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1

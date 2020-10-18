@@ -122,7 +122,8 @@ nnoremap <F5>: call CompileRunGcc()<CR>
 nnoremap <F6>: Autoformat<cr>
 map <C-n> :NERDTreeToggle<CR>
 
-color gruvbox
+" color gruvbox
+colorscheme palenight
 set background=dark
 
 " " Auto change directory to current dir
