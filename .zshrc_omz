@@ -7,13 +7,17 @@
 # export GIT_CURL_VERBOSE=1
 # Path to your oh-my-zsh installation.
 
-# flutter
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export PATH="$HOME/Program/flutter/bin:$PATH"
 export GOPATH=/home/qiqiang/go
 export GOPROXY=https://goproxy.io
+export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig"
+PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin:~/.cargo/bin:~/Program/flutter/bin:~/Software/bin
 
+# To make ranger default editor = vim
+VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
+
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 export ZSH="/home/qiqiang/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -126,15 +130,6 @@ source $ZSH/oh-my-zsh.sh
 # 避免oh-my-zsh 出现文件夹不安全的提示
 # set ZSH_DISABLE_COMPFIX = true
 
-#################### path ####################
-PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# To make ranger default editor = vim
-VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
-
-# rust tuna
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
 
 # >>> conda initialize >>>
@@ -265,12 +260,11 @@ function nc {
     # network connect
     if test $# -eq 0
     then
-        # ID=齐金生 
-        ID=qiqiang
+        ID=stout
     else
         ID=$1
     fi
-    nmcli device wifi rescan && nmcli device wifi connect $ID
+    nmcli device wifi connect $ID
 }
 
 
@@ -289,4 +283,4 @@ function secondscreen {
 #   tmux new; exit
 # fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
