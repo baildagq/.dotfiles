@@ -12,6 +12,7 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export GOPATH=/home/qiqiang/go
 export GOPROXY=https://goproxy.io
 export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig"
+export NODE_NO_WARNINGS=1
 PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin:~/.cargo/bin:~/Program/flutter/bin:~/Software/bin
 
 # To make ranger default editor = vim
@@ -187,8 +188,8 @@ alias vd='vimdiff'
 alias alacritty-colorscheme='alacritty-colorscheme -C ~/.alacritty-themes'
 # quickly go to folder
 alias tmp='cd ~/tmp'
-alias leet='cd ~/leetcode'
-alias note='cd ~/d/_note'
+alias leet='cd ~/Code/leetcode'
+alias note='cd ~/note'
 alias setproxy='export all_proxy=socks://127.0.0.1:8000'
 alias unproxy='unset all_proxy'
 
