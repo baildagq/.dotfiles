@@ -192,6 +192,7 @@ alias leet='cd ~/Code/leetcode'
 alias note='cd ~/note'
 alias setproxy='export all_proxy=socks://127.0.0.1:8000'
 alias unproxy='unset all_proxy'
+alias lc='leetcode'
 
 
 

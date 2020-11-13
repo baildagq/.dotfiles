@@ -38,8 +38,8 @@ floating_modifier $mod
 
 #===programs shortcuts===
 
-bindsym XF86AudioRaiseVolume exec pamixer -i 5
-bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioRaiseVolume exec pamixer -i 10
+bindsym XF86AudioLowerVolume exec pamixer -d 10
 bindsym XF86AudioMute        exec pamixer -t 
 # bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute  
 # bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute  
@@ -241,4 +241,4 @@ bindsym $mod+m bar mode toggle
 new_window none
 
 # gaps
-gaps inner 4
+gaps inner 0
