@@ -69,25 +69,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 #
-# # Font configuration (changes require restart)
-# font:
-#   # The normal (roman) font face to use.
-#   normal:
-#     family: Source Code Pro
-#     # Style can be specified to pick a specific face.
-#     style: Regular
-#
-#   # The bold font face
-#   bold:
-#     family: Source Code Pro
-#     # Style can be specified to pick a specific face.
-#     style: Bold
-#
-#   # The italic font face
-#   italic:
-#     family: Source Code Pro
-#     # Style can be specified to pick a specific face.
-#     style: Italic
 
 # Font configuration (changes require restart)
 font:
@@ -111,7 +92,7 @@ font:
 
 
   # Point size
-  size: 10.0
+  size: 9.0
 #
 #   # Offset is the extra space around each character. `offset.y` can be thought of
 #   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

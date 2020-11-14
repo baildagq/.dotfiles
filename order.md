@@ -1,7 +1,7 @@
-
 # 命令记录
 
 #################### common ####################
+
 # print color
 for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
 
@@ -127,3 +127,4 @@ find /usr/ -name libproxychains.so.3 -print
 
 fc-match 'DejaVuSansMono Nerd Font'
 
+sudo modprobe vboxdrv
