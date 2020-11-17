@@ -17,6 +17,7 @@ Plug 'prettier/vim-prettier'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 " Plug 'lyokha/vim-xkbswitch' "not work in windows-wsl
 
 " file support
