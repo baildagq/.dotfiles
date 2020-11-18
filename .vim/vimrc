@@ -24,7 +24,7 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>'")
 " clipboard : autoselect 和后面的为默认，本来以为可以直接set
 " clipbaord+=unnamedplus,但是发现可能就被exclude吃掉了，所以只能将unnameplus写在了前面，然后加上了default"
 " set clipboard=unnamedplus,autoselect,exclude:cons\\\|linux
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 set mouse=a
 syntax enable
 set number                  "show line numbers
