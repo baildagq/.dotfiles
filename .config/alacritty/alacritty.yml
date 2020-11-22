@@ -133,10 +133,10 @@ font:
 colors:
   # Default colors
   primary:
-    background: '0x002b36'
-    foreground: '0x839496'
-    # background: '0x000000'
-    # foreground: '0xffffff'
+    # background: '0x002b36'
+    # foreground: '0x839496'
+    background: '0x000000'
+    foreground: '0xffffff'
   # Normal colors
   normal:
     black:   '0x000000'

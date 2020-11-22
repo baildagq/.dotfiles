@@ -28,8 +28,8 @@ export ZSH="/home/qiqiang/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
-# ZSH_THEME="robbyrussell"
+# ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="af-magic"
 # ZSH_THEME="cloud"
 
@@ -197,6 +197,8 @@ alias setproxy='export all_proxy=socks://127.0.0.1:8000'
 alias unproxy='unset all_proxy'
 alias lc='leetcode'
 alias godoc='godoc -http=localhost:6060'
+alias hibernate='i3lock && systemctl hibernate'
+alias sk='setxkbmap -option ctrl:nocaps'
 
 
 

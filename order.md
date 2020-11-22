@@ -128,3 +128,8 @@ find /usr/ -name libproxychains.so.3 -print
 fc-match 'DejaVuSansMono Nerd Font'
 
 sudo modprobe vboxdrv
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+fdisk
+lsblk
+df
