@@ -133,3 +133,5 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 fdisk
 lsblk
 df
+
+find . -name '*.go' | xargs wc -l

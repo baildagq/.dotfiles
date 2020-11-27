@@ -91,7 +91,7 @@ set smartcase               " ...unless we type a capital
 
 "============== folds ===========
 set foldenable          "enable fold feature
-set foldlevel=5
+set foldlevel=10
 set foldmethod=indent   "fold based on syntax, other could be indent manual diff
 
 "============= jump =============

@@ -19,7 +19,7 @@ font pango: Noto Sans 10
 # autostart
 exec --no-startup-id feh --bg-scale ~/Picture/wall.jpg
 exec --no-startup-id flameshot
-exec --no-startup-id compton -b
+# exec --no-startup-id compton -b
 exec --no-startup-id dunst
 exec --no-startup-id keynav
 # exec --no-startup-id goldendict
