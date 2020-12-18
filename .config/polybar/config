@@ -33,7 +33,7 @@ height = 22
 ; bottom = true
 ; offset-x = 50%
 ; offset-y = 50%
-; radius = 6.0
+radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
@@ -42,8 +42,8 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-; border-size = 2
-; border-color = #00000000
+border-size = 2
+border-color = #00000000
 
 padding-left = 0
 padding-right = 1

@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/qiqiang/temp/brainpp-utils/bootstrap-script'
-let g:netrw_dirhist_2='/home/stout/.config_file/vim'
-let g:netrw_dirhist_3='/mnt/hgfs/D/tmp/code'
-let g:netrw_dirhist_4='/home/stout/anaconda3/envs/py36/lib/python3.6/site-packages/torch/nn/modules'
-let g:netrw_dirhist_5='/home/stout/anaconda3/envs/py36/lib/python3.6/site-packages/torch/nn'
-let g:netrw_dirhist_6='/home/stout/anaconda3/envs/py36/lib/python3.6/site-packages/torch'
-let g:netrw_dirhist_7='/home/stout/anaconda3/envs/py36/lib/python3.6/site-packages/torch/autograd'

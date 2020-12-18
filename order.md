@@ -135,3 +135,4 @@ lsblk
 df
 
 find . -name '*.go' | xargs wc -l
+sudo openvpn --config ~/.openvpn/vpn9.ovpn
