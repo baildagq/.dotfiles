@@ -19,29 +19,35 @@ exec --no-startup-id feh --bg-scale ~/Picture/grey.png
 exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id keynav
+exec --no-startup-id qv2ray
 exec_always fcitx
 exec --no-startup-id picom -b
 # exec --no-startup-id goldendict
 # exec_always variety
 # exec_always seafile
-# exec_always ~/.script/init.sh
+exec_always ~/.script/auto/init.sh
 # exec_always ~/.config/polybar/launch.sh
 # exec_always nextcloud
 # exec_always alacritty
 # exec_always st
+# exec_always google-chrome-stable
+exec brightnessctl --device='asus::kbd_backlight' set 0 > /dev/null
 
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# assign [class="Alacritty"] 1
-# assign [class="firefox"] 2
+# assign [class="Google-chrome"] 1
+# assign [class="st"] 2
+# assign [class="Joplin"] 3
+
+for_window [class="GoldenDict" instance="goldendict"] floating enable
 
 #===programs shortcuts===
 
-bindsym XF86AudioRaiseVolume   exec pamixer -i 10
-bindsym XF86AudioLowerVolume   exec pamixer -d 10
+bindsym XF86AudioRaiseVolume   exec pamixer -i 2
+bindsym XF86AudioLowerVolume   exec pamixer -d 2
 bindsym XF86AudioMute          exec pamixer -t 
 
 bindsym XF86TouchpadToggle     exec ~/.script/TouchpadToggle.sh
@@ -60,8 +66,9 @@ bindsym XF86MonBrightnessDown  exec brightnessctl set 20%- > /dev/null
 # bindsym XF86AudioNext exec playerctl next  
 # bindsym XF86AudioPrev exec playerctl previous  
 
-bindsym $mod+b exec google-chrome-stable
-# bindsym $mod+b exec firefox
+# bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec firefox
+# bindsym $mod+b exec ~/.script/startbrowser.sh
 
 # start a terminal
 # i3的脚本，自动选择系统安装的默认终端
@@ -74,8 +81,8 @@ bindsym $mod+u exec --no-startup-id thunar # nautilus dolphin thunar
 
 # start dmenu (a program launcher)
 # bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
-# bindsym $mod+space exec --no-startup-id rofi -show drun
+# bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
+bindsym $mod+space exec --no-startup-id rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -114,6 +121,7 @@ bindsym $mod+v split v
 bindsym Mod1+F4 kill
 # kill with q
 bindsym $mod+q kill
+bindsym $mod+Shift+q [class=".*"] kill
 
 # enter fullscreen mode for the focused container
 # most common config, but i think it have less use
@@ -142,13 +150,13 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+p focus parent
 
 # lock screen
-bindsym mod4+l exec i3lock
+bindsym mod4+l exec i3lock -c 555555
 
 bindsym mod4+j exec joplin
 bindsym mod4+Shift+l exec chromium www.leetcode-cn.com
 
 # change display mode
-bindsym mod4+p exec ~/.screenlayout/toggle.sh
+bindsym mod4+p exec ~/.script/screen/toggle.sh
 
 # # switch to near workspace
 bindsym mod4+Shift+Tab workspace prev
@@ -254,4 +262,4 @@ bar {
 new_window none
 
 # gaps
-gaps inner 0
+gaps inner 8
