@@ -1,62 +1,77 @@
 # 命令记录
 
-#################### common ####################
+print color
 
-# print color
-
+```
 for ((i = 0; i < 256; i++)); do printf '\e[38;5;%dm%03d' "${i}" "${i}"; done]'
+```
 
-# install youcompleteme
+install youcompleteme
 
+```
 python3 install.py --clang-completer --all
 python3 install.py --clang-completer --system-libclang --all
+```
 
-# compile using opencv file
+compile using opencv file
 
+```
 g++ $(pkg-config --cflags opencv) main.cpp -o main $(pkg-config --libs opencv) && ./main
+```
 
-# pip3 config
+pip3 config
 
+```
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
 
+other
+
+```
 grep -e "ctrl:\|:ctrl" /usr/share/X11/xkb/rules/evdev.lst
-
 setxkbmap -option caps:ctrl_modifier
-
 jupyter console
-
 npm install --registry=https://registry.npm.taobao.org
-
 du -h --max-depth=2
+
+```
 
 git push --delete origin qq
 git branch -d qq
 
 ./node_modules/.bin/eslint --init
 
-# docker
+docker
 
+```
 sudo docker run -it -p 80:80 sate-back:latest /usr/bin run.sh
 sudo docker run -it -p 80:80 sate-back:latest /bin/bash
 sudo docker run -itd --name ubuntu-test -v /hoe/qiqiqang/e/tmp/:/data ubuntu18.04 /bin/bash
+```
 
-# rofi
+rofi
 
+```
 rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3
+```
 
-#################### manjaro ####################
+manjaro
+
+```
 sudo pacman-mirrors -i -c China -m rank
-yay
-wqy-microhei
+```
 
-# ssh service
+ssh service
 
+```
 systemctl enable sshd.service # 开机启动
 systemctl start sshd.service # 立即启动
 systemctl restart sshd.service # 立即重启
+```
 
-# to solve screen lightness and keyboard lightness
+solve screen lightness and keyboard lightness
 
+```
 # screen:
 
     # install light(manjaro)
@@ -64,58 +79,65 @@ systemctl restart sshd.service # 立即重启
     # add current user to 'video' group:
     sudo usermod qiqiang -aG video
 
-# to resolve nvim markdownpreview error
-
-cd ~/.cache/vim/dein/repos/github.com/iamcco/markdown-preview.nvim
-npm install
-
-sudo pacman -Rnc xxxxx
-
-python3 -m pydoc -p 1234
-
-#################### ubuntu ####################
-
-# list system terminal
-
-update-alternatives --list x-terminal-emulator
-sudo add-apt-repository --update ppa:nicolais/termshark
-sudo apt install termshark
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
-
-#################### other ####################
-sudo apt-get install gcc-mips-linux-gnu
-
-# patch
-
-patch -p1 < 1.patch
-
-#################### vim ####################
-set paste
-
-#################### vmware ####################
-
-# sometime share directory could not be seen
-
-sudo /usr/bin/vmhgfs-fuse .host:/D /mnt/hgfs/D -o allow_other
-
-# udpate system-time with net
-
-sudo ntpdate time.windows.com
-gsettings get org.gnome.desktop.interface monospace-font-name
-sudo dpkg-reconfigure lightdm
-
-# look the manual install package
-
-comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
-
 # add user brightnessctl permission
 
 sudo usermod qiqiang -a -G video
 sudo gpasswd -a ${USER} docker
+```
 
+resolve nvim markdownpreview error
+
+```
+cd ~/.cache/vim/dein/repos/github.com/iamcco/markdown-preview.nvim
+npm install
+```
+
+python3 -m pydoc -p 1234
+
+ubuntu list system terminal
+
+```
+update-alternatives --list x-terminal-emulator
+sudo add-apt-repository --update ppa:nicolais/termshark
+sudo apt install termshark
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
+```
+
+sudo apt-get install gcc-mips-linux-gnu
+
+patch
+
+```
+patch -p1 < 1.patch
+```
+
+vmware sometime share directory could not be seen
+
+```
+sudo /usr/bin/vmhgfs-fuse .host:/D /mnt/hgfs/D -o allow_other
+```
+
+udpate system-time with net
+
+```
+sudo ntpdate time.windows.com
+gsettings get org.gnome.desktop.interface monospace-font-name
+sudo dpkg-reconfigure lightdm
+```
+
+look the manual install package
+
+```
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+```
+
+nmcli
+
+```
 nmcli c add type wifi autoconnect yes ifname wlp4s0 ssid 红米手机
 nmcli c up 红米手机 --ask
 nmcli c up 齐金生 passwd-file ~/.key/齐金生.key
+```
 
 fc-list # 列出字体，得到名称
 
@@ -146,3 +168,28 @@ sudo openvpn --config ~/.openvpn/vpn9.ovpn
 https_proxy=socks5://127.0.0.1:1089/ curl -Li https://www.google.com/search\?q\=123 | less
 
 sftp -p 2222 xingyu.xie@192.168.0.40 172.16.3.204
+
+```
+cat > getonly.json << EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+  {
+  "Action": [
+          "s3:GetObject"
+
+  ],
+        "Effect": "Allow",
+        "Resource": [
+                "arn:aws:s3:::my-bucketname/*"
+
+        ],
+              "Sid": ""
+
+  }
+
+  ]
+
+}
+EOF
+```

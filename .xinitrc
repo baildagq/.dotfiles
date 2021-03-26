@@ -41,6 +41,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 
+# exec bspwm 
 exec i3
 # exec startxfce4
 # export DESKTOP_SESSION=plasma
