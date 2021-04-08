@@ -8,6 +8,8 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# workspace_layout <default|stacking|tabbed>
+workspace_layout tabbed
 
 set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
@@ -15,11 +17,11 @@ set $mod Mod1
 font pango: DejaVuSansMono Nerd Font 10
 
 # autostart
-exec --no-startup-id feh --bg-scale ~/Picture/camera.jpg
+exec --no-startup-id feh --bg-scale ~/Picture/great/camera.jpg
 exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id keynav
-# exec --no-startup-id qv2ray
+exec --no-startup-id qv2ray
 exec_always fcitx
 # exec --no-startup-id picom -b
 # exec --no-startup-id goldendict
@@ -277,4 +279,4 @@ bar {
 new_window none
 
 # gaps
-gaps inner 0
+gaps inner 8
