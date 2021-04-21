@@ -193,3 +193,6 @@ cat > getonly.json << EOF
 }
 EOF
 ```
+
+// replace multiple file's string
+find ./ -type f -exec sed -i 's/string1/string2/g' {} \;

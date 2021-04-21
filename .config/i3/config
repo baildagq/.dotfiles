@@ -17,7 +17,7 @@ set $mod Mod1
 font pango: DejaVuSansMono Nerd Font 10
 
 # autostart
-exec --no-startup-id feh --bg-scale ~/Picture/great/camera.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/great/camera.jpg
 exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec --no-startup-id keynav
@@ -258,8 +258,8 @@ bar {
         # urgent_workspacei       #2f343f #ebcb8b #2f343f
     }
     # mode hide
-    height 24
-    position top
+    # height 24
+    position bottom
     status_command i3status
 }
 
@@ -279,4 +279,4 @@ bar {
 new_window none
 
 # gaps
-gaps inner 8
+# gaps inner 8
