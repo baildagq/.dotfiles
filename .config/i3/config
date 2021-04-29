@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 # workspace_layout <default|stacking|tabbed>
-workspace_layout tabbed
+workspace_layout default
 
 set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
@@ -50,8 +50,9 @@ bindsym $mod+minus scratchpad show
 
 for_window [class="GoldenDict" instance="goldendict"] floating enable, resize set 1000 800, move absolute position center
 # for_window [class="your-program"] floating enable, resize set x y
-for_window [class="Anki"] floating enable, resize set 1000 800, move scratchpad, scratchpad show
+for_window [class="Anki"] floating enable, resize set 1000 800, move scratchpad, scratchpad show, move absolute position center
 bindsym $mod+Ctrl+c move absolute position center
+for_window [class="Navigator"] floating enable, resize set 1000 800, move absolute position center
 
 #===programs shortcuts===
 
@@ -81,7 +82,8 @@ bindsym $mod+b exec ~/.script/startbrowser.sh
 
 # start a terminal
 # i3的脚本，自动选择系统安装的默认终端
-bindsym $mod+Return exec st
+# bindsym $mod+Return exec st
+bindsym $mod+Ctrl+t exec st
 # bindsym $mod+Return exec i3-sensible-terminal
 
 # start file manager -- thunar
@@ -105,10 +107,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left 80 px
-bindsym $mod+Shift+j move down 80 px
-bindsym $mod+Shift+k move up 80 px
-bindsym $mod+Shift+l move right 80 px
+bindsym $mod+Shift+h move left 40 px
+bindsym $mod+Shift+j move down 40 px
+bindsym $mod+Shift+k move up 40 px
+bindsym $mod+Shift+l move right 40 px
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
