@@ -1,0 +1,497 @@
+" if filereadable(expand("~/.vim/vimrc_plug"))
+"     source ~/.vim/vimrc_plug
+" endif
+
+let mapleader =";"
+
+" " ==================================================
+" " vim-plug
+" " ==================================================
+
+call plug#begin('~/.vim/plugged')
+" extra function
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim' " Distraction-free writing in Vim
+Plug 'tomtom/tcomment_vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'itchyny/lightline.vim'
+Plug 'majutsushi/tagbar'
+Plug 'Chiel92/vim-autoformat'
+Plug 'prettier/vim-prettier'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+" Plug 'ciaranm/detectindent'
+
+" file support
+Plug 'elzr/vim-json'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'vim-latex/vim-latex'
+
+" git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" color
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+
+" " syntax
+Plug 'neoclide/coc.nvim', {'branch': 'release'}"
+call plug#end()
+
+
+" " =============
+" " detectindent
+" " =============
+" let g:detectindent_prefered_expandtab=1
+" let g:detectindent_prefered_indent=4
+" autocmd BufReadPost * :DetectIndent
+
+
+" =============
+" markdown preview
+" =============
+let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='google-chrome-stable'
+
+
+" =============
+" supertab
+" =============
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+
+
+" =============
+" lightline
+" =============
+let g:lightline = {
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filepath',  'filename',  'modified', 'cocstatus' ] ],
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'FugitiveHead',
+            \   'cocstatus': 'coc#status'
+            \ },
+            \ }
+
+
+" =============
+" tagbar
+" =============
+let g:tagbar_ctags_bin='/usr/bin/ctags'
+" autocmd bufreadpost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+
+
+
+
+" =============
+" YouCompleteMe
+" =============
+let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jr :YcmCompleter GoToInclude<CR>
+" nnoremap <leader>rn :YcmCompleter RefactorRename<CR>
+vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap  <leader>yd :<C-u>Yde<CR>
+
+
+
+
+
+" " =============
+" " vim-autoformat
+" " =============
+" au BufWrite * :Autoformat
+" let g:autoformat_autoindent = 0
+" let g:autoformat_retab = 0
+" let g:autoformat_remove_trailing_spaces = 0
+
+
+
+
+
+" =============
+"palenight
+" =============
+"let g:lightline.colorscheme = 'palenight'
+if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198>
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+
+
+
+" =============
+" clang_complete
+" =============
+let g:clang_library_path='/usr/lib/llvm-8/lib'
+
+
+
+
+" =============
+" nerdtree
+" =============
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * NERDTree
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+
+
+
+" =============
+" vim-prettier
+" =============
+" max line length that prettier will wrap on
+" Prettier default: 80
+let g:prettier#config#print_width = 150
+
+
+
+
+
+" =============
+" vim-easy-align
+" =============
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+
+
+
+" =============
+" Goyo
+" =============
+let g:goyo_width = 120
+let g:goyo_height = 90
+
+
+
+" =============
+" vim-markdown
+" =============
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_override_foldtext = 0
+let g:vim_markdown_folding_level = 2
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'tab'
+
+
+" =============
+" vim-table-mode
+" =============
+
+
+
+
+" ==============
+" coc.nvim
+" =============
+
+" let g:python.jediEnabled: false
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-marketplace', 'coc-clangd']
+let g:coc_disable_startup_warning=1
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+
+" GoTo code navigation.
+" nmap <leader> gh :CocCommand clangd.switchSourceHeader
+nmap <silent> gh :CocCommand clangd.switchSourceHeader<cr>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+" Note coc#float#scroll works on neovim >= 0.4.0 or vim >= 8.2.0750
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+
+" NeoVim-only mapping for visual mode scroll
+" Useful on signatureHelp after jump placeholder of snippet expansion
+if has('nvim')
+  vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
+  vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
+endif
+
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of language server.
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" Open coclist
+nnoremap <silent> <space>g :<C-u>CocList --normal gstatus<CR>
+
+"============= General =============
+" clipboard : autoselect 和后面的为默认，本来以为可以直接set
+" clipbaord+=unnamedplus,但是发现可能就被exclude吃掉了，所以只能将unnameplus写在了前面，然后加上了default"
+" set clipboard=unnamedplus,autoselect,exclude:cons\\\|linux
+" set clipboard=unnamedplus
+set mouse=a
+syntax enable
+set number                  "show line numbers
+set relativenumber          "show relative line numbers
+set showcmd                 "show command in bottom bar
+set novisualbell            "no screen flashing
+set autoread                "reload the file changed outside vim
+set autowrite               "auto save file
+set history=1000            "Store lots of :cmdline history
+set cursorline              "highlight current line
+set cursorcolumn            "highlight current column
+set showmatch               "highlight matching {[()]}
+set pumheight=10            " 设置补全高度为10"
+set laststatus=2
+set cmdheight=1
+set nowrap
+set nolist
+" set lcs=tab:>-,trail:-
+" set listchars=tab:\|\
+" set listchars=tab:>-,trail:-,eol:$ list
+set scrolloff=4
+set ttyfast "should make scrolling faster
+set lazyredraw "same as above
+set hidden
+
+" undo, but i don't understant it yet
+silent !mkdir -p ~/.config/nvim/tmp/backup
+silent !mkdir -p ~/.config/nvim/tmp/undo
+"silent !mkdir -p ~/.config/nvim/tmp/sessions
+set backupdir=~/.config/nvim/tmp/backup,.
+set directory=~/.config/nvim/tmp/backup,.
+if has('persistent_undo')
+    set undofile
+    set undodir=~/.config/nvim/tmp/undo,.
+endif
+
+"============= Encoding ================
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+
+"============= Indentation =============
+set autoindent
+set smartindent
+set cindent
+set tabstop=4               "number  of visual spaces per tab
+set softtabstop=4           "number of spaces in tab when editing
+set shiftwidth=4            "click one 'delete' delete four space
+set smarttab                " 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+set expandtab
+
+
+"==============  Backup ==============
+set nobackup                "no backup files
+set noswapfile              "no swap files
+set nowritebackup           "only in case you don't want a backup file while editing
+set noundofile
+
+
+"==============  Search ==============
+set incsearch               "matching when you are inputing
+set hlsearch                "highlight the match when search
+set ignorecase              "ignore case when searching
+set smartcase               " ...unless we type a capital
+
+"============== folds ===========
+set foldenable          "enable fold feature
+set foldlevel=10
+set foldmethod=indent   "fold based on syntax, other could be indent manual diff
+
+"============= jump =============
+set tags=./tags;,tags
+
+"============== Tab management ===========
+" Create a new tab with tu
+noremap tu :tabe<CR>
+" Move around tabs with tn and ti
+noremap ti :-tabnext<CR>
+noremap tn :+tabnext<CR>
+" Move around tabs with tn and ti
+noremap <C-w>n :+tabnext<CR>
+noremap <C-w>p :-tabnext<CR>
+" Move the tabs with tmn and tmi
+noremap tmn :-tabmove<CR>
+noremap tmi :+tabmove<CR>
+
+" let mapleader = "\<Space>"
+let mapleader =";"
+vmap <C-c> "+yi
+nmap <leader>v "+gp
+nmap <leader>c "+y
+vmap <leader>v "+gp
+vmap <leader>c "+y
+" easy resize
+" noremap <up> :res +5<CR>
+" noremap <down> :res -5<CR>
+" noremap <left> :vertical res -5<CR>
+" noremap <right> :vertical res +5<CR>
+nnoremap Y y$
+nnoremap C c$
+nnoremap D d$
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>'")
+
+
+noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
+nnoremap <F2>: NERDTree<cr>
+nnoremap <F4>: TagbarToggle<cr>
+nnoremap <F6>: Autoformat<cr>
+map <C-n> :NERDTreeToggle<CR>
+
+" colorscheme PaperColor
+" set background=light 
+colorscheme gruvbox
+set background=dark
+" dark
+
+" " Auto change directory to current dir
+" autocmd BufEnter * silent! lcd %:p:h
+
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif

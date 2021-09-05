@@ -15,6 +15,9 @@ build
 .vim/plugged/
 .vim/sessions/
 
+node_modules
+list-marketplace-history.json
+
 .config/nvim/autoload/plugged/
 .config/nvim/tmp/
 .config/nvim/.netrwhist
