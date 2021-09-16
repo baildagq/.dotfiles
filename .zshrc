@@ -182,7 +182,7 @@ alias py='python3'
 alias pc='proxychains'
 alias pi='pi@192.168.2.103'
 alias ra="ranger"
-alias setproxy='export all_proxy=http://127.0.0.1:8889'
+alias setproxy='export all_proxy=http://172.25.176.1:8889'
 alias unproxy='unset all_proxy'
 alias sk='setxkbmap -option ctrl:nocaps'
 alias gopi='ssh -L 59000:localhost:5901 -C -l ubuntu 192.168.2.103'
@@ -291,3 +291,21 @@ if type rg &> /dev/null; then
 fi
 
 # source /opt/ros/noetic/setup.zsh
+
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/qiqiang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/qiqiang/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/qiqiang/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/qiqiang/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
