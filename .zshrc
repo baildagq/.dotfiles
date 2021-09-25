@@ -1,61 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
-
-# export GIT_TRACE_PACKET=1
-# export GIT_TRACE=1
-# export GIT_CURL_VERBOSE=1
 # Path to your oh-my-zsh installation.
-
-# export EIGEN3_INCLUDE_DIR=/usr/local/include/eigen3
-
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export GOPATH=$HOME/go
-export GOROOT=/usr/lib/go
-export GO111MODULE=on
-export GOPROXY=https://goproxy.io
-export GOPROXY=https://goproxy.cn
-export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig"
-export NODE_NO_WARNINGS=1
-export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
-
-export KF_NAME=my-kubeflow
-export BASE_DIR=/opt/kubeflow
-export KF_DIR=${BASE_DIR}/${KF_NAME}
-export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.2-branch/kfdef/kfctl_k8s_istio.v1.2.0.yaml" 
-# export INGRESS_HOST=$(minikube ip)
-# export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/oneapi/:/opt/ros/noetic/include:/usr/local/lib:/usr/lib
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/ros/noetic/include:/usr/local/include
-
-export TERM=xterm-256color
-
-PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin:~/.cargo/bin:~/Software/flutter/bin:~/Software/bin:~/go/bin
-
-# To make ranger default editor = vim
-VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR
-
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="random"
-# ZSH_THEME="amuse"
-ZSH_THEME="muse"
-# ZSH_THEME="avit"
-# ZSH_THEME="dpoggi"
-# ZSH_THEME="agnoster"
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="af-magic"
-# ZSH_THEME="cloud"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -76,7 +32,7 @@ ZSH_THEME="muse"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -88,6 +44,9 @@ ZSH_THEME="muse"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -107,8 +66,8 @@ ZSH_THEME="muse"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
@@ -147,9 +106,41 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+# export PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin:~/.cargo/bin:~/Software/flutter/bin:~/Software/bin:~/go/bin
+# export GIT_TRACE_PACKET=1
+# export GIT_TRACE=1
+# export GIT_CURL_VERBOSE=1
 
-#self: !!!!!!!
-# 避免oh-my-zsh 出现文件夹不安全的提示
+
+# flutter
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+# golang
+export GOPATH=$HOME/go
+export GOROOT=/usr/lib/go
+export GO111MODULE=on
+export GOPROXY=https://goproxy.io
+export GOPROXY=https://goproxy.cn
+
+# cplusplus
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/oneapi/:/opt/ros/noetic/include:/usr/local/lib:/usr/lib
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/ros/noetic/include:/usr/local/include
+
+# rust
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+
+# other
+export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig"
+export NODE_NO_WARNINGS=1
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+export TERM=xterm-256color
+export EIGEN3_INCLUDE_DIR=/usr/local/include/eigen3
+VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR # To make ranger default editor = vim
+
+
+# avoid oh-my-zsh appear directory not safe notify
 set ZSH_DISABLE_COMPFIX = true
 
 #################### alias ####################
