@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export PATH=/bin:/usr/bin:/usr/local/bin/:${HOME}/.local/bin:${PATH}
 # export PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin:~/.cargo/bin:~/Software/flutter/bin:~/Software/bin:~/go/bin
 # export GIT_TRACE_PACKET=1
 # export GIT_TRACE=1
