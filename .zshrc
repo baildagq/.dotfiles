@@ -106,8 +106,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
-# export PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.cache/wudao-dict/wudao-dict/bin:~/.local/bin:~/.joplin:~/.cargo/bin:~/Software/flutter/bin:~/Software/bin:~/go/bin
+export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export PATH=$PATH:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin
 # export GIT_TRACE_PACKET=1
 # export GIT_TRACE=1
 # export GIT_CURL_VERBOSE=1
@@ -165,6 +165,7 @@ alias la='ls -A'
 alias leet='cd ~/Code/leetcode'
 alias lc='leetcode'
 alias ll='ls -alF'
+alias nvim=lvim
 alias nv="nvim"
 alias ndw="nmcli device wifi"
 alias npmtb="npm install --registry=https://registry.npm.taobao.org"
@@ -300,3 +301,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+if [ -f ~/.aliasrc ]; then
+    source ~/.aliasrc
+fi

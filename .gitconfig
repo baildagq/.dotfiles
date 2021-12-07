@@ -1,9 +1,10 @@
 [user]
-    name = qiqiang
-    email = 13214867244@163.com
+    name = qiang.qi
+    email = qiang.qi@realai.ai
 
 [core]
     editor=vim
+	  autocrlf = false
 
 [oh-my-zsh]
-	hide-status = 1
+	  hide-status = 1
