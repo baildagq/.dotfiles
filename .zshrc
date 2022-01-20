@@ -126,6 +126,7 @@ export GOPROXY=https://goproxy.cn
 # cplusplus
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/oneapi/:/opt/ros/noetic/include:/usr/local/lib:/usr/lib
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/opt/ros/noetic/include:/usr/local/include
+export LLVM_SYMBOLIZER_PATH=/usr/lib/llvm-12/bin
 
 # rust
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -304,3 +305,13 @@ unset __conda_setup
 if [ -f ~/.aliasrc ]; then
     source ~/.aliasrc
 fi
+
+alias vim="lvim"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# alias grep="rgrep"
+
+
+ulimit -c unlimited
