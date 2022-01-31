@@ -165,7 +165,6 @@ alias la='ls -A'
 alias leet='cd ~/Code/leetcode'
 alias lc='leetcode'
 alias ll='ls -alF'
-alias nvim=lvim
 alias nv="nvim"
 alias ndw="nmcli device wifi"
 alias npmtb="npm install --registry=https://registry.npm.taobao.org"
@@ -305,8 +304,6 @@ unset __conda_setup
 if [ -f ~/.aliasrc ]; then
     source ~/.aliasrc
 fi
-
-alias vim="lvim"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
