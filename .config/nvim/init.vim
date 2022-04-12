@@ -1,13 +1,9 @@
-" " auto-install vim-plug and install plugins
-" if empty(glob('~/.config/nvim/autoload/plug.vim'))
-"     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-"                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"     autocmd VimEnter * PlugInstall | source $MYVIMRC
-" endif
+let g:config_files = [
+			\ 'globals.vim',
+			\ 'options.vim',
+			\ 'plugins.vim'
+			\]
 
-if filereadable(expand("~/.config/nvim/plug.vim"))
-    source ~/.config/nvim/plug.vim
-endif
-if filereadable(expand("~/.config/nvim/general.vim"))
-    source ~/.config/nvim/general.vim
-endif
+for s:fname in g:config_files
+	execute printf('source %s/core/%s', stdpath('config'), s:fname)
+endfor

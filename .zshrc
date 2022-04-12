@@ -139,6 +139,9 @@ export TERM=xterm-256color
 export EIGEN3_INCLUDE_DIR=/usr/local/include/eigen3
 VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR # To make ranger default editor = vim
 
+export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/usr/lib/llvm-12/lib/cmake/llvm
+export CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}:/usr/lib/llvm-12/lib/cmake/llvm
+
 
 # avoid oh-my-zsh appear directory not safe notify
 set ZSH_DISABLE_COMPFIX = true
@@ -258,6 +261,11 @@ function countdown {
     done
 }
 
+function wsl2proxy {
+    hostIP=`cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'`
+    export ALL_PROXY=http://${hostIP}:7890
+}
+
 
 #################### auto start ####################
 
@@ -312,3 +320,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 ulimit -c unlimited
+
+export BROWSER=wslview
