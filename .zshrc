@@ -176,7 +176,7 @@ alias py='python3'
 alias pc='proxychains'
 alias pi='pi@192.168.2.103'
 alias ra="ranger"
-alias setproxy='export all_proxy=http://172.25.176.1:8889'
+alias setproxy='export all_proxy=http://127.0.0.1:8889'
 alias unproxy='unset all_proxy'
 alias sk='setxkbmap -option ctrl:nocaps'
 alias gopi='ssh -L 59000:localhost:5901 -C -l ubuntu 192.168.2.103'
