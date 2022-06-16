@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/
+export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/:/opt/dotnet-sdk:/usr/local/cuda-11.7/bin
 # export GIT_TRACE_PACKET=1
 # export GIT_TRACE=1
 # export GIT_CURL_VERBOSE=1
@@ -322,3 +322,4 @@ export NVM_DIR="$HOME/.nvm"
 ulimit -c unlimited
 
 export BROWSER=wslview
+export CMAKE_MAKE_PROGRAM=/usr/bin/make
