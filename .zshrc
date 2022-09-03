@@ -71,9 +71,9 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	git
     vi-mode
     colored-man-pages
 )
@@ -118,10 +118,11 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 # golang
 export GOPATH=$HOME/go
-export GOROOT=/usr/lib/go
+export GOROOT=/usr/local/go
 export GO111MODULE=on
 export GOPROXY=https://goproxy.io
 export GOPROXY=https://goproxy.cn
+export PATH=${PATH}:/usr/local/go/bin
 
 # cplusplus
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/oneapi/:/opt/ros/noetic/include:/usr/local/lib:/usr/lib
@@ -323,3 +324,5 @@ ulimit -c unlimited
 
 export BROWSER=wslview
 export CMAKE_MAKE_PROGRAM=/usr/bin/make
+# export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
+# export DISPLAY=$(ifconfig | grep inet | awk '{print $2}' | head -n 1 | awk '{print $0":0.0"}')
