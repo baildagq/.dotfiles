@@ -76,9 +76,9 @@ bindsym XF86MonBrightnessDown  exec brightnessctl set 20%- > /dev/null
 # bindsym XF86AudioNext exec playerctl next  
 # bindsym XF86AudioPrev exec playerctl previous  
 
-# bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec google-chrome-stable
 # bindsym $mod+b exec firefox
-bindsym $mod+b exec ~/.script/startbrowser.sh
+# bindsym $mod+b exec ~/.script/startbrowser.sh
 
 # start a terminal
 # i3的脚本，自动选择系统安装的默认终端
