@@ -82,8 +82,13 @@ bindsym XF86MonBrightnessDown  exec brightnessctl set 20%- > /dev/null
 # bindsym XF86AudioNext exec playerctl next  
 # bindsym XF86AudioPrev exec playerctl previous  
 
+<<<<<<< HEAD
 # bindsym $mod+b exec google-chrome-stable
 bindsym $mod+b exec firefox
+=======
+bindsym $mod+b exec google-chrome-stable
+# bindsym $mod+b exec firefox
+>>>>>>> 58de64b7b47a425284585827bfca9966c104f93f
 # bindsym $mod+b exec ~/.script/startbrowser.sh
 
 # start a terminal

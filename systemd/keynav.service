@@ -1,0 +1,12 @@
+[Unit]
+Description=keyboard navigation as mouse
+After=network.target
+
+[Service]
+User=root
+Restart=always
+ExecStart=/usr/bin/keynav
+
+[Install]
+WantedBy=multi-user.target
+

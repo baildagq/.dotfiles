@@ -477,9 +477,9 @@ nnoremap <F4>: TagbarToggle<cr>
 nnoremap <F6>: Autoformat<cr>
 map <C-n> :NERDTreeToggle<CR>
 
-" colorscheme PaperColor
+colorscheme PaperColor
 " set background=light 
-colorscheme gruvbox
+" colorscheme gruvbox
 set background=dark
 " dark
 

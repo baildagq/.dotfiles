@@ -230,6 +230,10 @@ working_directory: None
 # backend cannot be initialized.
 enable_experimental_conpty_backend: false
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 58de64b7b47a425284585827bfca9966c104f93f
 debug:
   # Display the time it takes to redraw each frame.
   render_timer: false
@@ -536,6 +540,8 @@ key_bindings:
   - {key: F8, mods: Super, chars: "\e[19;3~"}
   - {key: F9, mods: Super, chars: "\e[20;3~"}
   - {key: F10, mods: Super, chars: "\e[21;3~"}
-  - {key: F11, mods: Super, chars: "\e[23;3~"}
+  # - {key: F11, mods: Super, chars: "\e[23;3~"}
+  # - { key: F11, command: { program: "fullscreen" } }
+  - { key: F11, command: {program: "wmctrl", args: ["-r", ":ACTIVE:", "-b", "toggle,fullscreen" ]} }
   - {key: F12, mods: Super, chars: "\e[24;3~"}
   - {key: NumpadEnter, chars: "\n"}
