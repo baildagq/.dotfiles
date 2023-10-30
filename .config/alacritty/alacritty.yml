@@ -230,10 +230,6 @@ working_directory: None
 # backend cannot be initialized.
 enable_experimental_conpty_backend: false
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 58de64b7b47a425284585827bfca9966c104f93f
 debug:
   # Display the time it takes to redraw each frame.
   render_timer: false
