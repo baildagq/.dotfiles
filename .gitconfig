@@ -8,3 +8,5 @@
 
 [oh-my-zsh]
 	  hide-status = 1
+[pull]
+	rebase = false
