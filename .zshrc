@@ -106,15 +106,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-<<<<<<< HEAD
 export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/:/opt/dotnet-sdk:/usr/local/cuda-11.7/bin:/opt/clash-for-windows
 # export GIT_TRACE_PACKET=1
 # export GIT_TRACE=1
 # export GIT_CURL_VERBOSE=1
 
-
-=======
->>>>>>> 58de64b7b47a425284585827bfca9966c104f93f
 # flutter
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
@@ -314,12 +310,10 @@ ulimit -c unlimited
 
 export BROWSER=wslview
 export CMAKE_MAKE_PROGRAM=/usr/bin/make
-<<<<<<< HEAD
 setopt no_nomatch
 
 # TODO: add systemctl service
 alias autossh_inp_tencent='autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -NR 2222:localhost:22 tencent'
-=======
 # export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 # export DISPLAY=$(ifconfig | grep inet | awk '{print $2}' | head -n 1 | awk '{print $0":0.0"}')
 
@@ -356,4 +350,3 @@ function ovpn {
     cd ~/Downloads/openvpn
     sudo openvpn --config realai.ovpn
 }
->>>>>>> 58de64b7b47a425284585827bfca9966c104f93f
