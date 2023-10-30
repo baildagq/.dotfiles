@@ -478,9 +478,9 @@ nnoremap <F6>: Autoformat<cr>
 map <C-n> :NERDTreeToggle<CR>
 
 colorscheme PaperColor
-set background=light 
+" set background=light 
 " colorscheme gruvbox
-" set background=dark
+set background=dark
 " dark
 
 " " Auto change directory to current dir

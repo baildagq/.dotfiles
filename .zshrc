@@ -1,3 +1,4 @@
+export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/:/opt/dotnet-sdk:/usr/local/cuda-11.8/bin:/opt/node-v16.18.0-linux-x64/bin:${GOPATH}/bin/:$HOME/.krew/bin
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -7,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="fletcherm"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -22,14 +23,13 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -106,23 +106,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/:/opt/dotnet-sdk:/usr/local/cuda-11.7/bin
-# export GIT_TRACE_PACKET=1
-# export GIT_TRACE=1
-# export GIT_CURL_VERBOSE=1
-
-
 # flutter
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 # golang
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
+export GOROOT=/usr/lib/go
 export GO111MODULE=on
 export GOPROXY=https://goproxy.io
 export GOPROXY=https://goproxy.cn
-export PATH=${PATH}:/usr/local/go/bin
 
 # cplusplus
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/oneapi/:/opt/ros/noetic/include:/usr/local/lib:/usr/lib
@@ -142,6 +135,11 @@ VISUAL=vim;export VISUAL EDITOR=vim; export EDITOR # To make ranger default edit
 
 export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/usr/lib/llvm-12/lib/cmake/llvm
 export CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}:/usr/lib/llvm-12/lib/cmake/llvm
+
+# export GIT_TRACE_PACKET=1
+# export GIT_TRACE=1
+# export GIT_CURL_VERBOSE=1
+
 
 
 # avoid oh-my-zsh appear directory not safe notify
@@ -170,6 +168,7 @@ alias leet='cd ~/Code/leetcode'
 alias lc='leetcode'
 alias ll='ls -alF'
 alias nv="nvim"
+# alias vim="nvim"
 alias ndw="nmcli device wifi"
 alias npmtb="npm install --registry=https://registry.npm.taobao.org"
 alias note='cd ~/note'
@@ -177,7 +176,7 @@ alias py='python3'
 alias pc='proxychains'
 alias pi='pi@192.168.2.103'
 alias ra="ranger"
-alias setproxy='export all_proxy=http://127.0.0.1:8889'
+alias setproxy='export all_proxy=http://127.0.0.1:7890'
 alias unproxy='unset all_proxy'
 alias sk='setxkbmap -option ctrl:nocaps'
 alias gopi='ssh -L 59000:localhost:5901 -C -l ubuntu 192.168.2.103'
@@ -292,24 +291,6 @@ fi
 
 # source /opt/ros/noetic/setup.zsh
 
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/qiqiang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/qiqiang/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/qiqiang/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/qiqiang/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
 if [ -f ~/.aliasrc ]; then
     source ~/.aliasrc
 fi
@@ -326,3 +307,37 @@ export BROWSER=wslview
 export CMAKE_MAKE_PROGRAM=/usr/bin/make
 # export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 # export DISPLAY=$(ifconfig | grep inet | awk '{print $2}' | head -n 1 | awk '{print $0":0.0"}')
+
+source /opt/miniconda/etc/profile.d/conda.sh
+# conda activate py38
+# alias npm="npm --registry=https://registry.npmmirror.com"
+alias swagger='docker run --rm -it  --user $(id -u):$(id -g) -e GOPATH=$(go env GOPATH):/go -v $HOME:$HOME -w $(pwd) quay.io/goswagger/swagger'
+
+
+
+alias kpg="kubectl get pods -o wide -A | grep "
+# alias kl="kubectl -n arachnid logs"
+function kl {
+    info=$(kubectl get pods -A | grep $1)
+    ns=$(echo $info | awk '{print $1}')
+    podname=$(echo $info | awk '{print $2}')
+    kubectl -n $ns logs $podname --tail 100 -f
+}
+function kepb {
+    info=$(kubectl get pods -A | grep $1)
+    ns=$(echo $info | awk '{print $1}')
+    podname=$(echo $info | awk '{print $2}')
+    kubectl -n $ns exec -it $podname -- bash
+}
+
+function kdp {
+    info=$(kubectl get pods -A | grep $1)
+    ns=$(echo $info | awk '{print $1}')
+    podname=$(echo $info | awk '{print $2}')
+    kubectl -n $ns describe pod $podname
+}
+
+function ovpn {
+    cd ~/Downloads/openvpn
+    sudo openvpn --config realai.ovpn
+}
