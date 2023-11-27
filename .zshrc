@@ -1,4 +1,4 @@
-export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/:/opt/dotnet-sdk:/usr/local/cuda-11.8/bin:/opt/node-v16.18.0-linux-x64/bin:${GOPATH}/bin/:$HOME/.krew/bin
+export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/:/opt/dotnet-sdk:/usr/local/cuda-11.8/bin:/opt/node-v16.18.0-linux-x64/bin:${GOPATH}/bin/:$HOME/.krew/bin:/opt/zoom
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -129,6 +129,10 @@ export LLVM_SYMBOLIZER_PATH=/usr/lib/llvm-12/bin
 
 # rust
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+
+# zoom
+export PATH=$PATH:/opt/zoom
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/zoom:/opt/zoom/cef
 
 # other
 export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig"
@@ -350,3 +354,8 @@ function ovpn {
     cd ~/Downloads/openvpn
     sudo openvpn --config realai.ovpn
 }
+
+function oect {
+    sudo openconnect --protocol=anyconnect --server=https://office.kubernetes.airbob.org:8443 --authgroup=default --user=qiang.qi --no-dtls
+}
+
