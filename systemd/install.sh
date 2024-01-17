@@ -2,6 +2,6 @@
 
 for file in $(ls ./*.service); do
     echo $file
-    rm /etc/systemd/system/$file
-    cp $(pwd)/$file /etc/systemd/system/$file
+    mv /etc/systemd/system/$file /etc/systemd/system/$file.back
+    ln -s $(pwd)/$file /etc/systemd/system/$file
 done

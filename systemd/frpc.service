@@ -1,0 +1,14 @@
+[Unit]
+Description=FRP Client
+After=network.target
+
+[Service]
+Type=simple
+User=baildagq
+Group=baildagq
+ExecStart=/usr/local/bin/frpc -c /home/baildagq/.dotfiles/systemd/frpc.toml
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

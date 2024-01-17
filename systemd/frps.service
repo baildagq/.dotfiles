@@ -1,0 +1,14 @@
+[Unit]
+Description=FRP Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+ExecStart=/usr/local/bin/frps -c /home/ubuntu/.dotfiles/systemd/frps.toml
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,23 @@
+serverAddr = "43.143.136.65"
+serverPort = 7000
+
+[[proxies]]
+name = "ssh"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22
+remotePort = 20000
+
+[[proxies]]
+name = "nextcloud"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 31000
+remotePort = 31000
+
+[[proxies]]
+name = "photoprism"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 31002
+remotePort = 31002
