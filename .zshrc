@@ -317,11 +317,11 @@ export CMAKE_MAKE_PROGRAM=/usr/bin/make
 setopt no_nomatch
 
 # TODO: add systemctl service
-alias autossh_inp_tencent='autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -NR 2222:localhost:22 tencent'
+alias autossh_tencent='autossh -M 10051 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -NR 10050:localhost:22 tencent'
 # export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 # export DISPLAY=$(ifconfig | grep inet | awk '{print $2}' | head -n 1 | awk '{print $0":0.0"}')
 
-source /opt/miniconda/etc/profile.d/conda.sh
+# source /opt/miniconda/etc/profile.d/conda.sh
 # conda activate py38
 # alias npm="npm --registry=https://registry.npmmirror.com"
 alias swagger='docker run --rm -it  --user $(id -u):$(id -g) -e GOPATH=$(go env GOPATH):/go -v $HOME:$HOME -w $(pwd) quay.io/goswagger/swagger'

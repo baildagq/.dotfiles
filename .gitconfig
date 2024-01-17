@@ -1,6 +1,6 @@
 [user]
-    name = qiang.qi
-    email = qiang.qi@realai.ai
+    name = baildagq
+    email = 13214867244@163.com
 
 [core]
     editor=vim
@@ -17,3 +17,5 @@
 	smudge = git-lfs smudge -- %f
 [pull]
 	rebase = false
+[init]
+	defaultBranch = master
