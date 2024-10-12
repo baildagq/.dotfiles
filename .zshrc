@@ -1,4 +1,8 @@
 export PATH=${PATH}:~/Downloads/mips-mti-elf/bin:~/.local/bin:~/.cargo/bin:/bin:/usr/bin:/usr/local/bin/:/opt/dotnet-sdk:/usr/local/cuda-11.8/bin:/opt/node-v16.18.0-linux-x64/bin:${GOPATH}/bin/:$HOME/.krew/bin:/opt/zoom
+export PATH=${PATH}:/opt/homebrew/bin
+export PATH=${PATH}:/Users/qiangqi/Software/flutter/bin
+export PATH=${PATH}:/usr/local/go/bin
+export CHROME_EXECUTABLE=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -358,4 +362,29 @@ function ovpn {
 function oect {
     sudo openconnect --protocol=anyconnect --server=https://office.kubernetes.airbob.org:8443 --authgroup=default --user=qiang.qi --no-dtls
 }
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# alias grep="rgrep"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/qiangqi/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/qiangqi/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/qiangqi/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/qiangqi/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+# conda config --set auto_activate_base false
 
