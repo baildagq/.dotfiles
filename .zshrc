@@ -388,3 +388,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 # conda config --set auto_activate_base false
 
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export GOROOT=/usr/local/go
+export GOPROXY=https://goproxy.io
+export GOPROXY=https://goproxy.cn
