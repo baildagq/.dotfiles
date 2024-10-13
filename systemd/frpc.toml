@@ -1,12 +1,12 @@
-serverAddr = "43.143.136.65"
+serverAddr = "42.193.106.242"
 serverPort = 7000
 
 [[proxies]]
-name = "ssh"
+name = "ssh-asus"
 type = "tcp"
 localIP = "127.0.0.1"
 localPort = 22
-remotePort = 20000
+remotePort = 2822
 
 [[proxies]]
 name = "nextcloud"
@@ -21,3 +21,74 @@ type = "tcp"
 localIP = "127.0.0.1"
 localPort = 31002
 remotePort = 31002
+
+[[proxies]]
+name = "qbittorrrent-nox"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 8080
+remotePort = 8080
+
+
+[[proxies]]
+name = "proxy-8000"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 8000
+remotePort = 8000
+
+[[proxies]]
+name = "proxy-8001"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 8001
+remotePort = 8001
+
+[[proxies]]
+name = "proxy-32001"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 32001
+remotePort = 32001
+
+[[proxies]]
+name = "proxy-32011"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 32011
+remotePort = 32011
+
+[[proxies]]
+name = "proxy-32021"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 32021
+remotePort = 32021
+
+[[proxies]]
+name = "proxy-32031"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 32031
+remotePort = 32031
+
+[[proxies]]
+name = "proxy-32041"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 32041
+remotePort = 32041
+
+[[proxies]]
+name = "proxy-33000"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 33000
+remotePort = 33000
+
+[[proxies]]
+name = "proxy-33001"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 33001
+remotePort = 33001
